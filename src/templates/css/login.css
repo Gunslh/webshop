@@ -1,0 +1,207 @@
+@CHARSET "UTF-8";
+.login-container 
+{
+	margin-top: 50px;
+}
+.login-container .item 
+{
+	background: none repeat scroll 0% 0% #FFF;
+	padding: 50px 100px;
+}
+.item .item-info
+{
+	position: relative;
+}
+.login-container .item .item-info {
+    width: 307px;
+    margin-bottom: 20px;
+}
+
+.item .item-info .i-name {
+    background: url("/picture/login-all-bg.png") no-repeat scroll -373px -111px #FFF;
+    width: 16px;
+    height: 16px;
+    top: 8px;
+}
+.item .item-info .ico {
+    position: absolute;
+    right: 12px;
+    z-index: 5;
+}
+.item .item-info .i-pass {
+    background: url("/picture/login-all-bg.png") no-repeat scroll -346px -108px #FFF;
+    width: 16px;
+    height: 19px;
+    top: 8px;
+}
+.item .item-info .ico {
+    position: absolute;
+    right: 12px;
+    z-index: 5;
+}
+.text {
+    float: none;
+    width: 282px;
+    height: 24px;
+    line-height: 24px;
+    padding: 4px 20px 4px 3px;
+    border: 1px solid #CCC;
+    font-size: 14px;
+    font-family: arial,"宋体";
+}
+.btn-img {
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    border: 0px none;
+    text-align: center;
+}
+.btn-entry {
+    width: 307px;
+    height: 34px;
+    font-family: "微软雅黑";
+    line-height: 100px;
+    text-indent: -9999px;
+    background: url("/picture/login-all-bg.png") no-repeat scroll 0px -61px transparent;
+    overflow: hidden;
+}
+
+.btn-entry:hover{
+	background:url(/picture/login-all-bg.png) no-repeat 0 -95px;
+}
+
+.login-container .form {
+    width: 508px;
+	margin: 0px auto;
+	background: none repeat scroll 0% 0% #E8E8E8;
+	padding: 15px;
+}
+
+.free-regist {
+    position: absolute;
+	right: 542px;
+	background: none repeat scroll 0% 0% #E8E8E8;
+	width: 115px;
+	height: 32px;
+	text-align: center;
+	line-height: 32px;
+	border-radius: 0px 0px 3px 3px;
+	padding: 0px 5px 5px;
+	top: 660px;
+}
+.free-regist span a {
+    color: #FFF;
+}
+.free-regist span {
+    text-align: center;
+    font-size: 14px;
+    background: none repeat scroll 0% 0% #7CBE56;
+    width: 115px;
+    height: 32px;
+    display: block;
+    color: #FFF;
+    border-radius: 0px 0px 3px 3px;
+}
+.free-regist span:hover{background:#89c964}
+
+.reg-container
+{
+	margin-top: 30px;
+	background: none repeat scroll 0% 0% #F2F2F2;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.reg-container .form
+{
+	width: 808px;
+	margin: 0px auto;
+	border-style: solid;
+	border-color: #DDD;
+	background: white;
+	border-width: 1px 1px 1px;
+}
+.reg-container .form .item
+{
+	margin-top: 50px;
+margin-bottom: 50px;
+}
+
+
+.reg-name, .reg-pass, .re-pass ,.reg-phone ,.reg-addr, .reg-rname
+{
+	width:700px;
+	height:50px;	
+	margin: 0px auto;
+}
+
+.reg-name .label, .reg-pass .label , .re-pass .label,
+.reg-addr .label, .reg-phone .label, .reg-rname .label
+{
+	text-align: right;
+	color: #999;
+	padding-right: 10px;
+	padding-top: 7px;
+	width: 150px;
+}
+.btn-submit {
+	margin-left: 200px;
+    width: 307px;
+    height: 34px;
+    font-family: "微软雅黑";
+    line-height: 100px;
+    text-indent: -9999px;
+    background: url("/picture/submit-all-bg.png") no-repeat scroll 0px -61px transparent;
+    overflow: hidden;
+}
+
+.btn-submit:hover{
+	background:url(/picture/submit-all-bg.png) no-repeat 0 -95px;
+}
+.reg-container .title
+{
+	width: 300px;
+	margin-bottom: 30px;
+	font-size: 30px;
+}
+
+.reg-container .text
+{
+	width:200px;
+}
+.highlight1{
+	border:1px solid #7ABD54;
+	color: #333;
+}
+.highlight2{
+	border: 1px solid #F00;
+	color: #F00;
+}	
+.hits
+{
+	display:none;
+	text-align: left;
+	text-indent: 20px;
+	color: #666;
+	width: 260px;
+	line-height: 32px;
+	background: none repeat scroll 0% 0% #F7F7F7;
+	border: 1px solid #DDD;
+	margin-left: 10px;
+}
+.hits_err
+{
+	display:none;
+	text-align: left;
+	text-indent: 20px;
+	width: 260px;
+	line-height: 32px;color: #E4393C;
+	background: none repeat scroll 0% 0% #FFEBEB;
+	border: 1px solid #FFBDBE;
+	margin-left: 10px;
+}
+
+.item .item-info .succeed{
+    background: url("/picture/sucess.png") no-repeat scroll center center #FFF;
+}

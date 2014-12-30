@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Cart</title>
+<?php include_once 'common/css2js.php';?>
+<link href="../css/cart.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+$(function(){
+	function setSum(val,num)
+	{
+		$('.sumPrice').find('em').html(val);
+		$('.amount-sum em').html(num);
+	}
+	function getItemNum(obj)
+	{
+		return obj.find('.item-number .quantity-form input').val();
+	}
+	function getItemTotal(obj)
+	{
+		return obj.find('.item-sum strong').html();
+	}
+	function totalRefresh()
+	{
+		var sum = 0;
+		var quntity = 0;
+		$('.item-list').each(function(){
+			var check = $(this).find('.item-check').find('input');
+			if(check.attr('checked'))
+			{
+				sum += parseFloat(getItemTotal($(this)));
+				quntity += parseInt(getItemNum($(this)));
+			}
+		});
+		setSum(parseFloat(sum),quntity);
+	}
+	
+	function getPrice(id)
+	{
+		return 100.01;
+	}
+	
+	function updateTotal(quntity_form, val)
+	{
+		var head = quntity_form.parent('div').parent('div');
+		var price = getPrice(head.attr("pd-id"));
+		var sum_obj = head.find('.item-sum').find('strong');
+		sum_obj.html(val*price);
+		totalRefresh();
+	}
+	$('.itxt').live("change",function(){
+		var parment = $(this).parent('div');
+		var num = $(this).val();
+		if(num > 1)
+			parment.find('.decrement').removeClass('disabled');
+		else
+			parment.find('.decrement').removeClass('disabled');
+		updateTotal(parment,num);
+	});
+	
+	$(".item-check input[type='checkbox']").change(function(){
+		 if($(this).attr('checked'))
+		 {
+			 $(this).parent('div').parent('div').addClass('item-selected');
+		 }
+		 else
+			 $(this).parent('div').parent('div').removeClass('item-selected');
+		 totalRefresh();
+	});
+	$(".check input[type='checkbox'], .cart-checkbox input[type='checkbox']").click(function(){
+		if($(this).attr('checked')){
+			$('.item-list').each(function(){
+				if(!$(this).find('.item-check input[type="checkbox"]').attr('checked'))
+					$(this).find('.item-check input[type="checkbox"]').click();
+				
+			});
+		}
+		else
+		{
+			$('.item-list').each(function(){
+				if($(this).find('.item-check input[type="checkbox"]').attr('checked'))
+					$(this).find('.item-check input[type="checkbox"]').click();
+				
+			});
+		}
+	});
+	$(".increment").live("click", function(){
+
+		var parment = $(this).parent('div')
+		var obj = parment.find('.itxt');
+		var num = obj.val();
+		num++;
+		if(parment.find('.increment').hasClass('disabled'))
+			return;
+		obj.val(num);
+		if(num > 1)
+		{
+			parment.find('.decrement').removeClass('disabled');
+		}
+		
+		updateTotal(parment,num);
+	});
+	
+	$(".decrement").live("click", function(){
+		
+		var parment = $(this).parent('div')
+		var obj = parment.find('.itxt');
+		var num = obj.val();
+		num--;
+		if(parment.find('.decrement').hasClass('disabled'))
+			return;
+		
+		obj.val(num);
+		if(num == 1)
+		{
+			parment.find('.decrement').addClass('disabled');
+		}
+		updateTotal(parment,num);
+	});
+});
+</script>
+</head>
+<body>
+<div class="body-container">
+	<div class="index-top">
+		<img src="/picture/title.gif"></img>
+	</div>
+	<?php include_once '/common/search.php'; ?>
+	<?php include_once '/common/menu.php'; ?>
+	<div class="cart-container">
+		<div class="cart-total">Total</div>
+		<div class="cart-detail">
+			<div class="banner">
+				<div class="left check">
+				<input  type="checkbox"> </input>
+				Select all</div>
+				<div class="left cart-product">Product</div>
+				<div class="left cart-price">Price</div>
+				<div class="left cart-number">Number</div>
+				<div class="left cart-sum">Total</div>
+				<div class="left cart-op">Operation</div>
+			</div>
+			<div class="cart-list" pd-id="1">
+				<div class="item-list">
+					<div class="item-check left"><input  type="checkbox"> </input></div>
+					<div class="item-product left">
+						<div class="goods-item">						
+							<div class="p-img">
+								<a href="http://item.jd.com/1239591.html" target="_blank"><img src="http://img10.360buyimg.com/cms/s80x80_jfs/t325/188/1316636339/70143/4210efde/5437396bN8394e2f5.jpg"></a>
+							</div>
+							
+							<div class="item-msg">
+								<div class="p-name">
+									<a  href="http://item.jd.com/1239591.html" target="_blank">欧琳（OULIN）OLWG81460水槽+龙头套餐 优质304不锈钢水槽 厨房水槽双槽套装 不锈钢洗菜盆洗碗池</a>
+								</div>
+								
+								<div class="p-extend">
+									<span class="promise" >
+									</span>
+									<!-- 满减 -->
+									<span class="promise" >
+										<!--<i class="jd-service-icon"></i>
+										<a href="#none" class="ftx-03 jd-service" clstag="clickcart|keycount|xincart|cart_fuWu" data-tips="购买京东服务">购买京东服务</a>-->
+									</span>
+								</div>
+							</div>
+				
+						</div>
+					</div>
+					<div class="item-price left cart-cell">
+						<strong>100</strong>
+					</div>
+					<div class="item-number left cart-cell">				
+						<div class="quantity-form">		
+							<a href="javascript:void(0);" class="decrement disabled" >-</a>
+							<input autocomplete="off" class="itxt" value="1"  type="text"></input>
+							<a href="javascript:void(0);" class="increment">+</a>
+						</div>
+					</div>
+					<div class="item-sum left cart-cell">
+						<strong>100</strong>
+					</div>
+					<div class="item-ops left cart-cell">
+						<a href="javascript:void(0)" class="item-del">delete</a>
+					</div>
+				</div>
+				
+				
+				<div class="item-list" pd-id="2">
+					<div class="item-check left"><input  type="checkbox"> </input></div>
+					<div class="item-product left">
+						<div class="goods-item">						
+							<div class="p-img">
+								<a href="http://item.jd.com/1239591.html" target="_blank"><img src="http://img10.360buyimg.com/cms/s80x80_jfs/t325/188/1316636339/70143/4210efde/5437396bN8394e2f5.jpg"></a>
+							</div>
+							
+							<div class="item-msg">
+								<div class="p-name">
+									<a  href="http://item.jd.com/1239591.html" target="_blank">欧琳（OULIN）OLWG81460水槽+龙头套餐 优质304不锈钢水槽 厨房水槽双槽套装 不锈钢洗菜盆洗碗池</a>
+								</div>
+								
+								<div class="p-extend">
+									<span class="promise" >
+									</span>
+									<!-- 满减 -->
+									<span class="promise" >
+										<!--<i class="jd-service-icon"></i>
+										<a href="#none" class="ftx-03 jd-service" clstag="clickcart|keycount|xincart|cart_fuWu" data-tips="购买京东服务">购买京东服务</a>-->
+									</span>
+								</div>
+							</div>
+				
+						</div>
+					</div>
+					<div class="item-price left cart-cell">
+						<strong>100</strong>
+					</div>
+					<div class="item-number left cart-cell">				
+						<div class="quantity-form">		
+							<a href="javascript:void(0);" class="decrement disabled" >-</a>
+							<input autocomplete="off" class="itxt" value="1"  type="text"></input>
+							<a href="javascript:void(0);" class="increment">+</a>
+						</div>
+					</div>
+					<div class="item-sum left cart-cell">
+						<strong>100</strong>
+					</div>
+					<div class="item-ops left cart-cell">
+						<a href="javascript:void(0)" class="item-del">delete</a>
+					</div>
+				</div>
+				
+				<div class="item-list" pd-id="3">
+					<div class="item-check left"><input  type="checkbox"> </input></div>
+					<div class="item-product left">
+						<div class="goods-item">						
+							<div class="p-img">
+								<a href="http://item.jd.com/1239591.html" target="_blank"><img src="http://img10.360buyimg.com/cms/s80x80_jfs/t325/188/1316636339/70143/4210efde/5437396bN8394e2f5.jpg"></a>
+							</div>
+							
+							<div class="item-msg">
+								<div class="p-name">
+									<a  href="http://item.jd.com/1239591.html" target="_blank">欧琳（OULIN）OLWG81460水槽+龙头套餐 优质304不锈钢水槽 厨房水槽双槽套装 不锈钢洗菜盆洗碗池</a>
+								</div>
+								
+								<div class="p-extend">
+									<span class="promise" >
+									</span>
+									<!-- 满减 -->
+									<span class="promise" >
+										<!--<i class="jd-service-icon"></i>
+										<a href="#none" class="ftx-03 jd-service" clstag="clickcart|keycount|xincart|cart_fuWu" data-tips="购买京东服务">购买京东服务</a>-->
+									</span>
+								</div>
+							</div>
+				
+						</div>
+					</div>
+					<div class="item-price left cart-cell">
+						<strong>100</strong>
+					</div>
+					<div class="item-number left cart-cell">				
+						<div class="quantity-form">		
+							<a href="javascript:void(0);" class="decrement disabled" >-</a>
+							<input autocomplete="off" class="itxt" value="1"  type="text"></input>
+							<a href="javascript:void(0);" class="increment">+</a>
+						</div>
+					</div>
+					<div class="item-sum left cart-cell">
+						<strong>100</strong>
+					</div>
+					<div class="item-ops left cart-cell">
+						<a href="javascript:void(0)" class="item-del">delete</a>
+					</div>
+				</div>
+				
+				<div class="item-list" pd-id="5">
+					<div class="item-check left"><input  type="checkbox"> </input></div>
+					<div class="item-product left">
+						<div class="goods-item">						
+							<div class="p-img">
+								<a href="http://item.jd.com/1239591.html" target="_blank"><img src="http://img10.360buyimg.com/cms/s80x80_jfs/t325/188/1316636339/70143/4210efde/5437396bN8394e2f5.jpg"></a>
+							</div>
+							
+							<div class="item-msg">
+								<div class="p-name">
+									<a  href="http://item.jd.com/1239591.html" target="_blank">欧琳（OULIN）OLWG81460水槽+龙头套餐 优质304不锈钢水槽 厨房水槽双槽套装 不锈钢洗菜盆洗碗池</a>
+								</div>
+								
+								<div class="p-extend">
+									<span class="promise" >
+									</span>
+									<!-- 满减 -->
+									<span class="promise" >
+										<!--<i class="jd-service-icon"></i>
+										<a href="#none" class="ftx-03 jd-service" clstag="clickcart|keycount|xincart|cart_fuWu" data-tips="购买京东服务">购买京东服务</a>-->
+									</span>
+								</div>
+							</div>
+				
+						</div>
+					</div>
+					<div class="item-price left cart-cell">
+						<strong>100</strong>
+					</div>
+					<div class="item-number left cart-cell">				
+						<div class="quantity-form">		
+							<a href="javascript:void(0);" class="decrement disabled" >-</a>
+							<input autocomplete="off" class="itxt" value="1"  type="text"></input>
+							<a href="javascript:void(0);" class="increment">+</a>
+						</div>
+					</div>
+					<div class="item-sum left cart-cell">
+						<strong>100</strong>
+					</div>
+					<div class="item-ops left cart-cell">
+						<a href="javascript:void(0)" class="item-del">delete</a>
+					</div>
+				</div>
+			</div>
+			
+			<div class="cart-toolbar">
+				<div class="toolbar-wrap">
+					<div class="options-box">
+					
+						<div class="select-all">
+							<div class="cart-checkbox">
+								<input type="checkbox"></input>
+								<label class="checked" for="">Select All</label>
+							</div>
+						</div>				
+						<div class="toolbar-right">
+							<div class="normal">
+								<div class="comm-right">
+									<div class="btn-area">
+										<a data-bind="1" href="javascript:void(0);" onclick="return false;" clstag="clickcart|keycount|xincart|cart_gotoOrder" class="submit-btn ">
+										Check Out<b></b></a>
+										<!-- <a href="javascript:void(0);" class="submit-btn submit-btn-disabled">
+										去结算<b></b></a> -->
+									</div>
+									<div class="price-sum">
+										<div>
+											<span class="txt">Total:</span>
+											<span class="price sumPrice"><em>0</em></span>
+											<br></br>
+<!-- 										<span class="txt">已节省：</span>
+											<span class="price totalRePrice">- ¥225.00</span> -->	
+										</div>
+									</div>
+									<div class="amount-sum">
+										Total<em>0</em>Items
+									</div>
+									<div class="clr"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<?php include_once '/common/foot.php'; ?>
+	
+</div>
+ 
+</body>
+</html>

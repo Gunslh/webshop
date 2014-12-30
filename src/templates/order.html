@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Order</title>
+<?php include_once 'common/css2js.php';?>
+<script src="/js/ui.js" type="text/javascript"></script>
+<link href="../css/order.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+	$(function() {
+		$('.hookbox').change(function(){
+			var attr = $(this).attr('attr');
+			$('.hookbox').each(function(){
+				if($(this).attr('attr') != attr){
+					$(this).attr("checked",false);
+					$(this).parent('div').removeClass('item-selected');
+					$(this).parent('div').find('.item-action').css('display','none');
+					
+				}
+				else
+				{
+					$(this).parent('div').addClass('item-selected');
+					$(this).parent('div').find('.item-action').css('display','inline');
+				}
+				
+			});
+			if(attr=="new")			
+				$('.consignee-form').css('display','block');			
+			else
+				$('.consignee-form').css('display','none');
+				
+		});
+		$('.item').live("click", function(){
+			var attr = $(this).find('.hookbox').attr('attr');
+			$(this).find('.hookbox').attr('checked',true);
+			$('.hookbox').each(function(){
+				if($(this).attr('attr') != attr){
+					$(this).attr("checked",false);
+					$(this).parent('div').removeClass('item-selected');
+					$(this).parent('div').find('.item-action').css('display','none');
+					
+				}
+				else
+				{
+					$(this).parent('div').addClass('item-selected');
+					$(this).parent('div').find('.item-action').css('display','inline');
+				}
+				
+			});
+			if(attr=="new")			
+				$('.consignee-form').css('display','block');			
+			else
+				$('.consignee-form').css('display','none');
+			//hook.attr("checked",true);
+		});
+		$('#consignee_edit_action a').click(function(){
+			if($(this).html()=="Modify"){
+				$(".s-content .form").show();
+				$(".s-content .show").hide();
+				$('#consignee_edit_action a').html("Save");
+			}
+			else if ($(this).html()=="Save")
+			{
+				$(".s-content .form").hide();
+				$(".s-content .show").show();
+				$('#consignee_edit_action a').html("Modify");
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="body-container">
+		<?php include_once 'common/head.php'; ?>
+		<?php include_once 'common/search.php'; ?>
+		<?php include_once 'common/menu.php'; ?>
+		<div class="order-container checkout-steps">
+			<div class="mt">
+				<p>Order information form</p>
+			</div>
+
+			<div id="step-1" class="step step-complete">
+				<div class="step-title">
+					<div id="save-consignee-tip" class="step-right"></div>
+					<strong id="consigneeTitleDiv">Address Selection</strong> <span
+						class="step-action" id="consignee_edit_action"><a
+						href="#none" >Modify</a></span>
+				</div>
+				<div class="step-content">
+					<div id="consignee" class="sbox-wrap">
+						<div class="sbox">
+							<div class="s-content">
+								<p class="show">
+										胡秋 &nbsp; 189****7357 &nbsp; 189****7357 &nbsp; <br> 四川
+											成都市 双流县 万安镇 &nbsp; 白沙镇成都双流县麓山大道二段19号雅居乐花园62栋701 
+								</p>
+								<div class="form">
+									<div id="consignee-list" name="consignee-list">
+											<div class="item" index="consignee_index_1">
+												<input class="hookbox" type="radio" attr="1">
+												<label for="consignee_radio_26377362">
+												 <b>胡秋</b>&nbsp;
+													四川成都市双流县万安镇白沙镇成都双流县麓山大道二段19号雅居乐花园62栋701 &nbsp; 189****7357
+													&nbsp;
+												</label> <span class="item-action">
+													<a onclick="setAllDefaultAddress('26377362')" href="#none">Default</a>
+													<a href="#none" onclick="show_ConsigneeDetail('26377362')">Edit</a>
+													&nbsp; <a href="#none"
+													onclick="delete_Consignee('26377362')">Delete</a>&nbsp;
+												</span>
+											</div>
+											<div class="item" index="consignee_index_1">
+												<input class="hookbox" type="radio" attr="2">
+												<label for="consignee_radio_26377362">
+												 <b>胡秋</b>&nbsp;
+													四川成都市双流县万安镇白沙镇成都双流县麓山大道二段19号雅居乐花园62栋701 &nbsp; 189****7357
+													&nbsp;
+												</label> <span class="item-action">
+													<a onclick="setAllDefaultAddress('26377362')" href="#none">设为默认地址</a>
+													<a href="#none" onclick="show_ConsigneeDetail('26377362')">编辑</a>
+													&nbsp; <a href="#none"
+													onclick="delete_Consignee('26377362')">删除</a>&nbsp;
+												</span>
+											</div>
+											<div class="item" index="consignee_index_1">
+												<input class="hookbox" type="radio" attr="3">
+												<label for="consignee_radio_26377362">
+												 <b>胡秋</b>&nbsp;
+													四川成都市双流县万安镇白沙镇成都双流县麓山大道二段19号雅居乐花园62栋701 &nbsp; 189****7357
+													&nbsp;
+												</label> <span class="item-action">
+													<a onclick="setAllDefaultAddress('26377362')" href="#none">设为默认地址</a>
+													<a href="#none" onclick="show_ConsigneeDetail('26377362')">编辑</a>
+													&nbsp; <a href="#none"
+													onclick="delete_Consignee('26377362')">删除</a>&nbsp;
+												</span>
+											</div>
+									</div>
+
+									<!--更多常用收货人--->
+									<div class="address-list">
+										<div class="inner group">
+											<div id="select-more" class="select-expand">
+												<span onclick="open_MoreConsignee()">More Address</span><s></s>
+											</div>
+										</div>
+									</div>
+
+
+									<!---详细收货人信息表单--->
+									<div class="item" id="use-new-address">
+										<a name="editConsignee"></a> 
+										<input class="hookbox" name="consignee_radio" type="radio" attr="new">
+											<label for="consignee_radio_new">New Address</label><span id="addNumLimitNote" class="status error"
+											style="display: none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												当前地址数量已达上限，若要继续添加新地址，请先删除部分收货地址。</span>
+									</div>
+									<form>
+										<div class="consignee-form" style="padding-left: 12px; display: none;">
+											<input value="0" id="consignee_form_id"
+												name="consigneeParam.id" type="hidden"> <input
+												id="consignee_type" name="consigneeParam.type" type="hidden">
+													<input id="consignee_ceshi1" name="consignee_ceshi1"
+													type="hidden">
+														<div class="list" id="name_div">
+															<span class="label"><em>*</em>Your Name：</span>
+															<div class="field">
+																<input class="textbox" id="consignee_name"
+																	name="consigneeParam.name" maxlength="20" type="text">
+															</div>
+															<span class="status error" id="name_div_error"></span>
+														</div>
+														<div class="list select-address" id="area_div">
+															<span class="label"><em>*</em>Country：</span>
+															<div class="field">
+																<span id="span_area"> <span id="span_province">
+																<select id="country-select">
+																</select>
+																</span> 
+																</span> <span class="form-tip"><span
+																	class="status error" id="area_div_error"></span>&nbsp;&nbsp;</span>
+															</div>
+														</div>
+														<div class="list full-address" id="address_div">
+															<span class="label"><em>*</em>Address：</span>
+															<div class="field">
+																<span class="fl selected-address" id="areaNameTxt"></span>
+																<input class="textbox" id="consignee_address" type="text">
+															</div>
+															<span class="status error" id="address_div_error"></span>
+														</div>
+														<div class="list" id="call_div">
+															<span class="label"><em>*</em>Mobile：</span>
+															<div class="field">
+																<div class="phone">
+																	<input class="textbox" id="consignee_mobile"
+																		name="consigneeParam.mobile"  maxlength="11"
+																		value="" type="text">
+																		<em>或</em> <span>Telephone：</span> <input class="textbox"
+																		id="consignee_phone"
+																		value=""
+																		type="text">
+																</div>
+																<span class="status error" id="call_div_error"></span>
+															</div>
+														</div>
+														<div class="list" id="email_div">
+															<span class="label"><em></em>Email：</span>
+															<div class="field">
+																<input class="textbox" id="consignee_email"
+																	maxlength="50" type="text">
+																	<span class="form-tip">For service purpose</span>
+															</div>
+															<span class="status error" id="email_div_error"></span>
+														</div>
+										</div>
+									</form>
+									<div class="form-btn group">
+										<a href="#none" class="btn-submit" onclick="save_Consignee()"><span
+											id="saveConsigneeTitleDiv">Save Selection</span></a>
+										<div class="loading loading-1" style="display: none">
+											<b></b>正在提交信息，请等待！
+										</div>
+									</div>
+
+
+								</div>
+
+
+							</div>
+						</div>
+					</div>
+					<!--@end div#consignee-->
+				</div>
+			</div>
+		</div>
+		<?php include_once '/common/foot.php'; ?>
+
+	</div>
+
+</body>
+</html>

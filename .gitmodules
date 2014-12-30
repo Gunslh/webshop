@@ -1,0 +1,3 @@
+[submodule "src/bui"]
+	path = src/bui
+	url = https://github.com/dxq613/bui.git
