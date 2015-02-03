@@ -46,9 +46,9 @@ class SubMenu extends ItemObject
 			$seoTitle,$seoDescr,$seoKeyWord,$fk_cateId)
 	{
 		$all = $this->query("insert into ".$this->tableName." (".
-				"t_menuName, t_menuDescr, t_menuImage, t_isShow, t_discount,".
+				"t_menuName, t_menuDescr, fk_mediaId, t_isShow, t_discount,".
 				" t_guid, t_seoTitle, t_seoDescr, t_seoKeyword , fk_cateId) values".
-				" ('$name', '$descr', '$image', $isShow, $discount, '$guid'".
+				" ('$name', '$descr', $image, $isShow, $discount, '$guid'".
 				",'$seoTitle','$seoDescr','$seoKeyWord', $fk_cateId)".
 				";");
 		if($all === false)

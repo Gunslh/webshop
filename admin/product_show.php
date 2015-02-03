@@ -10,7 +10,6 @@ $cate = new Category();
 $submenu = new SubMenu();
 $product = new Product();
 
-
 ?>
 <script type="text/javascript">
 $(function(){

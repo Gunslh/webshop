@@ -305,7 +305,7 @@ $(function(){
 													<tr msgid="<?php echo $cate->t_pkId ?>">
 														<td><?php echo $cate->t_pkId ?></td>
 														<td><?php echo substr($cate->t_cateName,0,20) ?></td>
-														<td><?php echo substr($cate->t_cateDescr,0,20) ?></td>
+														<td><?php echo substr($cate->t_cateDescr,0,21) ?></td>
 														<td><?php echo $cate->t_discount ?></td>
 														<td><?php echo $cate->t_createDate ?></td>
 														<td class="action-td">

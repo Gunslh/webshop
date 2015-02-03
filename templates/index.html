@@ -1,101 +1,124 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Index</title>
+<title>Hizentai</title>
 <?php include_once 'common/css2js.php';?>
+<link href="../css/index.css" type="text/css" rel="stylesheet" />
 <script type="text/javascript">
 $(function(){
-	$('.category li').hover(function(){
-		var id = $(this).attr("cateid");
-		$('.category_detail').each(function(){
-			
-			if($(this).attr("cateid") == id)
-			{
-				//$('.adv').hide();
-				$(this).show();
-			}
-		});
-		
-	},
-	function(){
-		var id = $(this).attr("cateid");
-		$('.category_detail').each(function(){
-			if($(this).attr("cateid") == id)
-			{
-				$(this).hide();
-				//$('.adv').show();
-			}
-		});
-	}
-	);
+	
 });
 </script>
 </head>
 <body>
-<?php include_once 'common/header.php';?>
-	<div class="body_container">
-		<?php include_once 'common/search.php';?>
-		<div class="category">
-			<h3>CATEGORIES</h3>
-			<ul>
-				<li cateid=1 ><a>1</a></li>
-				<li cateid=2 ><a>1</a></li>
-			</ul>
-		</div>
-		<div class="category_detail" cateid=1>1
-		</div>
-		<div class="category_detail" cateid=2>2
-		</div>
-		<div class="adv">
-		3
-		</div>
-		<div class="top_list">
-			<span class="title inline">TOP 5</span>
-			<ul>	
-				<li>
-					<div>
-						<span class="num left inline">1</span>
-						<div class="mid left inline">
-							<a title="Black Zentai Suit | Full-body Spandex Lycra Unisex Suit">Black Zentai Suit | Full-body Spandex Lycra Unisex Suit</a>
-							<br>
-							<span class="items_price">
-							    <span class="left instockSalePrice important">							
-							        $33.15 - 							
-							    </span>
-							    <span class="productSalePrice">							
-							        $39.00							
-							    </span>							
-							</span>
-						</div>
-						<a class="imgt5 left inline">
-							<img width="41" height="64" src="/picture/top1.jpg"></img>
-						</a>
-					</div>
-				</li>
-				<li>
-					<div>
-						<span class="num left inline">2</span>
-						<div class="mid left inline">
-							<a title="Black Zentai Suit | Full-body Spandex Lycra Unisex Suit">Deadpool Costume - Red and Black Premium Zentai Suit</a>
-							<br>
-							<span class="items_price">
-							    <span class="left instockSalePrice important">							
-							        $33.15 - 							
-							    </span>
-							    <span class="productSalePrice">							
-							        $39.00							
-							    </span>							
-							</span>
-						</div>
-						<a class="imgt5 left inline">
-							<img width="41" height="64" src="/picture/top2.jpg"></img>
-						</a>
-					</div>
-				</li>
-			</ul>
-		</div>
+<div class="body-container">
+	<div class="index-top">
+		<img src="/picture/title.gif"></img>
 	</div>
-
+	<?php include_once '/common/search.php'; ?>
+	<?php include_once '/common/menu.php'; ?>
+	<div class="index-adv">
+		<div class="left shift">
+			<ul>
+				<li showid="1" ><img src="/picture/adv-1.png"></img>				</li>
+				<li showid="2"><img src="/picture/adv-2.png"></img></li>
+				<li showid="3">3</li>
+			</ul>
+		</div>
+		<div class="left fix">
+			<ul>
+				<li class="sales">
+					<div class="upto">UPTO</div>
+					<div class="num-70">70</div>
+					<div class="percent">%</div>
+					<div class="off">OFF</div>
+					<div class="daily">Daily deals</div>
+				</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="index-category">
+		<div class="cate-text">
+			<p>Let your imagination run riot by viewing our brilliant range of 
+			fancy dress costumes. MorphCostumes, formally known as Morphsuits, 
+			have the newest and coolest outfits - from superhero favourites 
+			like Spiderman and Ironman to our scarily good selection of Halloween
+			 costumes, perfect for the best party of the year. Stand out from the 
+			 rest of the crowd by choosing one of our terrifyingly realistic interactive 
+			 costumes, some with real life beating hearts!</p>
+		</div>
+		<div class="cate-pics">
+			<ul>
+				<li><img src="/picture/cate1.jpg" ></img></li>
+				<li><img src="/picture/cate2.jpg" ></img></li>
+				<li><img src="/picture/cate3.jpg" ></img></li>
+				<li><img src="/picture/cate4.jpg" ></img></li>
+				<li><img src="/picture/cate5.jpg" ></img></li>
+				<li><img src="/picture/cate6.jpg" ></img></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	<div class="index-hotsale">
+		<p>HOT SALE</p>
+		<div class="sales-container">
+			<ul>
+				<li>
+					<div class="sale-item">
+						<img src="/picture/sale-1.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+				<li>
+					<div class="sale-item">
+						<img src="/picture/sale-2.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+				<li>
+					<div class="sale-item">
+						<img src="/picture/sale-3.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+				<li>
+					<div class="sale-item">
+						<img src="/picture/sale-4.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+				<li>
+					<div class="sale-item">
+						<img src="/picture/sale-5.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+				<li>
+					<div class="sale-item">
+						<img src="/picture/sale-6.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+	
+	
+	<?php include_once '/common/foot.php'; ?>
+	
+</div>
  
 </body>
-</html>11
+</html>

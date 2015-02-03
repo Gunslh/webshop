@@ -53,7 +53,7 @@
 					<li id="product">
 						<div class="title">
 						 
-							<i class="icon-th-large"></i>
+							<i class="icon-shopping-cart"></i>
 							产品管理
 						</div>
 						<div class="sub-nav hide">
@@ -86,11 +86,23 @@
 						</div>
 					</li>
 					
-					<li>
-						<a href="javascript:void(0);">
+					<li id="member">
+						<div class="title">
+						 
 							<i class="icon-user"></i>
-							会员管理							
-						</a>
+							会员管理
+						</div>
+						<div class="sub-nav hide">
+							<ul>
+								<li id="show">
+									<i class="icon-plus"></i>
+									<a href="./member.php">
+										查看信息 		
+									</a>
+								</li>
+
+							</ul>						
+						</div>
 					</li>
 
 				</ul>	

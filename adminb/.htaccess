@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+    
+RewriteEngine on
+    
+RewriteRule    ^$    main.html    [L]
+    
+</IfModule>

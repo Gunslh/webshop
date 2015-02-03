@@ -1,7 +1,7 @@
 <?php include_once '../frwk/inculde.php'; ?>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="apple-mobile-web-app-capable" content="yes" />    
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="charset=UTF-8">
 <link href="./css/bootstrap.min.css" rel="stylesheet" />
 <link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
 <link href="./css/font-awesome.css" rel="stylesheet" />

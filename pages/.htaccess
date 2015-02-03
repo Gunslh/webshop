@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine on	
+	RewriteRule    ^(.*)\.htm*   show.php?pages=$1    [L]
+</IfModule>

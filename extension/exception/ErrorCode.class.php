@@ -9,6 +9,8 @@ class ErrorCode{
 	const E_UNKOWN_ACT = 0x06;
 	const E_DB_ERR = 0x07;
 	const E_DB_DUPLICATE = 0x08;
+	const E_FILE_ERR = 0x09;
+	
 	public $err = array (
 		self::E_SUCCESS => array('descr' => 'success'),
 		self::E_ERROR => array('descr' => 'Error occured'),
@@ -19,6 +21,7 @@ class ErrorCode{
 		self::E_UNKOWN_ACT => array('descr' => 'unkown action.'),
 		self::E_DB_ERR => array('descr' => 'unkown DB error contact customer service.'),
 		self::E_DB_DUPLICATE => array('descr' => 'given message exist.'),
+		self::E_FILE_ERR => array('descr' => 'file operation error.'),
 	);
 	public static function GetErr($id)
 	{		

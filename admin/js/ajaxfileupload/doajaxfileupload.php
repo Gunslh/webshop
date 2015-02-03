@@ -2,9 +2,10 @@
 <?php
 	$error = "";
 	$msg = "";
-	$fileElementName = 'fileToUpload';
-	$mediaManager = new MediaManager();
-	$url = $mediaManager->getUpload($_FILES, $fileElementName);
+	$fileElementName = $_POST['id'];
+	//$json['msg'] = 'ok'; 
+	$mediaManager = new UploadManager();
+	$url = $mediaManager->GetUpLoadFile($_FILES, $fileElementName);
 	$json['msg'] = $url;
 	echo json_encode($json);
 ?>

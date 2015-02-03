@@ -11,9 +11,80 @@ $subid = isset($_GET['subid'])? $_GET['subid']:1;
 $prod = new Product();
 $products = $prod->SelectAllProduct();
 ?>
+<!-- <link href="./css/ajaxfileupload.css" type="text/css" rel="stylesheet"> -->
+<script type="text/javascript" src="./js/ajaxfileupload.js"></script>
+
 <script type="text/javascript">
 $(function(){
 	$.public.initMenu('#product', '#newproduct');
+
+	$('.uploaddelbtn').live("click",function(){
+		var path = $(this).parent("div").find('img').attr('src');
+		///alert(path);
+		$(this).parent("div").remove();
+		
+		var data = 'path='+path+'&act=filedel';
+
+	    $.ajax({
+	        url : 'action/submenu.php',
+	        type : 'post',
+	        data : data,//form.serialize(),
+	        cache : false,
+	        dataType : "json",
+	        error : function(XMLHttpRequest, textStatus, errorThrown) 
+	        {
+	            alert("服务器无响应! status: " + textStatus);
+	        },
+	        success : function(json, textStatus) 
+	        {
+	
+	            switch(json['status']){
+	                case 0:
+	                	alert(json['msg']);            	
+	                    break;
+	                default:
+	                    alert(json['msg']);
+	                    break;
+	            }
+	        }
+	    });
+	});
+	$('.uploadbtn').live("click", function(){
+		$.public.mask(true);
+		$.ajaxFileUpload({
+			url:'uploadAction.php',
+			secureuri:false,
+			fileElementId:'fileToUpload',
+			dataType: 'json',
+			data:{name:'logan', id:'fileToUpload'},
+			success: function (data, status)
+			{
+				if(typeof(data.error) != 'undefined')
+				{
+					if(data.error != '')
+					{
+						alert(data.error);
+					}else
+					{
+						var container = $('.pic-control');
+						var html = '<div class="picture">' +
+							'<img src="'+data.url+'" height="32px" width="32px">'+'<a class="uploaddelbtn" >删除</a>'
+							'</div> ';
+						container.append(html);			
+						$('#fileToUpload').val("");
+					}
+				}
+			},
+			error: function (data, status, e)
+			{
+				alert(e+".."+status);
+			}
+		});
+		$.public.mask(false);
+		return false;
+	});
+	
+	
 	$("#cateselect").change(function()
 	{
 		var cateid = $(this).val();
@@ -297,13 +368,18 @@ $(function(){
 	
 	$('#add').click(function(){	
 		var check = 0;
+		var images = "";
 		if(!checkVal())
 			return;
+		$('.picture').each(function(){
+			images+=$(this).find('img').attr('src')+"|";
+			//alert($(this).find('img').attr('src'));
+		});
 		
 		if($('#isShow').attr('checked'))
 			check = 1;
 
-		var data = 'name=' + $('#name').val() + '&descr=' + $('#descr').val() + '&seo_title='+$('#seo_title').val()
+		var data = 'images='+images+'&name=' + $('#name').val() + '&descr=' + $('#descr').val() + '&seo_title='+$('#seo_title').val()
 			+ '&seo_descr='+$('#seo_descr').val() + '&seo_keyword='+$('#seo_keyword').val()
 			+ '&isShow='+check + '&act='+$('#act').val() + '&discount='+$('#discount').val() + '&price='+$('#price').val()
 			+ '&cateselect=' + $('#cateselect').val() + '&subselect=' + $('#subselect').val()  ;
@@ -471,7 +547,16 @@ $(function(){
 													</div> <!-- /controls -->				
 												</div> <!-- /control-group -->
 												
-												
+												<div class="control-group upload">											
+												<label class="control-label" for="firstname">图片上传</label>
+												<div class="controls">
+													<input id="fileToUpload" type="file" size="45" name="fileToUpload" class="input"> <a class='uploadbtn' >上传</a>
+													<p class="fail_info" mess="请输入名称"></p>
+												</div> <!-- /controls -->	
+												<div class="controls pic-control">
+												</div>		
+											</div> <!-- /control-group -->
+											
 												<div class="control-group">											
 													<label class="control-label" for="lastname">产品描述</label>
 													<div class="controls">

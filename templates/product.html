@@ -1,11 +1,137 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="UTF-8">
-<title>product</title>
+<title>Product</title>
+<?php include_once 'common/css2js.php';?>
+<link href="/css/index.css" type="text/css" rel="stylesheet" />
+<link href="/css/product.css" type="text/css" rel="stylesheet" />
+<link href="/css/likes.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+$(function(){
+	$('.small ul li').hover(function(){
+		$('.big').html($(this).html());
+	});
+	$('.option').click(function(){
+		if ($(this).hasClass("active"))
+		{
+			$(this).removeClass("active");
+		}
+		else
+		{
+			$('.option').each(function(){
+				if ($(this).hasClass("active"))
+				{
+					$(this).removeClass("active");
+				}
+			});
+			$(this).addClass("active");
+		}
+		
+	});
+});
+</script>
 </head>
 <body>
-	  <?php echo "product param=".$param; ?>
+	<div class="body-container">
+		
+		<?php include_once '/common/head.php'; ?>	
+		<?php include_once '/common/menu.php'; ?>
+		
+		<div class="path">
+			WHERE YOU ARE
+		</div>
+		
+		<div class="product-info">
+			<div class="product-pic">
+				<div class="small">
+					<ul>
+						<li><img src="/picture/sale-1.jpg"></li>
+						<li><img src="/picture/sale-2.jpg"></li>
+						<li><img src="/picture/sale-3.jpg"></li>
+					</ul>
+				</div>
+				<div class="big"><img src="/picture/sale-1.jpg"></img></div>
+			</div>
+			<div class="product-detail">
+				<div class="pd-title">AMERICAN CAPTAIN</div>
+				<div class="pd-price">$65</div>
+				<div class="pd-size">SIZE:</div>
+				<div class="size-form">
+					<ul>
+						<li class="size-name">FEMALE:</li>
+						<li class="option" data="1">XS</li>
+						<li class="option" data="2">S</li>
+						<li class="option" data="3">M</li>
+						<li class="option" data="4">L</li>
+						<li class="option" data="5">XL</li>
+						<li class="option" data="6">XLL</li>
+						<li class="option" data="7">XLLL</li>
+					</ul>
+					<ul>
+						<li class="size-name">MALE:</li>
+						<li class="option" data="11">XS</li>
+						<li class="option" data="12">S</li>
+						<li class="option" data="13">M</li>
+						<li class="option" data="14">L</li>
+						<li class="option" data="15">XL</li>
+						<li class="option" data="16">XLL</li>
+						<li class="option" data="17">XLLL</li>
+					</ul>
+					<ul>
+						<li class="size-name">KIDS:</li>
+						<li class="option" data="21">XS</li>
+						<li class="option" data="22">S</li>
+						<li class="option" data="23">M</li>
+						<li class="option" data="24">L</li>
+						<li class="option" data="25">XL</li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+		<div class="special-options">
+			<div class="op-banner">
+				<p>Special Options / <font style="color:white;font-size:18px;font-weight:normal;">See Default Detail</font></p>
+			</div>
+			<div class="op-detail">
+				<ul>
+					<li class="op-name">Hands&Feet</li>
+					<li><input type="checkbox" id="op-1"/><p>Hands Detachable(Wrist)(+$5.00)</p></li>
+					<li><input type="checkbox" id="op-2"/><p>Without Hands</p></li>
+					<li><input type="checkbox" id="op-3"/><p>Without Feet</p></li>
+					<li><input type="checkbox" id="op-4"/><p>Add Toes(+$5.00)</p></li>
+					<li><input type="checkbox" id="op-5"/><p>Separate Finger (Default)</p></li>
+				</ul>
+				<ul>
+					<li class="op-name">Zipper</li>
+					<li><input type="checkbox" id="op-11"/><p>Chest Zipper(Two Horizontal Zippers)(+$5.00)</p></li>
+					<li><input type="checkbox" id="op-12"/><p>Crotch Zipper For Male)Vertical(+$5.00)</p></li>
+					<li><input type="checkbox" id="op-13"/><p>Feet Detachable(Under Knee)(+$7.00)</p></li>
+					<li><input type="checkbox" id="op-14"/><p>Hand Detachable(Under Elbow)(+$7.00)</p></li>
+					<li><input type="checkbox" id="op-15"/><p>Feet Detachable(Under )(+$5.00)</p></li>
+				</ul>				
+			</div>
+			<div class="op-info">
+			Description:
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+		<div class="size-guide">
+			<div class="size-banner">
+				<p class="guid">SIZE GUIDE</p>
+				<p class="guid-text">aaaaaaaaaaaaaaaaaaaaaaaaa</p>
+				<img src="/picture/size_table.gif"></img>
+			</div>
+		</div>
+		
+		<?php include_once '/common/youmaylike.php' ?>
+		
+		<?php include_once '/common/foot.php'; ?>
+	
+	</div>
+ 
 </body>
 </html>

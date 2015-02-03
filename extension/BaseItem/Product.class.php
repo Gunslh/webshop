@@ -49,9 +49,9 @@ class Product extends ItemObject
 // 				";";
 				
 		$all = $this->query("insert into ".$this->tableName." (".
-				"t_title, t_descr, t_image, t_isShow, t_discount,".
+				"t_title, t_descr, fk_mediaId, t_isShow, t_discount,".
 				" t_guid, t_seoTitle, t_seoDescr, t_seoKeyword, t_price, fk_menuId) values".
-				" ('$name', '$descr', '$image', $isShow, $discount, '$guid'".
+				" ('$name', '$descr', $image, $isShow, $discount, '$guid'".
 				",'$seoTitle','$seoDescr','$seoKeyWord','$price', $subselect)".
 				";".
 				";");

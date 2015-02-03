@@ -1,6 +1,6 @@
 <?php include_once '../../frwk/inculde.php'; ?>
 <?php
-$act = isset($_POST["act"])?$_POST["act"]:"unkown";
+$act = isset($_POST["act"])?$_POST["act"]:"add";
 $json["status"] = ErrorCode::E_SUCCESS;
 
 switch($act)
@@ -17,7 +17,8 @@ switch($act)
 		$fk_cateId = $_POST["fk_cateId"];
 		$guid = "";
 		$subMenu = new SubMenu();
-		
+		$imagesUrl = $_POST["images"];
+		//$imagesUrl = "/frwk/upload/tmp/1.jpg|/frwk/upload/tmp/2.jpg|/frwk/upload/tmp/3.jpg|";
 		if($subMenu->SelectCountBy("t_menuName", $name) > 0)
 		{
 			$json['status'] = ErrorCode::E_DB_DUPLICATE;
@@ -25,13 +26,29 @@ switch($act)
 		}
 		else 
 		{
-			if ($subMenu->Add($name, $descr, "", $isShow, $discount, $guid, $seoTitle, $seoDescr, $seoKeyword,$fk_cateId) == false)
-			{
-				$json['status'] = ErrorCode::E_DB_ERR;
-				$json['msg'] = ErrorCode::GetErr(ErrorCode::E_DB_ERR);
+			
+			$media = new MediaManager();
+			$mediaId = $media->saveMedia($imagesUrl);
+
+			if($mediaId != false)
+			{				
+// 				$json['msg'] = $subMenu->Add($name, $descr, $mediaId, $isShow, $discount, $guid, $seoTitle, $seoDescr, $seoKeyword,$fk_cateId);
+// 				$json['status'] = ErrorCode::E_FILE_ERR;
+// 				echo json_encode($json);
+// 				return;
+				if ($subMenu->Add($name, $descr, $mediaId, $isShow, $discount, $guid, $seoTitle, $seoDescr, $seoKeyword,$fk_cateId) == false)
+				{
+					$json['status'] = ErrorCode::E_DB_ERR;
+					$json['msg'] = ErrorCode::GetErr(ErrorCode::E_DB_ERR);
+				}		
+				else	
+					$json['msg'] = "add success";
 			}
 			else
-				$json['msg'] = "add success";
+			{
+				$json['status'] = ErrorCode::E_FILE_ERR;
+				$json['msg'] = ErrorCode::GetErr(ErrorCode::E_FILE_ERR);
+			}
 		}
 	break;
 	case 'show':
@@ -68,6 +85,13 @@ switch($act)
 		$subMenu->Del($pkid);
 		$json['msg'] = "delete action success.";
 	break;	
+	
+	case 'filedel':
+		$path = $_POST['path'];
+		$upload = new UploadManager();
+		$upload->delete($path);
+		$json['msg'] = "delete action success.";
+		break;
 	default:
 		$json["status"] = ErrorCode::E_UNKOWN_ACT;
 		$json['msg'] = ErrorCode::GetErr(ErrorCode::E_UNKOWN_ACT);

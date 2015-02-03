@@ -18,7 +18,7 @@ switch($act)
 		$isShow = $_POST["isShow"];
 		$discount = $_POST["discount"];
 		$price = $_POST['price'];
-		
+		$imagesUrl = $_POST["images"];
 		$guid = "";
 		
 		if($poduct->SelectCountBy("t_title", $name) > 0)
@@ -28,14 +28,23 @@ switch($act)
 		}
 		else 
 		{
-	
-			if ($poduct->Add($name, $descr, "", $isShow, $discount, $guid, $seoTitle, $seoDescr, $seoKeyword,$price, $subselect) == false)
+			$media = new MediaManager();
+			$mediaId = $media->saveMedia($imagesUrl);
+			if($mediaId != false)
 			{
-				$json['status'] = ErrorCode::E_DB_ERR;
-				$json['msg'] = ErrorCode::GetErr(ErrorCode::E_DB_ERR);
+				if ($poduct->Add($name, $descr, $mediaId, $isShow, $discount, $guid, $seoTitle, $seoDescr, $seoKeyword,$price, $subselect) == false)
+				{
+					$json['status'] = ErrorCode::E_DB_ERR;
+					$json['msg'] = ErrorCode::GetErr(ErrorCode::E_DB_ERR);
+				}
+				else
+					$json['msg'] = "add success";
 			}
 			else
-				$json['msg'] = "add success";
+			{
+				$json['status'] = ErrorCode::E_FILE_ERR;
+				$json['msg'] = ErrorCode::GetErr(ErrorCode::E_FILE_ERR);
+			}
 		}
 	break;
 	case 'del':
