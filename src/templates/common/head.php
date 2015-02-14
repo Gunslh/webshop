@@ -1,3 +1,3 @@
 <div class="index-top">
-		<img src="/picture/title.gif"></img>
+		<img src="picture/title.gif"></img>
 	</div>

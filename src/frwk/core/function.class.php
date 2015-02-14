@@ -14,15 +14,14 @@ class Functions {
 	
 	public static function getWebRoot()
 	{
-		//echo $_SERVER['PHP_SELF'];
-		return str_replace('frwk/index.php', '', $_SERVER['PHP_SELF']);
+	    //return str_replace('frwk/index.php', '', $_SERVER['PHP_SELF']);
+		return str_replace($_SERVER['DOCUMENT_ROOT'], '', self::getAppDir());
 	}
 	
 	public static function getAppDir()
 	{
-		return $_SERVER['DOCUMENT_ROOT'];
+	    return str_replace('frwk/core', '', dirname(__FILE__));
 	}
-	
 	public static function isHttpXRequest()
 	{
 		return isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
@@ -66,18 +65,15 @@ class Functions {
 	
 		return false;
 	}
+	
 	public static function display($file = 'index.html',$param = 0)
 	{	
-		
-		//include $_SERVER['DOCUMENT_ROOT'].WEB_ROOT.Configure::$DIRECTORY_TEMPLATE.$file;
-		include $_SERVER['DOCUMENT_ROOT'].Configure::$DIRECTORY_TEMPLATE.$file;
+		include self::getAppDir().Configure::$DIRECTORY_TEMPLATE.$file;
 	}
 	
 	public static function directDisplay($file = 'index.html',$param = 0)
 	{
-	
-		//include $_SERVER['DOCUMENT_ROOT'].WEB_ROOT.Configure::$DIRECTORY_TEMPLATE.$file;
-		include $_SERVER['DOCUMENT_ROOT'].$file;
+		include self::getAppDir().$file;
 	}
 	public static function redirect($file)
 	{

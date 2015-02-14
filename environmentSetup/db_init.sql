@@ -194,9 +194,34 @@ CREATE TABLE `shop_user` (
   `t_status` int(11) unsigned  NOT NULL,
   PRIMARY KEY (`t_pkId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+CREATE UNIQUE INDEX shop_user_idx1 ON shop_user (t_usrName);
 
 -- ----------------------------
--- Records of shop_user
+-- Table structure for `shop_user_addr`
 -- ----------------------------
-INSERT INTO `shop_user` VALUES ('1', 'aaaa', 'weqqwe', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
-INSERT INTO `shop_user` VALUES ('2', 'bbb', 'qw12312', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+DROP TABLE IF EXISTS `shop_user_addr`;
+CREATE TABLE `shop_user_addr` (
+  `t_pkId` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `t_usrName` char(60) NOT NULL,
+  `t_name` char(60) NOT NULL,
+  `t_countrycode` char(60) NOT NULL,
+  `t_telephone` char(60) NOT NULL,
+  `t_zipCode` char(40) NOT NULL,
+  `t_area` varchar(400) NOT NULL,
+  `t_address` varchar(400) NOT NULL,
+  `t_flag` datetime NOT NULL,
+  PRIMARY KEY (`t_pkId`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Table structure for `shop_shopping_cart;`
+-- ----------------------------
+DROP TABLE IF EXISTS `shop_shopping_cart`;
+CREATE TABLE `shop_shopping_cart` (
+  `t_pkId` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `t_usrName` char(60) NOT NULL,
+  `t_prodId` int(11) unsigned,
+  `t_num` int(11) unsigned,
+  `t_unit_price` double NOT NULL,
+  PRIMARY KEY (`t_pkId`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;

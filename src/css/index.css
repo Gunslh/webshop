@@ -23,7 +23,7 @@
 {
 	height:56px;
 	width:250px;
-	background:url('/picture/world.gif') no-repeat 0px 0px;
+	background:url('../picture/world.gif') no-repeat 0px 0px;
 	padding-left: 54px;
 	
 }
@@ -82,14 +82,14 @@
 
 .index-search .d-middle .search-btn
 {
-	background:url('/picture/search-bar.jpg') no-repeat 0px 0px;
+	background:url('../picture/search-bar.jpg') no-repeat 0px 0px;
 	height:35px;
 	width:35px;
 }
 
 .index-search .d-middle .search-btn:hover
 {
-	background:url('/picture/search-bar-hover.jpg') no-repeat 0px 0px;
+	background:url('../picture/search-bar-hover.jpg') no-repeat 0px 0px;
 }
 
 .index-search .d-right
@@ -121,7 +121,7 @@
 }
 .cart
 {
-	background:url('/picture/cart.png') no-repeat 0px 0px;
+	background:url('../picture/cart.png') no-repeat 0px 0px;
 	height:56px;
 	margin: 0px;
 	position:relative;
@@ -153,7 +153,7 @@
 	width: 56px;
 	height: 49px;
 	background-position: 0px 0px;
-	background-image: url("/picture/cart-all.png");
+	background-image: url("../picture/cart-all.png");
 	background-repeat: no-repeat;
 }
 .index-menu
@@ -206,7 +206,7 @@
 .sales
 {
 	font-family: Tahoma;
-	background:url('/picture/sales.png') no-repeat 130px 0px;
+	background:url('../picture/sales.png') no-repeat 130px 0px;
 }
 .sales .upto
 {
