@@ -10,6 +10,8 @@ ml
 .DS_Store
 Thumbs.db
 .project
+.buildpath
+.settings
 .*proj
 .svn/
 *.swp
