@@ -6,7 +6,7 @@ class LoginFilter extends BaseFilter
 	
 	public function beforeFilter(BaseRequest $request, BaseResponse $response)
 	{
-	    echo "loginFilter<br/>";
+	    //echo "loginFilter<br/>";
 	}
 }
 
