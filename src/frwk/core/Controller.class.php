@@ -5,9 +5,6 @@ class Controller
 	private $request;	
 	private $response;
 	
-	//private $actionInfo;
-	//private $scriptInfo;
-	
 	public function __construct(BaseRequest $request,BaseResponse $response = null)
 	{
 	    $this->request = $request;
@@ -36,19 +33,33 @@ class Controller
 	            $class->afterAction();
 	        }
 	    } catch (Exception $e) {
-	        //echo $e;
+	        echo $e;
 	    }
+	}
+	
+	protected function isAction($action)
+	{
+	    if($this->request->isHttpXRequest()){
+	        return true;
+	    }
+	    return  (preg_match('/.*Action$/', $action) === 1) ? true : false;
+	}
+	
+	protected function handlerScriptFlow($script)
+	{
+	    include_once $script;
 	}
 	
 	public function invokeAction()
 	{
-	    if($this->request->isHttpXRequest()){
-	        $actionInfo = URLHandler::parseActionInfo($this->request);
+	    //判断请求类型
+	    $actionInfo = URLHandler::parseActionInfo($this->request);
+	    if($this->isAction($actionInfo->action)){
+	        //$actionInfo = URLHandler::parseActionInfo($this->request);
 	        $this->handlerActionFlow($actionInfo->action, $actionInfo->method);
 	    }else {
-	        //:todo modify
-	        $actionInfo = URLHandler::parseActionInfo($this->request);
-	        $this->handlerActionFlow($actionInfo->action, $actionInfo->method);
+	        $scriptInfo = URLHandler::parseScriptInfo($this->request);
+	        $this->handlerScriptFlow($scriptInfo->script);
 	    }
 	}
 	

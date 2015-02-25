@@ -19,8 +19,8 @@ class Configure
 	    ),
 	);
 
-	public static $DIRECTORY_TEMPLATE = 'templates/';
-	public static $REQUEST_PAGE_NOT_FOUND = '404.php';
+	//public static $DIRECTORY_TEMPLATE = 'templates/';
+	public static $REQUEST_PAGE_NOT_FOUND = '404.html';
 	public static $BASE_CONTROLLER = 'Controller';
 // 	public static $DISPATCHER_FILTERS = array (
 // 			'LoginFilter',
