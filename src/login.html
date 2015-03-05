@@ -1,59 +1,39 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>Login</title>
- <link href="/app/css/login.css" type="text/css" rel="stylesheet" />
-</head>
-<body>
-<div class="body-container">
-	<div class="index-top">
-	</div>
-	<div class="index-search">
-	</div>
-	<div class="index-menu">
-	</div>
-	<div class="login-container">
-		<div class="form">
-			<div class="item">
-				<div class="item-info">
-					<input id="loginname" class="text" type="text" autocomplete="off" tabindex="1" name="loginname" placeholder="UserName"></input>
-					<div class="i-name ico"></div>					
-				</div>
-				<div class="item-info">
-					<input id="nloginpwd" name="nloginpwd" class="text" tabindex="2" autocomplete="off" placeholder="Password" type="password">
-					<div class="i-pass ico"></div>					
-				</div>
-				<div class="item-info login-btn2013">
-				    <input id="loginsubmit" class="btn-img btn-entry" type="button"  tabindex="3" value="登录"></input>				
-				</div>
-				
-			</div>
-		</div>
-		<div class="free-regist">
-            <span><a href="/reg.html" >Register&gt;&gt;</a></span>
-        </div>
-	</div>	
-	<div class="footer">
-	</div>
-	
-</div>
- <script src="/lib/js/jquery-1.8.1.min.js"></script>
-<script src="/app/js/templates.js"></script>
-<script type="text/javascript" src="/lib/js/md5-min.js"></script>
-<script type="text/javascript">
-$(function(){
-	$.template.loadHead();
-	$.template.loadTopBanner($('.index-top'));
-	$.template.loadSearchBanner($('.index-search'));
-	$.template.loadMenuBanner($(".index-menu"));
-	$.template.loadFoot($(".footer"));
-	
-	$('#loginsubmit').click(function(){	
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shop Admin</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
+    
+    
+    <link href="./css/font-awesome.css" rel="stylesheet" />
+    
+    <link href="./css/adminia.css" rel="stylesheet" /> 
+    <link href="./css/adminia-responsive.css" rel="stylesheet" /> 
+    
+    <link href="./css/pages/login.css" rel="stylesheet" /> 
 
-		var data = 'usrname=' + $('#loginname').val() + '&usrpwd=' + hex_md5($('#nloginpwd').val());
-		alert(data);
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
+  	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+	<script type="text/javascript" src="./lib/js/jquery-1.8.1.min.js"></script>
+	<script type="text/javascript" src="./lib/js/md5-min.js"></script>
+	<script type="text/javascript">
+$(function(){
+
+	$('#login').click(function(){	
+		var data = 'usrname=' + $('#usrname').val() + '&usrpwd=' + hex_md5($('#usrpwd').val());
         $.ajax({
-            url : 'admin/action/UserloginAction.php',
+            url : 'admin/LoginAction/login',
             type : 'post',
             data : data,//form.serialize(),
             cache : false,
@@ -62,10 +42,9 @@ $(function(){
                 alert("服务器无响应! status: " + textStatus);
              },
             success : function(json, textStatus) {
-
+			alert(json);
                 switch(json['status']){
                     case 0:
-                    	alert(JSON.stringify(json));
                     	 //window.location.href = './';
                         break;
                     default:
@@ -76,7 +55,106 @@ $(function(){
         });
 		return false;
 	});
+
 });
 </script>
-</body>
+</head>
+<body>
+	
+<div class="navbar navbar-fixed-top">
+	
+	<div class="navbar-inner">
+		
+		<div class="container">
+			
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 				
+			</a>
+			
+			<a class="brand" href="./">Shop Admin</a>
+			
+			<div class="nav-collapse">
+			
+				<ul class="nav pull-right">
+					
+					<li class="">
+						
+						<a href="javascript:;"><i class="icon-chevron-left"></i> Back to Homepage</a>
+					</li>
+				</ul>
+				
+			</div> <!-- /nav-collapse -->
+			
+		</div> <!-- /container -->
+		
+	</div> <!-- /navbar-inner -->
+	
+</div> <!-- /navbar -->
+
+
+<div id="login-container">
+	
+	
+	<div id="login-header">
+		
+		<h3>Login</h3>
+		
+	</div> <!-- /login-header -->
+	
+	<div id="login-content" class="clearfix">
+	
+	<form action="./" />
+				<fieldset>
+					<div class="control-group">
+						<label class="control-label" for="username">Username</label>
+						<div class="controls">
+							<input type="text" class="" id="usrname" />
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="password">Password</label>
+						<div class="controls">
+							<input type="password" class="" id="usrpwd" />
+						</div>
+					</div>
+				</fieldset>
+				
+				<div id="remember-me" class="pull-left">
+					<input type="checkbox" name="remember" id="remember" />
+					<label id="remember-label" for="remember">Remember Me</label>
+				</div>
+				
+				<div class="pull-right">
+					<button type="submit" class="btn btn-warning btn-large" id="login">
+						Login
+					</button>
+				</div>
+			</form>
+			
+		</div> <!-- /login-content -->
+		
+		
+		<!--   <div id="login-extra">
+			
+			<p>Don't have an account? <a href="javascript:;">Sign Up.</a></p>
+			
+			<p>Remind Password? <a href="forgot_password.html">Retrieve.</a></p>
+			
+		</div> --><!-- /login-extra -->
+	
+</div> <!-- /login-wrapper -->
+
+    
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./js/jquery-1.7.2.min.js"></script>
+
+
+<script src="./js/bootstrap.js"></script>
+
+  </body>
 </html>
