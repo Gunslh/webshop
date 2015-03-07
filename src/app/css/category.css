@@ -1,0 +1,171 @@
+@CHARSET "UTF-8";
+.category-container{
+	margin-top: 30px;
+}
+.category-container,.c-info,.c-body
+{
+	width:100%;
+
+}
+.c-info
+{
+	background-color: #8C3CE1;
+	color: white;
+	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 18px;
+}
+.c-info p
+{
+	text-align: left;
+	text-indent: 20px;
+	margin-left:30px;
+}
+.c-menu 
+{
+	width:324px;
+	float:left;
+	color: #8C3CE1;
+	min-height:50px;
+}
+.liketext
+{
+	background-color: #8C3CE1;
+	color: white;
+	text-align: left;
+	text-indent: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 28px;
+
+}
+.c-menu .menu
+{
+	min-height: 250px;
+}
+.c-menu .menu li , .sub-nav ul li
+{
+    background: url("/picture/arrow-left.gif") no-repeat scroll 0px -1px transparent;
+    text-align: left;
+	text-indent: 70px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	cursor: pointer;
+	font-weight: bold;
+}
+.c-menu .menu li p, .sub-nav ul li p
+{
+	margin:0px;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+.c-menu .menu .select
+{
+	background: url("/picture/arrow-down.gif") no-repeat scroll 0px -1px transparent;
+}
+.sub-nav
+{
+	display:none;
+}
+.sub-nav ul
+{
+	padding-left: 25px;
+}
+.c-detail
+{
+	width:700px;
+	float:left;
+}
+.detail-container ul
+{
+	margin: 0px;
+	padding: 0px;
+}
+.detail-container ul li
+{
+	float:left;
+	width:220px;
+	margin-left:5px;
+	margin-top:15px;
+}
+.detail-container .sale-item p
+{
+	margin:0px;
+}
+.detail-container .sale-item .descr
+{
+	font-size: 14px;
+	text-align: center;
+	color: rgb(124,124,124);
+	width: 160px;
+	margin-left: 45px;
+	margin-top: 25px;
+}
+.detail-container .sale-item .price
+{
+	text-align: center;
+	color: rgb(147,30,35);
+}
+.maylikes 
+{
+	border: 1px solid black;
+	margin-left: 40px;
+}
+.maylikes  li
+{
+	margin:0px;
+}
+.maylikes  .sale-item p
+{
+	margin:0px;
+}
+.maylikes  .sale-item img
+{
+	width:110px;
+	height:201px;
+}
+.maylikes .sale-item .descr
+{
+	font-size: 14px;
+	text-align: center;
+	color: rgb(124,124,124);
+	width: 160px;
+	margin-left: 45px;
+	margin-top: 25px;
+}
+.maylikes .sale-item .price
+{
+	text-align: center;
+	color: rgb(147,30,35);
+}
+.page-index
+{
+	position: absolute;
+	top: 2320px;
+	right: 250px;
+	width: 450px;
+	height: 40px;
+	background-color: #e9eeee;
+}
+.page-index ul
+{
+	margin-left:45px;
+}
+.page-index ul li
+{
+	float:left;
+	width: 32px;
+	background-color: rgb(201, 214, 215);
+	margin-left: 10px;
+	margin-top: 10px;
+}
+.page-index .page-pre,.page-index .page-next
+{
+	width:70px;
+}
+.page-index ul li:hover
+{
+	background-color: #8c3ce1;
+	cursor: pointer;
+}
