@@ -37,7 +37,12 @@
 			loadPage('/views/common/menu.php',null, obj);
 		},
 		loadFoot:function(obj){
-			loadPage('/views/common/foot.php',null, obj);
-		}
+			loadPage('/views/common/foot.php',null, obj);			
+		},
+		loadYouMaylike:function(obj){
+			$('head').append('<link href="/app/css/likes.css" type="text/css" rel="stylesheet" />');
+			loadPage('/views/common/youmaylike.php',null, obj);
+		},
 	};
+
 })(jQuery);
