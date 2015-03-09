@@ -32,7 +32,7 @@ class ErrorCode{
 
 	public static function getErrDesc($id)
 	{
-		return  self::errorDesc[$id]['descr'];
+	    return self::$errorDesc[$id]['descr'];
 	}
 }
 ?>

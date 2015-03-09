@@ -14,8 +14,8 @@ class UserRegisterAction extends AjaxAction
 		if(empty($usr) || empty($pwd) || empty($name) || empty($tele))
 		{
 			$json = new stdClass();
-			$json.status = ;
-			$json.msg = ;
+			$json->status = ErrorCode::E_INPUT_ERROR;
+			$json->msg = ErrorCode::GetErr(ErrorCode::E_INPUT_ERROR);
 			echo json_encode($json, true);
 
 			$json['status'] = ErrorCode::E_INPUT_ERROR;
@@ -25,16 +25,16 @@ class UserRegisterAction extends AjaxAction
 		}
 		
 		$json['status'] = ErrorCode::E_SUCCESS;
-		$AddUser = new UserManager();
-		if($AddUser->Add($usr, $pwd, $name, $tele, $zipCode, $addr) == true)
-		{
-			$json['status'] = ErrorCode::E_SUCCESS;
-			$json["msg"] = ErrorCode::GetErr(ErrorCode::E_SUCCESS);
-		}
-		else {
-			$json['status'] = ErrorCode::E_LOGIN_FAIL;
-			$json["msg"] = ErrorCode::GetErr(ErrorCode::E_LOGIN_FAIL);	
-		}
+// 		$AddUser = new UserManager();
+// 		if($AddUser->Add($usr, $pwd, $name, $tele, $zipCode, $addr) == true)
+// 		{
+// 			$json['status'] = ErrorCode::E_SUCCESS;
+// 			$json["msg"] = ErrorCode::GetErr(ErrorCode::E_SUCCESS);
+// 		}
+// 		else {
+// 			$json['status'] = ErrorCode::E_LOGIN_FAIL;
+// 			$json["msg"] = ErrorCode::GetErr(ErrorCode::E_LOGIN_FAIL);	
+// 		}
 		echo json_encode($json);
 	}
 }

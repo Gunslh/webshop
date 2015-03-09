@@ -1,3 +1,4 @@
+<?php include_once dirname(__FILE__).'/ConnectManagementFactory.class.php';?>
 <?php
 class BaseEntity
 {
@@ -10,7 +11,7 @@ class BaseEntity
 	
 	protected function opendb()
 	{
-		$this->connection = DBConnFactory::instance();
+		$this->connection = ConnectManagementFactory::instance();
 		if($this->connection == false)
 			$this->errno = self::DB_CONNECTION_FAILD;
 	}

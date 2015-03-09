@@ -1,3 +1,4 @@
+<?php include_once dirname(__FILE__).'/BaseEntity.class.php';?>
 <?php
 class AdminEntity extends BaseEntity
 {
