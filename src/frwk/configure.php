@@ -17,6 +17,16 @@ class Configure
 	            'admin/actions/',
 	        ),
 	    ),
+	    'customer'=>array(
+	        'pattern'=>'/^\/customer\/.*/',
+	        'filters'=>array(
+	            //'LoginFilter'
+	        ),
+	        'loadpath'=>array(
+	            //'admin/filters/',
+	            'customer/actions/',
+	        ),
+	    ),
 	);
 
 	//public static $DIRECTORY_TEMPLATE = 'templates/';
