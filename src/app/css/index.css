@@ -153,7 +153,7 @@
 	width: 56px;
 	height: 49px;
 	background-position: 0px 0px;
-	background-image: url("/images/cart-all.png");
+	background-image: url("app/imgs/cart-all.png");
 	background-repeat: no-repeat;
 }
 .index-menu

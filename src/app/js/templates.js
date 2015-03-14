@@ -24,24 +24,30 @@
 	}
 	
 	$.template = {
-		loadHead:function(obj){
-			loadPage('/views/common/css2js.php',headAppend, null);
+		loadHead:function(obj, path){
+			path = path || ''; 
+			loadPage(path + 'views/common/css2js.php',headAppend, null);
 		},
-		loadTopBanner:function(obj){
-			loadPage('/views/common/head.php',null, obj);
+		loadTopBanner:function(obj, path){
+			path = path || '';
+			loadPage(path +'views/common/head.php',null, obj);
 		},
-		loadSearchBanner:function(obj){
-			loadPage('/views/common/search.php',null, obj);
+		loadSearchBanner:function(obj, path){
+			path = path || '';
+			loadPage(path +'views/common/search.php',null, obj);
 		},
-		loadMenuBanner:function(obj){
-			loadPage('/views/common/menu.php',null, obj);
+		loadMenuBanner:function(obj, path){
+			path = path || '';
+			loadPage(path +'views/common/menu.php',null, obj);
 		},
-		loadFoot:function(obj){
-			loadPage('/views/common/foot.php',null, obj);			
+		loadFoot:function(obj, path){
+			path = path || '';
+			loadPage(path +'views/common/foot.php',null, obj);			
 		},
-		loadYouMaylike:function(obj){
+		loadYouMaylike:function(obj, path){
+			path = path || '';
 			$('head').append('<link href="/app/css/likes.css" type="text/css" rel="stylesheet" />');
-			loadPage('/views/common/youmaylike.php',null, obj);
+			loadPage(path +'views/common/youmaylike.php',null, obj);
 		},
 	};
 
