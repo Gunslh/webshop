@@ -7,8 +7,6 @@ class AdminAction extends AjaxAction
 	public function login(){
 		$usr = isset($_POST["usrname"]) ? $_POST["usrname"] : null;
 		$pwd = isset($_POST["usrpwd"]) ? $_POST["usrpwd"] : null;
-		$usr = isset($_GET["usrname"]) ? $_GET["usrname"] : null;
-		$pwd = isset($_GET["usrpwd"]) ? $_GET["usrpwd"] : null;
 		$json['status'] = ErrorCode::E_SUCCESS;
 		//$session = new Session();
 		$json = new stdClass();
