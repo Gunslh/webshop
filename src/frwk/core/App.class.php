@@ -12,13 +12,13 @@ class App
         {
             if($val === '.' || $val === '..')
                 continue;
-            if(substr ( $path, -1 ) == '/')
+            if(substr ( $path, -1 ) == DIRECTORY_SEPARATOR)
                 $val = $path.$val;
             else
-                $val = $path.'/'.$val;
+                $val = $path.DIRECTORY_SEPARATOR.$val;
             if(is_dir($val)){
-                if(substr ( $val, -1 ) != '/')
-                    $val = $val.'/';
+                if(substr ( $val, -1 ) != DIRECTORY_SEPARATOR)
+                    $val = $val.DIRECTORY_SEPARATOR;
                 array_push(self::$_packages, $val);
                 if($flag)
                     self::subdir($val);
@@ -37,14 +37,14 @@ class App
                 self::subdir($path,true);
                 continue;
             }
-            if(substr ( $path, -2 ) == '*/'){
+            if(substr ( $path, -2 ) == '*'.DIRECTORY_SEPARATOR){
                 $path = substr($path, 0, -2);
                 self::subdir($path);
                 continue;
             }
             if(is_dir($path)){
-                if(substr ( $path, -1 ) != '/')
-                    $path = $path.'/';
+                if(substr ( $path, -1 ) != DIRECTORY_SEPARATOR)
+                    $path = $path.DIRECTORY_SEPARATOR;
                 array_push(self::$_packages, $path);
             }
         }

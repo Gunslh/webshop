@@ -27,7 +27,7 @@ class URLHandler
     public static function getAppDir()
     {
         //return rtrim($_SERVER['DOCUMENT_ROOT'],'/').'/'.ltrim(self::getWebRoot(),'/');
-        return str_replace('frwk/core', '', dirname(__FILE__));
+        return str_replace('frwk'.DIRECTORY_SEPARATOR.'core', '', dirname(__FILE__));
     }
     
     public static function isHttpXRequest()
