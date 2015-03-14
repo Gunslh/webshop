@@ -2,12 +2,12 @@
 <?php
 class AdminEntity extends BaseEntity
 {
-	const TABLE_NAME = "shop_user";
+	const TABLE_NAME = "shop_admin";
 	
 	public function auth($usr, $pwd)
 	{
-		$all = $this->query("SELECT count(1) as count FROM ".self::TABLE_NAME.' where t_name="'.$usr.'" and t_pwd="'.$pwd.'";');
-		
+	    $sql = "select count(1) as count FROM shop_admin where t_name='$usr' and t_pwd='$pwd'";
+		$all = $this->query($sql);
 		if($all === false)
 			return false;
 		return $all[0]->count;
