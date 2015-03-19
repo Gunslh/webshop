@@ -47,9 +47,9 @@
 			$('#loginsubmit').click(
 					function() {
 						var data = 'usrname=' + $('#loginname').val() + '&usrpwd=' + hex_md5($('#nloginpwd').val());
-console.log(data)
+
 						$.ajax({
-							url : 'admin/UserAction/login',
+							url : 'customer/UserAction/login',
 							type : 'post',
 							data : data,//form.serialize(),
 							cache : false,

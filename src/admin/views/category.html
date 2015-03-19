@@ -170,7 +170,6 @@ $categorys = $pojo->findAll();
     </div>
     </div>
    
-   <!-- 
     <div class="showMiddle">
     <div class="showInfo">
         <form id="edit-profile" class="form-horizontal" >
@@ -240,7 +239,7 @@ $categorys = $pojo->findAll();
         </form>
     </div>
 </div>      
- --> 
+
 <?php include_once dirname(__FILE__).'/common/footer.html';?>
 <script type="text/javascript">
 $(function(){
@@ -275,13 +274,12 @@ $(function(){
         
         if($('#e_isShow').attr('checked'))
             check = 1;
-
         var data = 'pkid='+$('#e_pkid').val()+'& name=' + $('#e_name').val() + '&descr=' + $('#e_descr').val() + '&seo_title='+$('#e_seo_title').val()
             + '&seo_descr='+$('#e_seo_descr').val() + '&seo_keyword='+$('#e_seo_keyword').val()
             + '&isShow='+check + '&act=update&discount='+$('#e_discount').val();
 
         $.ajax({
-            url : 'action/category.php',
+            url : '<?php echo WEB_ROOT?>admin/CategoryAction/edit',
             type : 'post',
             data : data,//form.serialize(),
             cache : false,
@@ -293,8 +291,7 @@ $(function(){
 
                 switch(json['status']){
                     case 0:
-                        alert(json['msg']);
-                        window.location.href = './newcategory.php';
+                        window.location.href = "<?php echo WEB_ROOT?>admin/views/category.html";
                         break;
                     default:
                         alert(json['msg']);
@@ -309,7 +306,7 @@ $(function(){
         var id = $(this).parent('td').parent('tr').attr('msgId');
         var data = 'pkid=' + id +' &act=show';
         $.ajax({
-            url : 'action/category.php',
+            url : '<?php echo WEB_ROOT?>admin/CategoryAction/show',
             type : 'post',
             data : data,//form.serialize(),
             cache : false,
@@ -350,7 +347,7 @@ $(function(){
         var id = $(this).parent('td').parent('tr').attr('msgId');
         var data = 'pkid=' + id +' &act=show';
         $.ajax({
-            url : 'action/category.php',
+            url : '<?php echo WEB_ROOT?>admin/CategoryAction/show',
             type : 'post',
             data : data,//form.serialize(),
             cache : false,
@@ -392,7 +389,7 @@ $(function(){
         var data = 'pkid=' + id +' &act=del';
         
         $.ajax({
-            url : 'action/category.php',
+            url : '<?php echo WEB_ROOT?>admin/CategoryAction/del',
             type : 'post',
             data : data,//form.serialize(),
             cache : false,
@@ -404,8 +401,7 @@ $(function(){
 
                 switch(json['status']){
                     case 0:
-                        alert(json['msg']);
-                        window.location.href = './newcategory.php';
+                        window.location.href = "<?php echo WEB_ROOT?>admin/views/category.html";
                         break;
                     default:
                         alert(json['msg']);
@@ -446,7 +442,7 @@ $(function(){
             + '&isShow='+check + '&act='+$('#act').val() + '&discount='+$('#discount').val();
 
         $.ajax({
-            url : 'action/category.php',
+            url : '<?php echo WEB_ROOT?>admin/CategoryAction/add',
             type : 'post',
             data : data,//form.serialize(),
             cache : false,
@@ -455,11 +451,9 @@ $(function(){
                 alert("服务器无响应! status: " + textStatus);
              },
             success : function(json, textStatus) {
-
                 switch(json['status']){
                     case 0:
-                        alert(json['msg']);
-                        window.location.href = './newcategory.php';
+                        window.location.href = "<?php echo WEB_ROOT?>admin/views/category.html";
                         break;
                     default:
                         alert(json['msg']);

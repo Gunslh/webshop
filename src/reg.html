@@ -164,7 +164,7 @@
 			
 			var obThis = $(this);
 			$.ajax({
-				url : 'admin/UserAction/registerCheck',
+				url : 'customer/UserAction/registerCheck',
 				type : 'post',
 				data : data,//form.serialize(),
 				cache : false,
@@ -208,7 +208,7 @@
 			'&usrrealname='+$('#rname').val() + '&usrtele='+$('#phone').val() + '&usraddr='+$('#addr').val()+
 			'&usrzipcode=1';
 			$.ajax({
-				url : 'admin/UserAction/register',
+				url : 'customer/UserAction/register',
 				type : 'post',
 				data : data,//form.serialize(),
 				cache : false,

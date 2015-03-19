@@ -48,7 +48,7 @@ class CategoryAction extends AjaxAction
 		$json = $val;
 		echo json_encode($json);
 	}
-	public function update() {
+	public function edit() {
 		
 		$pkid =  $_POST["pkid"];
 		$name = $_POST["name"];
