@@ -1,7 +1,7 @@
 
 				<div class="account-container">
 					<div class="account-avatar">
-						<img src="./img/headshot.png" alt="" class="thumbnail" />
+						<img src="<?php echo WEB_ROOT?>app/imgs/headshot.png" alt="" class="thumbnail" />
 					</div> <!-- /account-avatar -->
 					<div class="account-details">
 						<span class="account-name"><?php echo "luoji"; ?></span>
@@ -17,7 +17,7 @@
 					<li id="main">
 						<div class="title">
 							<i class="icon-home"></i>
-							主面板
+							主面板 
 						</div>
 						<div class="sub-nav hide">
 							<ul>
@@ -46,25 +46,25 @@
 							<ul>
 								<li id="show">
 									<i class="icon-plus"></i>
-									<a href="./product_show.php">
+									<a href="<?php echo WEB_ROOT?>admin/views/product_show.php">
 										查看信息 		
 									</a>
 								</li>
 								<li id="newcategory">
 									<i class="icon-plus"></i>
-									<a href="./newcategory.php">
+									<a href="<?php echo WEB_ROOT?>admin/views/category.html">
 										分类管理		
 									</a>
 								</li>
 								<li id="newsubmenu">
 									<i class="icon-plus"></i>
-									<a href="./newsubmenu.php">
+									<a href="<?php echo WEB_ROOT?>admin/views/submenu.html">
 										子目录管理		
 									</a>
 								</li>
 								<li id="newproduct">
 									<i class="icon-plus"></i>
-									<a href="./newproduct.php">
+									<a href="<?php echo WEB_ROOT?>admin/views/product.html">
 										产品管理		
 									</a>
 								</li>

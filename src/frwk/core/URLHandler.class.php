@@ -81,9 +81,9 @@ class URLHandler
                 }
             }
             if(strpos($value, '/') === 0){
-                $value = self::getAppDir() .substr($value,  1);
+                $value = $_SERVER['DOCUMENT_ROOT'] . $value;
             }else{
-                $value = self::getAppDir() . $value;
+                $value = $_SERVER['DOCUMENT_ROOT']. '/' . $value;
             }
             if (file_exists ( $value )) {
                 return $value;
