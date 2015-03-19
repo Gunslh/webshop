@@ -10,7 +10,7 @@ class AdminEntity extends BaseEntity
 		$all = $this->query($sql);
 		if($all === false)
 			return false;
-		return $all[0]->count;
+		return intval($all[0]->count) === 1 ? true : false;
 	}
 	
 	public function get($usr)

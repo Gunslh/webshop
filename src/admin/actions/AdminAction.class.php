@@ -17,8 +17,8 @@ class AdminAction extends AjaxAction
             echo json_encode($json, true);
             return;
         }
-
-        if($entity->auth($usr, $pwd) === 1)
+        
+        if($entity->auth($usr, $pwd) === true)
         {
             $json->status = ErrorCode::E_SUCCESS;
             $json->msg = ErrorCode::getErrDesc(ErrorCode::E_SUCCESS);

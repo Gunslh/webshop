@@ -98,6 +98,7 @@ $(function(){
     $('#login').click(function(){   
 
         var data = 'usrname=' + $('#usrname').val() + '&usrpwd=' + hex_md5($('#usrpwd').val());
+        console.log(data);
         $.ajax({
             url : 'admin/AdminAction/login',
             type : 'post',
@@ -110,7 +111,7 @@ $(function(){
             success : function(json, textStatus) {
                 switch(json['status']){
                     case 0:
-                         //window.location.href = './';
+                         window.location.href = 'admin/views/category.html';
                         break;
                     default:
                         alert(json['msg']);
