@@ -41,9 +41,9 @@ class EventManager
 	public function dispatch($eventname)
 	{
 		if (empty($this->_listeners[$eventname]))
-			return;
+			return true;
 		if (empty($this->_events[$eventname]))
-			return;
+			return true;
 		foreach ($this->_events[$eventname] as $event)
 		{
 			$object = $event->subject()->newInstance();
@@ -55,8 +55,9 @@ class EventManager
 				$result = $method->invokeArgs($object,$event->data());
 			}
 			if($result === false)
-				break;
+				return false;
 		}
+		return true;
 	}
 }
 

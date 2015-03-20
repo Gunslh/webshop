@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Registration</title>
-<link href="/app/css/login.css" type="text/css" rel="stylesheet" />
+<link href="app/css/login.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 	<div class="body-container">
@@ -86,8 +86,8 @@
 		</div>
 
 	</div>
-<script src="/lib/js/jquery-1.8.1.min.js"></script>
-<script src="/app/js/templates.js"></script>
+<script src="lib/js/jquery-1.8.1.min.js"></script>
+<script src="app/js/templates.js"></script>
 <script type="text/javascript" src="/lib/js/md5-min.js"></script>
 <script type="text/javascript">
 
@@ -158,10 +158,13 @@
 			else
 				$(this).parent("div").find(".ico").removeClass("succeed");
 
-			var data = 'usrname=' + $('#loginname').val();
+			var usrname =  $('#loginname').val();
+			if(!usrname) return;
+			var data = 'usrname=' + usrname;
 			
+			var obThis = $(this);
 			$.ajax({
-				url : 'admin/action/UserRegisterCheckAction.php',
+				url : 'customer/UserAction/registerCheck',
 				type : 'post',
 				data : data,//form.serialize(),
 				cache : false,
@@ -170,13 +173,12 @@
 					alert("Server error! status: " + textStatus);
 				},
 				success : function(json, textStatus) {
-
 					switch (json['status']) {
-					case 10:
-						alert(json['msg']);
+					case 0:
+						obThis.parent("div").find(".ico").addClass("succeed");
 						break;
 					default:
-						alert(json['msg']);
+						obThis.parent("div").find(".ico").removeClass("succeed");
 						break;
 					}
 				}
@@ -205,9 +207,8 @@
 		var data = 'usrname=' + $('#loginname').val()+'&usrpwd='+hex_md5($(' #nloginpwd').val())+
 			'&usrrealname='+$('#rname').val() + '&usrtele='+$('#phone').val() + '&usraddr='+$('#addr').val()+
 			'&usrzipcode=1';
-			alert(data);
 			$.ajax({
-				url : 'admin/action/UserRegisterAction.php',
+				url : 'customer/UserAction/register',
 				type : 'post',
 				data : data,//form.serialize(),
 				cache : false,

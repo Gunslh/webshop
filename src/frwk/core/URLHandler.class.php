@@ -27,7 +27,7 @@ class URLHandler
     public static function getAppDir()
     {
         //return rtrim($_SERVER['DOCUMENT_ROOT'],'/').'/'.ltrim(self::getWebRoot(),'/');
-        return str_replace('frwk/core', '', dirname(__FILE__));
+        return str_replace('frwk'.DIRECTORY_SEPARATOR.'core', '', dirname(__FILE__));
     }
     
     public static function isHttpXRequest()
@@ -81,9 +81,9 @@ class URLHandler
                 }
             }
             if(strpos($value, '/') === 0){
-                $value = self::getAppDir() .substr($value,  1);
+                $value = $_SERVER['DOCUMENT_ROOT'] . $value;
             }else{
-                $value = self::getAppDir() . $value;
+                $value = $_SERVER['DOCUMENT_ROOT']. '/' . $value;
             }
             if (file_exists ( $value )) {
                 return $value;

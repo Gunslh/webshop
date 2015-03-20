@@ -1,0 +1,100 @@
+<?php $userInfo = SessionManagement::getAdminLoginSession(); ?>
+				<div class="account-container">
+					<div class="account-avatar">
+						<img src="<?php echo WEB_ROOT?>app/imgs/headshot.png" alt="" class="thumbnail" />
+					</div> <!-- /account-avatar -->
+					<div class="account-details">
+						<span class="account-name"><?php echo $userInfo->t_name; ?></span>
+						<span class="account-role"><?php echo AdminLAStatus::getDesc(intVal($userInfo->t_level))?></span>
+						<span class="account-actions">
+							<a href="javascript:;">Profile</a> |
+							<a href="javascript:;">Edit Settings</a>
+						</span>
+					</div> <!-- /account-details -->
+				</div> <!-- /account-container -->
+				<hr />
+				<ul id="main-nav" class="nav nav-tabs nav-stacked">
+					<li id="main">
+						<div class="title">
+							<i class="icon-home"></i>
+							主面板 
+						</div>
+						<div class="sub-nav hide">
+							<ul>
+								<li id="one">
+									<i class="icon-plus"></i>
+									<a href="./">
+										one 		
+									</a>
+								</li>
+								<li id="two">
+									<i class="icon-plus"></i>
+									<a href="./two.php">
+										two 		
+									</a>
+								</li>
+							</ul>						
+						</div>
+						
+					</li>
+					<li id="product">
+						<div class="title">
+							<i class="icon-shopping-cart"></i>
+							产品管理
+						</div>
+						<div class="sub-nav hide">
+							<ul>
+								<li id="show">
+									<i class="icon-plus"></i>
+									<a href="<?php echo WEB_ROOT?>admin/views/product_show.php">
+										查看信息 		
+									</a>
+								</li>
+								<li id="newcategory">
+									<i class="icon-plus"></i>
+									<a href="<?php echo WEB_ROOT?>admin/views/category.html">
+										分类管理		
+									</a>
+								</li>
+								<li id="newsubmenu">
+									<i class="icon-plus"></i>
+									<a href="<?php echo WEB_ROOT?>admin/views/submenu.html">
+										子目录管理		
+									</a>
+								</li>
+								<li id="newproduct">
+									<i class="icon-plus"></i>
+									<a href="<?php echo WEB_ROOT?>admin/views/product.html">
+										产品管理		
+									</a>
+								</li>
+							</ul>						
+						</div>
+					</li>
+					
+					<li id="member">
+						<div class="title">
+						 
+							<i class="icon-user"></i>
+							会员管理
+						</div>
+						<div class="sub-nav hide">
+							<ul>
+								<li id="show">
+									<i class="icon-plus"></i>
+									<a href="./member.php">
+										查看信息 		
+									</a>
+								</li>
+
+							</ul>						
+						</div>
+					</li>
+				</ul>	
+				<hr />
+				
+				<div class="sidebar-extra">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
+				</div> <!-- .sidebar-extra -->
+				
+				<br />

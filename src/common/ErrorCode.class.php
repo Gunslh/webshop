@@ -13,7 +13,7 @@ class ErrorCode{
 	const E_IS_EXISTS = 0x0a;
 	const E_NOT_EXISTS = 0x0b;
 	const E_INPUT_ERROR = 0x0c;
-
+	
 	private static $errorDesc = array (
 		self::E_SUCCESS => array('descr' => 'success'),
 		self::E_ERROR => array('descr' => 'Error occured'),
