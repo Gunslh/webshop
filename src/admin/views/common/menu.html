@@ -1,11 +1,11 @@
-
+<?php $userInfo = SessionManagement::getAdminLoginSession(); ?>
 				<div class="account-container">
 					<div class="account-avatar">
 						<img src="<?php echo WEB_ROOT?>app/imgs/headshot.png" alt="" class="thumbnail" />
 					</div> <!-- /account-avatar -->
 					<div class="account-details">
-						<span class="account-name"><?php echo "luoji"; ?></span>
-						<span class="account-role">Administrator</span>
+						<span class="account-name"><?php echo $userInfo->t_name; ?></span>
+						<span class="account-role"><?php echo AdminLAStatus::getDesc(intVal($userInfo->t_level))?></span>
 						<span class="account-actions">
 							<a href="javascript:;">Profile</a> |
 							<a href="javascript:;">Edit Settings</a>
