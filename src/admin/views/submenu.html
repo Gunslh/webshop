@@ -370,7 +370,7 @@ $(function(){
             + '&isShow='+check + '&act=update&discount='+$('#e_discount').val();
 
         $.ajax({
-            url : 'action/submenu.php',
+        	url : '<?php echo WEB_ROOT ?>admin/SubmenuAction/update',
             type : 'post',
             data : data,//form.serialize(),
             cache : false,
@@ -383,7 +383,7 @@ $(function(){
                 switch(json['status']){
                     case 0:
                         alert(json['msg']);
-                        window.location.href = './newsubmenu.php?cateSelect=<?php echo  $cateSelect?>';
+                        window.location.href = '<?php echo WEB_ROOT ?>admin/views/submenu.html?cateSelect=<?php echo  $cateSelect?>';
                         break;
                     default:
                         alert(json['msg']);
@@ -399,7 +399,7 @@ $(function(){
         var id = $(this).parent('td').parent('tr').attr('msgId');
         var data = 'pkid=' + id +' &act=show';
         $.ajax({
-            url : 'action/submenu.php',
+        	url : '<?php echo WEB_ROOT ?>admin/SubmenuAction/show',
             type : 'post',
             data : data,//form.serialize(),
             cache : false,
@@ -439,7 +439,7 @@ $(function(){
         var id = $(this).parent('td').parent('tr').attr('msgId');
         var data = 'pkid=' + id +' &act=show';
         $.ajax({
-            url : 'action/submenu.php',
+            url : '<?php echo WEB_ROOT ?>admin/SubmenuAction/show',
             type : 'post',
             data : data,//form.serialize(),
             cache : false,
@@ -476,7 +476,7 @@ $(function(){
     
     $("#cateselect").change(function()
     {
-          window.location.href = './newsubmenu.php?cateSelect='+ $(this).val();
+          window.location.href = '<?php echo WEB_ROOT ?>admin/views/submenu.html?cateSelect='+ $(this).val();
 
     });
     $('.delbtn').click(function(){
@@ -484,7 +484,7 @@ $(function(){
 
         var data = 'pkid=' + id +' &act=del';
         $.ajax({
-            url : 'action/submenu.php',
+        	url : '<?php echo WEB_ROOT ?>admin/SubmenuAction/del',
             type : 'post',
             data : data,//form.serialize(),
             cache : false,
@@ -497,7 +497,7 @@ $(function(){
                 switch(json['status']){
                     case 0:
                         alert(json['msg']);
-                        window.location.href = './newsubmenu.php';
+                        window.location.href = '<?php echo WEB_ROOT ?>admin/views/submenu.html';
                         break;
                     default:
                         alert(json['msg']);
