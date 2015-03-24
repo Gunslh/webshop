@@ -93,19 +93,19 @@ CREATE TABLE `shop_product` (
 -- ----------------------------
 DROP TABLE IF EXISTS `shop_submenu`;
 CREATE TABLE `shop_submenu` (
-  `t_pkId` int(11) NOT NULL AUTO_INCREMENT,
-  `fk_cateId` int(11) DEFAULT NULL COMMENT 'id',
-  `t_isShow` bit(1) DEFAULT NULL,
-  `t_discount` double DEFAULT NULL,
-  `t_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `t_guid` varchar(512) DEFAULT NULL,
-  `t_menuName` varchar(512) DEFAULT NULL,
-  `t_menuDescr` varchar(512) DEFAULT NULL,
-  `t_menuImage` varchar(512) DEFAULT NULL,
-  `t_seoTitle` varchar(512) DEFAULT NULL,
-  `t_seoDescr` varchar(512) DEFAULT NULL,
-  `t_seoKeyword` varchar(512) DEFAULT NULL,
-  PRIMARY KEY (`t_pkId`)
+      `t_pkId` int(11) NOT NULL AUTO_INCREMENT,
+      `fk_cateId` int(11) DEFAULT NULL COMMENT '分类id',
+      `t_isShow` bit(1) DEFAULT NULL,
+      `t_discount` double DEFAULT NULL COMMENT '打折',
+      `t_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      `t_guid` varchar(4000) CHARACTER SET utf8 DEFAULT NULL COMMENT '页面生成使用',
+      `t_menuName` varchar(4000) CHARACTER SET utf8 DEFAULT NULL,
+      `t_menuDescr` varchar(4000) CHARACTER SET utf8 DEFAULT NULL,
+      `fk_mediaId` int(10) unsigned DEFAULT NULL,
+      `t_seoTitle` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
+      `t_seoDescr` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
+      `t_seoKeyword` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
+      PRIMARY KEY (`t_pkId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -171,3 +171,15 @@ CREATE TABLE `shop_shopping_cart` (
   `t_unit_price` double NOT NULL,
   PRIMARY KEY (`t_pkId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `shop_picture` (
+      `t_pkId` int(11) NOT NULL AUTO_INCREMENT,
+      `fk_mediaId` int(11) DEFAULT NULL,
+      `t_url` varchar(512) DEFAULT NULL,
+      PRIMARY KEY (`t_pkId`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `shop_media` (
+      `t_pkId` int(11) NOT NULL AUTO_INCREMENT,
+      PRIMARY KEY (`t_pkId`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;

@@ -49,7 +49,6 @@ class URLHandler
         $actionInfo = new stdClass();
         $actionArray = explode("/", $uri);
         if(count($actionArray) < 3){
-            var_dump(count($actionArray));
             list($actionInfo->action, $actionInfo->method) =  $actionArray;
         }else{
             list($actionInfo->method, $actionInfo->action) =  array_reverse($actionArray);
