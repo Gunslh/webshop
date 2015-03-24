@@ -5,10 +5,11 @@
 
 class LoginFilter extends BaseFilter
 {
-	const LOGIN_URL = '/admin/AdminAction/login';
+	const LOGIN_ACTION_URL = 'admin/AdminAction/login';
+	const LOGIN_PAGE_URL = 'adminlogin.html';
 	
 	private function whitelistFilter(BaseRequest $request){
-	    if($request->geturl() === self::LOGIN_URL){
+	    if($request->geturl() === WEB_ROOT.self::LOGIN_ACTION_URL){
 	        return true;
 	    }
 	    return false;
@@ -21,7 +22,7 @@ class LoginFilter extends BaseFilter
 	        $json->msg = ErrorCode::getErrDesc(ErrorCode::E_PERMISSIONS);
 	        echo json_encode($json);
 	    }else{
-	        $response->redirect(Configure::$REQUEST_PAGE_NOT_FOUND);
+	        $response->redirect(self::LOGIN_PAGE_URL);
 	    }
 	}
 	

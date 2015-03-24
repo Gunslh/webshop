@@ -70,22 +70,22 @@ CREATE TABLE `shop_manufactory` (
 -- ----------------------------
 DROP TABLE IF EXISTS `shop_product`;
 CREATE TABLE `shop_product` (
-  `t_pkId` int(11) NOT NULL AUTO_INCREMENT,
-  `fk_menuId` int(11) DEFAULT NULL,
-  `fk_manufactoryId` int(11) DEFAULT NULL COMMENT 'ID',
-  `t_guid` varchar(512) DEFAULT NULL,
-  `t_title` varchar(512) DEFAULT NULL,
-  `t_descr` varchar(512) DEFAULT NULL,
-  `t_isShow` int(1) DEFAULT NULL,
-  `t_discount` double DEFAULT NULL,
-  `t_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `t_price` double DEFAULT NULL,
-  `t_updateDate` datetime DEFAULT NULL,
-  `t_image` varchar(45) DEFAULT NULL,
-  `t_seoKeyword` varchar(512) DEFAULT NULL,
-  `t_seoDescr` varchar(512) DEFAULT NULL,
-  `t_seoTitle` varchar(512) DEFAULT NULL,
-  PRIMARY KEY (`t_pkId`)
+      `t_pkId` int(11) NOT NULL AUTO_INCREMENT,
+      `fk_menuId` int(11) DEFAULT NULL COMMENT '关联的分类',
+      `fk_manufactoryId` int(11) DEFAULT NULL COMMENT '生产厂商ID',
+      `t_guid` varchar(4000) DEFAULT NULL COMMENT '产品guid生成静态页面用',
+      `t_title` varchar(4000) DEFAULT NULL COMMENT '产品标题',
+      `t_descr` varchar(4000) DEFAULT NULL COMMENT '产品描述',
+      `t_isShow` int(1) DEFAULT NULL,
+      `t_discount` double DEFAULT NULL COMMENT '打折',
+      `t_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+      `t_price` double DEFAULT NULL,
+      `t_updateDate` datetime DEFAULT NULL,
+      `fk_mediaId` int(10) unsigned DEFAULT NULL,
+      `t_seoKeyword` varchar(500) DEFAULT NULL,
+      `t_seoDescr` varchar(400) DEFAULT NULL,
+      `t_seoTitle` varchar(500) DEFAULT NULL,
+      PRIMARY KEY (`t_pkId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
