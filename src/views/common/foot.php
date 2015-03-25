@@ -5,4 +5,4 @@
 		over 30 million products in a wide range of categories including Apparel & Accessories, Computers & Networking, Consumer 
 		Electronics, Toys & Hobbies, Health & Beauty, Bags & Jewelry, Home, Auto, and more. Get low prices on top selling products 
 		such as but not limited to wedding dresses, electronic cigarettes, </p>
-		<p class="banner"><img src="/images/botton-banner.jpg"></img></p>
+		<p class="banner"><img src="images/botton-banner.jpg"></img></p>
