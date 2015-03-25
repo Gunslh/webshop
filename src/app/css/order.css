@@ -1,0 +1,247 @@
+@CHARSET "UTF-8";
+
+.order-container
+{
+	width: 988px;
+	border: 1px solid #DDD;
+	text-align: left;
+	margin-top: 30px;
+}
+
+.order-container .mt {
+    height: 28px;
+    background-color: #F7F7F7;
+    padding-top: 7px;
+    cursor: default;
+    overflow: hidden;
+}
+
+.mt p
+{
+	margin: 0px 0px 0px 20px;
+	font-weight: bold;
+}
+.checkout-steps .step {
+    border-top: 1px solid #DDD;
+}
+
+.checkout-steps .step-title {
+    height: 45px;
+    padding: 0px 20px;
+    line-height: 45px;
+    position: relative;
+}
+.checkout-steps .step-current {
+    width: 984px;
+    margin: -1px;
+    border: 3px solid #F60;
+    position: relative;
+}
+.step-right {
+    height: 20px;
+    line-height: 20px;
+    padding: 10px 10px 0px 0px;
+    position: absolute;
+    top: 2px;
+    left: 133px;
+}
+
+.checkout-steps .step-complete .step-title strong {
+    color: #000;
+}
+.checkout-steps .step-action {
+    padding-left: 10px;
+    color: #005EA7;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+ .step-complete .sbox-wrap {
+    padding: 0px 44px;
+}
+
+.sbox {
+    width: 900px;
+    overflow: hidden;
+    padding: 0px 0px 20px;
+    font: 12px/150% Arial,Verdana;
+	color: #666;
+}
+.s-content .form
+{
+	display:none;
+}
+
+#consignee .item-selected{
+    background-color: #FFF4D3;
+}
+#consignee .item {
+    height: 28px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    line-height: 28px;
+}
+#consignee .item .hookbox{
+    margin: 7px 5px 0px 8px;
+}
+
+.item-action
+{
+	display:none;
+}
+.item-action a
+{
+	margin-right:20px;
+}
+#consignee-list .item-action {
+    padding-left: 20px;
+    color: #999;
+}
+
+#consignee .address-list{
+    height: 18px;
+    margin-bottom: 1px;
+    overflow: hidden;
+}
+#consignee .address-list .inner {
+    width: 900px;
+    height: 17px;
+    border-top: 1px solid #FFF;
+    text-align: center;
+    transition: all 0.4s ease-out 0s;
+}
+#consignee .address-list .inner:hover { border-top:1px solid #ccc; }
+#select-more {
+    width: 110px;
+    height: 16px;
+    margin: -1px auto 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-right: 1px solid #CCC;
+    border-color: #FFF #CCC #CCC;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+    background: url("/picture/more-bg-1.gif") repeat-x scroll 0% 0% transparent;
+}
+
+#consignee .address-list .select-expand span {
+	color: #666;
+	line-height: 16px;
+	margin-right: 5px;
+    padding-left: 13px;
+    float: left;
+	cursor: pointer;
+}
+
+#select-more s {
+    width: 5px;
+    height: 7px;
+    margin-top: 4px;
+    overflow: hidden;
+    line-height: 0;
+    font-size: 0px;
+        float: left;
+    cursor: pointer;
+    background: url("/picture/more-arrow-1.gif") no-repeat scroll 0px -6px transparent;
+}
+
+#consignee .list{
+    padding: 5px 0px;
+    overflow: hidden;
+}
+#consignee .list .field {
+    line-height: 26px;
+}
+#consignee .list .label{
+    width: 85px;
+    height: 26px;
+    margin-right: 5px;
+    float: left;
+    color: #666;
+    line-height: 26px;
+    font-size: 12px;
+    text-align: right;
+}
+#consignee .list .label em {
+    margin-right: 5px;
+    color: #F60;
+    font-family: sans-serif;
+}
+em {
+    font-style: normal;
+}
+#consignee .list .field {
+    height: 26px;
+    float: left;
+    line-height: 26px;
+}
+
+#consignee .textbox {
+    width: 138px;
+    height: 16px;
+    border: 1px solid #CCC;
+    padding: 4px 3px;
+    font-family: Arial,"宋体",sans-serif;
+    float: left;
+	font-size: 12px;
+}
+#consignee .select-address select{
+    height: 22px;
+    margin: 2px 5px 0px 0px;
+    float: left;
+	font-size: 12px;
+}
+#consignee .phone{
+    float: left;
+}
+#consignee .phone em{
+    padding: 0px 20px 0px 5px;
+    color: #999;
+    float: left;
+}
+#consignee .phone span{
+    color: #666;
+    float: left;
+}
+#consignee .form .form-tip {
+    padding-left: 10px;
+    float: left;
+}
+#consignee .form-tip {
+    color: #999;
+}
+#consignee .form-btn {
+    height: 23px;
+    width: 150px;
+	background: none repeat scroll 0% 0% #e64346;
+	border-radius: 2px;
+	margin-top: 10px;
+}
+#consignee .form-btn:hover
+{
+background: none repeat scroll 0% 0% #f64346;
+}
+.form-btn a
+{
+	color:white;
+}
+#consignee .btn-submit {
+    height: 23px;
+    padding-left: 20px;
+    float: left;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.btn-submit span {
+    height: 24px;
+    padding-right: 20px;
+    float: left;
+    cursor: pointer;    
+}
