@@ -205,3 +205,6 @@ margin-bottom: 50px;
 .item .item-info .succeed{
     background: url("/images/sucess.png") no-repeat scroll center center #FFF;
 }
+.item .item-info .failed{
+    background: url("/images/failed.png") no-repeat scroll center center #FFF;
+}

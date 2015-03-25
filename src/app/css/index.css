@@ -6,6 +6,10 @@
 	margin-right:auto;
 	width:1024px;
 }
+img
+{
+	border: none;
+}
 .index-search,.index-top,.index-menu,.index-adv,.index-category,.index-hotsale
 {
 	width:100%;
