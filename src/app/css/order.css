@@ -3,11 +3,9 @@
 .order-container
 {
 	width: 988px;
-	border: 1px solid #DDD;
 	text-align: left;
 	margin-top: 30px;
 }
-
 .order-container .mt {
     height: 28px;
     background-color: #F7F7F7;
@@ -21,8 +19,8 @@
 	margin: 0px 0px 0px 20px;
 	font-weight: bold;
 }
-.checkout-steps .step {
-    border-top: 1px solid #DDD;
+.step {
+    border-bottom: 1px solid rgb(221, 221, 221);
 }
 
 .checkout-steps .step-title {
@@ -244,4 +242,108 @@ background: none repeat scroll 0% 0% #f64346;
     padding-right: 20px;
     float: left;
     cursor: pointer;    
+}
+
+#shipAndSkuInfo .step-tit {
+    display: block;
+    padding-left: 20px;
+    line-height: 40px;
+}
+#shipAndSkuInfo .step-tit h3 {
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0px;
+	padding: 0px;
+	display: block;
+}
+.checkout-steps .step-cont {
+    margin-bottom: 10px;
+}
+
+.payment-list {
+    padding: 0px 40px;
+}
+
+.payment-list .list-cont ul {
+    display: block;
+    margin: 0px;
+}
+.payment-list .list-cont li {
+    float: left;
+    margin-right: 30px;
+    cursor: default;
+}
+.payment-list .list-cont .payment-item.item-selected {
+    border: 2px solid #E4393C;
+    padding: 4px 23px;
+}
+
+.payment-list .list-cont .payment-item {
+    float: left;
+    position: relative;
+    border: 1px solid #DDD;
+    height: 18px;
+    line-height: 18px;
+    padding: 5px 24px;
+    cursor: pointer;
+}
+.payment-list .list-cont ul::after {
+    content: ".";
+    display: block;
+    height: 0px;
+    clear: both;
+    visibility: hidden;
+}
+
+.payment-list .list-cont .payment-item.item-selected b {
+    display: block;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 12px;
+    height: 12px;
+    overflow: hidden;
+    background: url("http://misc.360buyimg.com/user/purchase/css/i/user_purchase20150324162501.png?__sprite") no-repeat scroll 0px 0px transparent;
+    margin: 0px;
+	padding: 0px;
+}
+.payment-list .list-cont .payment-item .qmark-icon {
+    visibility: hidden;
+    position: absolute;
+    right: 5px;
+    top: 7px;
+    width: 13px;
+    overflow: hidden;
+    background: url("http://misc.360buyimg.com/user/purchase/css/i/user_purchase20150324162501.png?__sprite") no-repeat scroll 0px -73px transparent;
+    height: 13px;
+}
+
+.payment-list .list-cont .payment-item.payment-item-hover .qmark-icon {
+    visibility: visible;
+}
+.ui-tips {
+    position: absolute;
+    padding: 10px 14px 10px 10px;
+    background: none repeat scroll 0% 0% #FFFDEE;
+    border: 1px solid #EDD28B;
+    box-shadow: 0px 0px 2px 2px #EEE;
+}
+.ui-tips-x-left .ui-tips-arrow {
+    left: 10px;
+    right: auto;
+}
+.ui-tips-top .ui-tips-arrow {
+    left: 10px;
+    top: -6px;
+}
+.ui-tips-arrow {
+    display: block;
+    position: absolute;
+    background-image: url("http://misc.360buyimg.com/jdf/1.0.0/ui/tips/1.0.0/tips.gif");
+    background-repeat: no-repeat;
+    width: 11px;
+    height: 6px;
+    background-position: 0px 0px;
+    overflow: hidden;
 }

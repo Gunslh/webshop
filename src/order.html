@@ -3,7 +3,7 @@
 <head>
 <title>Order</title>
 <link href="app/css/order.css" type="text/css" rel="stylesheet" />
-<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 </head>
 <body>
 	<div class="body-container">
@@ -12,7 +12,8 @@
 		<div class="index-menu"></div>
 		<div class="cart-container">
 			<div class="order-container checkout-steps">
-				<div class="mt">
+
+				<div class="mt step">
 					<p>Order information form</p>
 				</div>
 
@@ -168,12 +169,52 @@
 						<!--@end div#consignee-->
 					</div>
 				</div>
+				<div id="shipAndSkuInfo" class="step">
+					<div id="payShipAndSkuInfo">
+						<div class="step-tit">
+							<strong id="consigneeTitleDiv">Payment Selection</strong>
+						</div>
+					</div>
+					<div class="step-cont">
+						<div class="payment-list" id="">
+							<div class="list-cont">
+								<ul id="payment-list">
+									<li style="cursor: pointer;" onclick="save_Pay(1);">
+										<div class="payment-item item-selected online-payment"
+											for="pay-method-1" payname="货到付款" payid="1">
+											<b></b> Cheque<span class="qmark-icon qmark-tip"
+												data-tips="送货上门后再收款，支持现金、POS机刷卡、支票支付 <a href='http://help.jd.com/help/distribution-768-2-2813-2863-0-1410707152669.html' target='_blank' class='ftx-05'>查看服务及配送范围</a>"></span>
+										</div>
+									</li>
+									<li style="cursor: pointer;" onclick="save_Pay(1);">
+										<div class="payment-item" for="pay-method-1" payname="货到付款"
+											payid="1">
+											<b></b> PayPal<span class="qmark-icon qmark-tip"
+												data-tips="即时到帐，支持绝大数银行借记卡及部分银行信用卡 <a href='http://www.jd.com/help/onlinepay.aspx' target='_blank' class='ftx-05'> 查看银行及限额</a>"></span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="footer"></div>
 
+			<div class="footer"></div>
+			<div class="ui-tips ui-tips-top ui-tips-x-left qmarkTip"
+				style="z-index: 101; top: 372px; left: 414.5px; display: none;"
+				id="uis-tips-1">
+				<div class="ui-tips-main">
+					送货上门后再收款，支持现金、POS机刷卡、支票支付 <a
+						href="http://help.jd.com/help/distribution-768-2-2813-2863-0-1410707152669.html"
+						target="_blank" class="ftx-05">查看服务及配送范围</a>
+				</div>
+				<span class="ui-tips-arrow" style="z-index: 101"></span>
+			</div>
 		</div>
 		<script src="/lib/js/jquery-1.8.1.min.js"></script>
 		<script src="/app/js/templates.js"></script>
+		<script src="/app/js/order.js"></script>
 		<script type="text/javascript">
 			$(function() {
 				$.template.loadHead();
@@ -181,7 +222,7 @@
 				$.template.loadSearchBanner($('.index-search'));
 				$.template.loadMenuBanner($(".index-menu"));
 				$.template.loadFoot($(".footer"));
-				
+
 				$('.hookbox').change(
 						function() {
 							var attr = $(this).attr('attr');
