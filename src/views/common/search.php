@@ -12,7 +12,7 @@ $(function(){
 		$('.cart .detail').fadeIn();
 	},
 	function(){
-		$('.cart .detail').fadeOut();
+		//$('.cart .detail').fadeOut();
 	});
 
 	$('.cart .detail').hover(function(){
