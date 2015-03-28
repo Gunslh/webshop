@@ -71,4 +71,10 @@
 	function(){
 		$('.qmarkTip').hide();
 	});
+	$('.mode-tab-item').click(function(){
+		$('.mode-tab-item').each(function (){
+			$(this).removeClass('curr')
+		});
+		$(this).addClass('curr');
+	});
 })(jQuery);
