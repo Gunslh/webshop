@@ -177,9 +177,20 @@ CREATE TABLE `shop_picture` (
       `fk_mediaId` int(11) DEFAULT NULL,
       `t_url` varchar(512) DEFAULT NULL,
       PRIMARY KEY (`t_pkId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `shop_media` (
       `t_pkId` int(11) NOT NULL AUTO_INCREMENT,
       PRIMARY KEY (`t_pkId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `shop_cart` (
+    `t_pkId` int(11) NOT NULL AUTO_INCREMENT,
+    `fk_user` int(11) NOT NULL,
+    `fk_product` int(11) NOT NULL,
+    `t_price` double DEFAULT NULL,
+    `t_total` int(11) DEFAULT 1,
+    `t_selected` int(11) DEFAULT 1,
+    PRIMARY KEY (`t_pkId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
