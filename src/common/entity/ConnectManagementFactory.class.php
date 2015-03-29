@@ -6,7 +6,7 @@ class ConnectManagementFactory
 	const DB_HOST = '127.0.0.1';
 	const DB_USER = 'root';
 	const DB_PWD = '123456';
-	const DB_NAME = 'web_shop';
+	const DB_NAME = 'webshop';
 
 	private static $_connection = null;
 
