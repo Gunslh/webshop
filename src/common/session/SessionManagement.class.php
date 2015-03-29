@@ -3,6 +3,7 @@
 class SessionManagement
 {
     const SESSION_ADMIN_LOGIN_KEY = "ADLGS_INFO";
+    const SESSION_USER_LOGIN_KEY = "USRLGS_INFO";
     private static $_session = null;
     
     public static function instance()
@@ -37,6 +38,17 @@ class SessionManagement
     
     public static function clrAdminLoginSession(){
         self::set(self::SESSION_ADMIN_LOGIN_KEY);
+    }
+    public static function setUserLoginSession($userInfo){
+        self::set(self::SESSION_USER_LOGIN_KEY, $userInfo);
+    }
+    
+    public static function getUserLoginSession(){
+        return self::get(self::SESSION_USER_LOGIN_KEY);
+    }
+    
+    public static function clrUserLoginSession(){
+        self::set(self::SESSION_USER_LOGIN_KEY);
     }
 }
 

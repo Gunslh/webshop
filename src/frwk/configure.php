@@ -20,10 +20,10 @@ class Configure
 	    'customer'=>array(
 	        'pattern'=>'/^\/customer\/.*/',
 	        'filters'=>array(
-	            //'LoginFilter'
+	            'LoginFilter'
 	        ),
 	        'loadpath'=>array(
-	            //'admin/filters/',
+	            'customer/filters/',
 	            'customer/actions/',
 	        ),
 	    ),

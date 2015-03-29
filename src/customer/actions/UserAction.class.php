@@ -1,8 +1,21 @@
 <?php include_once dirname(__FILE__).'/../../common/ErrorCode.class.php';?>
 <?php include_once dirname(__FILE__).'/../../common/entity/UserEntity.class.php';?>
+<?php include_once dirname(__FILE__).'/../../common/session/SessionManagement.class.php';?>
 <?php
 class UserAction extends AjaxAction
 {
+    private $entity = null;
+    public function beforAction(){
+        $this->entity = new UserEntity();
+    }
+    
+    private function saveSessoin($usr){
+        $userInfo = $this->entity->get($usr);
+        if($userInfo){
+            SessionManagement::setUserLoginSession($userInfo);
+        }
+    }
+    
     public function login(){
         $json['status'] = ErrorCode::E_SUCCESS;
         
@@ -21,6 +34,7 @@ class UserAction extends AjaxAction
         }
         if($entity->auth($usr, $pwd) === true)
         {
+            $this->saveSessoin($usr);
             $json->status = ErrorCode::E_SUCCESS;
             $json->msg = ErrorCode::getErrDesc(ErrorCode::E_SUCCESS);
         }
