@@ -17,9 +17,17 @@
 			<ul>
 				<li showid="1" ><img src="/images/adv-1.png"></img>				</li>
 				<li showid="2"><img src="/images/adv-2.png"></img></li>
-				<li showid="3">3</li>
+				<li showid="3">adv 3</li>
+				
 			</ul>
+			<div class="clear"></div>
+			<div class="slide-control">
+				<span showid="1" class="curr">1</span>
+				<span showid="2" >2</span>
+				<span showid="3" >3</span>
+			</div>
 		</div>
+		
 		<div class="left fix">
 			<ul>
 				<li class="sales">
@@ -124,7 +132,55 @@ $(function(){
 	$.template.loadSearchBanner($('.index-search'));
 	$.template.loadMenuBanner($(".index-menu"));
 	$.template.loadFoot($(".footer"));
-	//alert($('head').html());
+	//操作广告
+	var advid =1;
+	var advact = true;
+	$('.index-adv .shift ul li').each(function(){
+		var id = $(this).attr("showid");
+		if(id == 1)
+		{
+			$(this).fadeToggle();	
+		}
+	});
+	function AdvShow(aid){
+		$('.index-adv .shift ul li').each(function(){
+			var id = $(this).attr("showid");
+			if(id == aid)
+				$(this).fadeIn();	
+			else
+				$(this).fadeOut();
+		});
+		$('.slide-control span').each(function(){
+			var id = $(this).attr("showid");
+			if(id == aid)
+				$(this).addClass('curr');	
+			else
+				$(this).removeClass('curr');
+		});
+	};
+	$('.index-adv .shift ul li,').hover(function(){
+		advact = false;
+	});
+	$('.slide-control span').hover(function(){
+		var id = $(this).attr("showid");
+		advact = false;
+		AdvShow(id);
+	})
+	AdvShow(advid);
+	function AdvShift(){
+		if(advact == false){
+			alert(0);
+			return;
+		}
+		advid ++ ;
+		//alert(advid);
+		if(advid > 3 )
+			advid = 1;
+		AdvShow(advid);
+		
+	};
+	setInterval (AdvShift,2000);
+	
 });
 </script>
 </body>

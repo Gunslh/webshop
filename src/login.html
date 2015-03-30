@@ -44,6 +44,13 @@
 			$.template.loadSearchBanner($('.index-search'));
 			$.template.loadMenuBanner($(".index-menu"));
 			$.template.loadFoot($(".footer"));
+			
+			$('#loginname , #nloginpwd').focus(function(){
+				$(this).css('border','1px solid green');
+			});
+			$('#loginname , #nloginpwd').blur(function(){
+				$(this).css('border','1px solid #ccc');
+			});
 			$('#loginsubmit').click(
 					function() {
 						var data = 'usrname=' + $('#loginname').val() + '&usrpwd=' + hex_md5($('#nloginpwd').val());

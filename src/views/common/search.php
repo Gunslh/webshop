@@ -1,13 +1,5 @@
 <script type="text/javascript">
 $(function(){
-	$('.index-adv .shift ul li').each(function(){
-		var id = $(this).attr("showid");
-		if(id == 1)
-		{
-			$(this).fadeToggle();	
-		}
-	});
-
 	$('.cart .cart-t').hover(function(){
 		$('.cart .detail').fadeIn();
 	},
