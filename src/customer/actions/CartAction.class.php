@@ -1,8 +1,7 @@
-<?php include_once dirname(__FILE__).'/../../common/ErrorCode.class.php';?>
 <?php include_once dirname(__FILE__).'/../../common/entity/CartEntity.class.php';?>
 <?php include_once dirname(__FILE__).'/../../common/entity/ProductEntity.class.php';?>
 <?php
-class CartAction extends AjaxAction
+class CartAction extends CustomerBaseAction
 {
     private function totalPrice($all){
         $total = 0;
@@ -16,7 +15,7 @@ class CartAction extends AjaxAction
         $json = new stdClass();
         $json->status = ErrorCode::E_SUCCESS;
         $entity = new CartEntity();
-        $user = 1;
+        $user = $this->userInfo->fk_pkId;
         $all = $entity->allcart($user);
         if($all === false){
             $json->status = ErrorCode::E_DB_ERR;
@@ -35,7 +34,7 @@ class CartAction extends AjaxAction
         $total = isset($_POST["total"]) ? $_POST["total"] : 1;
         $selected = isset($_POST["selected"]) ? $_POST["selected"] : 1;
         $price = isset($_POST["price"]) ? $_POST["price"] : 0;
-        $user = 1;
+        $user = $this->userInfo->fk_pkId;
         $json = new stdClass();
         $json->status = ErrorCode::E_SUCCESS;
         $entity = new CartEntity();
@@ -65,7 +64,7 @@ class CartAction extends AjaxAction
     
 public function del(){
         $productId = isset($_POST["productId"]) ? $_POST["productId"] : null;
-        $user = 1;
+        $user = $this->userInfo->fk_pkId;
         $json = new stdClass();
         $json->status = ErrorCode::E_SUCCESS;
         $entity = new CartEntity();
@@ -85,7 +84,7 @@ public function del(){
     }
     
     public function allSelect(){
-        $user = 1;
+        $user = $this->userInfo->fk_pkId;
         $json = new stdClass();
         $json->status = ErrorCode::E_SUCCESS;
         $entity = new CartEntity();
@@ -102,7 +101,7 @@ public function del(){
     }
     
     public function allCanel(){
-        $user = 1;
+        $user = $this->userInfo->fk_pkId;
         $json = new stdClass();
         $json->status = ErrorCode::E_SUCCESS;
         $entity = new CartEntity();
