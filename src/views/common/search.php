@@ -1,25 +1,25 @@
 <script type="text/javascript">
 $(function(){
-	$('.index-adv .shift ul li').each(function(){
-		var id = $(this).attr("showid");
-		if(id == 1)
-		{
-			$(this).fadeToggle();	
-		}
-	});
+
+	var cart_hover = false;
 
 	$('.cart .cart-t').hover(function(){
 		$('.cart .detail').fadeIn();
 	},
 	function(){
-		//$('.cart .detail').fadeOut();
+		setTimeout(function(){
+			if(cart_hover == false)
+				$('.cart .detail').fadeOut();
+		},500);
 	});
 
 	$('.cart .detail').hover(function(){
 		$('.cart .detail').fadeIn();
+		cart_hover = true;
 	},
 	function(){
 		$('.cart .detail').hide();
+		cart_hover = false;
 	});
 });
 </script>

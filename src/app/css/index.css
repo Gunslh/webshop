@@ -323,12 +323,38 @@ h4 {
 {
 	margin-left: -40px;
 	width:700px;
+	height:400px;
+	position: relative;
 }
 
 .shift ul li
 {
 
 	position: absolute;
+}
+.slide-control
+{
+    position: absolute;
+    left: 550px;
+    bottom: 20px;
+}
+.slide-control span {
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+}
+.slide-control span {
+    display: inline-block;
+    margin: 0px 1px;
+    background: none repeat scroll 0% 0% #999;
+    text-align: center;
+    cursor: default;
+    color: #FFF;
+    border-radius: 12px;
+    font-size:12px;
+}
+.slide-control .curr {
+    background: none repeat scroll 0% 0% #E4393C;
 }
 .index-adv
 {
