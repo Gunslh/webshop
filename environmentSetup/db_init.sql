@@ -113,13 +113,16 @@ CREATE TABLE `shop_submenu` (
 -- ----------------------------
 DROP TABLE IF EXISTS `shop_transaction`;
 CREATE TABLE `shop_transaction` (
-  `t_pkId` int(11) NOT NULL AUTO_INCREMENT,
-  `fk_user` int(11) DEFAULT NULL,
-  `fk_address` int(11) DEFAULT NULL,
-  `fk_product` int(11) DEFAULT NULL,
-  `t_createDate` datetime DEFAULT NULL,
-  `fk_deliveryId` int(11) DEFAULT NULL,
-  PRIMARY KEY (`t_pkId`)
+      `t_pkId` int(11) NOT NULL AUTO_INCREMENT,
+      `fk_user` int(11) DEFAULT NULL,
+      `address` varchar(512) DEFAULT NULL,
+      `fk_products` int(11) DEFAULT NULL,
+      `t_createDate` datetime DEFAULT NULL,
+      `delivery` char(32) DEFAULT NULL,
+      `orderNum` char(64) DEFAULT NULL,
+      `status` smallint(6) DEFAULT NULL,
+      `tradeNum` char(64) DEFAULT NULL,
+      PRIMARY KEY (`t_pkId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------

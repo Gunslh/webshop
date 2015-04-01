@@ -10,7 +10,8 @@ class SubMenuEntity extends ItemObjectEntity
 	}
 	function FindByCategory($cateId)
 	{
-		$all = $this->query("select * from ".$this->tableName." where fk_cateId =".$cateId);
+	    $sql = "select * from ".$this->tableName." where fk_cateId=$cateId and t_isShow=1";
+		$all = $this->query($sql);
 		if($all === false)
 			return  false;
 		if(count($all) <= 0)

@@ -29,9 +29,9 @@ class ProductEntity extends ItemObjectEntity
 			return  false;
 	}
 	
-	function FindByMenu($cateId)
+	function FindByMenu($subId)
 	{
-		$all = $this->query("select * from ".$this->tableName." where fk_menuId=".$cateId);
+		$all = $this->query("select * from ".$this->tableName." where fk_menuId=".$subId);
 		if($all === false)
 			return  false;
 		if(count($all) < 0)
@@ -63,7 +63,38 @@ class ProductEntity extends ItemObjectEntity
 				"t_isShow = $isShow, t_seoTitle= '$seoTitle', t_discount = $discount, ".
 				" t_seoDescr= '$seoDescr', t_seoKeyword='$seoKeyWord' where t_pkId = $pkid");
 		return true;
+	}
 	
+	public function getByCatId($catId, $start, $count){
+	    $sql ="select b.* from shop_submenu as a RIGHT JOIN shop_product as b on a.t_pkId=b.fk_menuId where a.fk_cateId=$catId and a.t_isShow=1  limit $start,$count";
+	    $all = $this->query($sql);
+	    if($all === false)
+	        return  false;
+	    return $all;
+	}
+	
+	public function getCountByCatId($catId){
+	    $sql ="select count(1) as c from shop_submenu as a RIGHT JOIN shop_product as b on a.t_pkId=b.fk_menuId where a.fk_cateId=$catId and a.t_isShow=1";
+	    $all = $this->query($sql);
+	    if($all === false)
+	        return  false;
+	    return $all[0]->c;
+	}
+	
+	public function getBySubId($subId, $start, $count){
+	    $sql ="select * from shop_product where fk_menuId=$subId  limit $start,$count";
+	    $all = $this->query($sql);
+	    if($all === false)
+	        return  false;
+	    return $all;
+	}
+	
+	public function getCountBySubId($subId){
+	    $sql ="select count(1) as c from shop_product where fk_menuId=$subId";
+	    $all = $this->query($sql);
+	    if($all === false)
+	        return  false;
+	    return $all[0]->c;
 	}
 }
 ?>

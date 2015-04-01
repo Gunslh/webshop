@@ -41,7 +41,6 @@ class CategoryEntity extends ItemObjectEntity
 		" t_cateImage = '$image' ,t_isShow = $isShow, t_seoTitle= '$seoTitle', t_discount = $discount, ".
 		" t_seoDescr= '$seoDescr', t_seoKeyword='$seoKeyWord' where t_pkId = $pkid");
 		return true;
-
 	}
 }
 ?>
