@@ -46,5 +46,18 @@ class AddressEntity extends BaseEntity
 //             return  null;
         return $all;
     }
+    
+    public function setDefault($usr, $pkId)
+    {
+        $sql = "update ".self::TABLE_NAME." set `isDefault`=0 where fk_usrId=$usr";
+        $all = $this->query($sql);
+        if($all === false)
+            return false;
+        $sql = "update ".self::TABLE_NAME." set `isDefault`=1 where t_pkId=$pkId";
+        $all = $this->query($sql);
+        if($all === false)
+            return false;
+        return true;
+    }
 }
 ?>

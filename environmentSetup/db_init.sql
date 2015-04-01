@@ -8,15 +8,16 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `shop_address`;
 CREATE TABLE `shop_address` (
-  `t_pkId` int(11) NOT NULL AUTO_INCREMENT,
-  `fk_usrId` int(11) DEFAULT NULL,
-  `t_country` varchar(512) DEFAULT NULL,
-  `t_state` varchar(512) DEFAULT NULL,
-  `t_city` varchar(512) DEFAULT NULL,
-  `t_street` varchar(512) DEFAULT NULL,
-  `t_name` varchar(512) DEFAULT NULL,
-  `t_phone` varchar(512) DEFAULT NULL,
-  PRIMARY KEY (`t_pkId`)
+      `t_pkId` int(11) NOT NULL AUTO_INCREMENT,
+      `fk_usrId` int(11) DEFAULT NULL,
+      `t_country` varchar(512) DEFAULT NULL,
+      `t_state` varchar(512) DEFAULT NULL,
+      `t_city` varchar(512) DEFAULT NULL,
+      `t_street` varchar(512) DEFAULT NULL,
+      `t_name` varchar(512) DEFAULT NULL,
+      `t_phone` varchar(512) DEFAULT NULL,
+      `isDefault` tinyint(4) DEFAULT 0,
+      PRIMARY KEY (`t_pkId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------

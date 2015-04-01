@@ -1,8 +1,6 @@
-<?php include_once dirname(__FILE__).'/../../common/ErrorCode.class.php';?>
 <?php include_once dirname(__FILE__).'/../../common/entity/UserEntity.class.php';?>
-<?php include_once dirname(__FILE__).'/../../common/session/SessionManagement.class.php';?>
 <?php
-class UserAction extends AjaxAction
+class UserAction extends CustomerBaseAction
 {
     private $entity = null;
     public function beforAction(){

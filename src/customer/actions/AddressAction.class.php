@@ -1,7 +1,6 @@
-<?php include_once dirname(__FILE__).'/../../common/ErrorCode.class.php';?>
 <?php include_once dirname(__FILE__).'/../../common/entity/AddressEntity.class.php';?>
 <?php
-class AddressAction extends AjaxAction
+class AddressAction extends CustomerBaseAction
 {
     public function add(){
         $country = isset($_POST["country "]) ? $_POST["country "] : "";
@@ -9,8 +8,9 @@ class AddressAction extends AjaxAction
         $city = isset($_POST["city"]) ? $_POST["city"] : "";
         $street = isset($_POST["street"]) ? $_POST["street"] : "";
         $name = isset($_POST["name"]) ? $_POST["name"] : "";
-        $phone = isset($_POST["phone"]) ? $_POST["$phone"] : "";
-        $user = 1;
+        $phone = isset($_POST["phone"]) ? $_POST["phone"] : "";
+        $isDefault = isset($_POST["isDefault"]) ? $_POST["isDefault"] : 0;
+        $user = $this->userInfo->fk_pkId;
         $json = new stdClass();
         $json->status = ErrorCode::E_SUCCESS;
         $entity = new AddressEntity();
@@ -40,7 +40,8 @@ class AddressAction extends AjaxAction
         $city = isset($_POST["city"]) ? $_POST["city"] : "";
         $street = isset($_POST["street"]) ? $_POST["street"] : "";
         $name = isset($_POST["name"]) ? $_POST["name"] : "";
-        $phone = isset($_POST["phone"]) ? $_POST["$phone"] : "";
+        $phone = isset($_POST["phone"]) ? $_POST["phone"] : "";
+        $isDefault = isset($_POST["isDefault"]) ? $_POST["isDefault"] : 0;
         $pk = isset($_POST["pkid "]) ? intval($_POST["pkid "]) : null;
         $json = new stdClass();
         if(empty($pk)){
@@ -59,6 +60,7 @@ class AddressAction extends AjaxAction
         $dao->t_street = $street;
         $dao->t_name = $name;
         $dao->t_phone = $phone;
+        $dao->t_pkId = $this->userInfo->fk_pkId;
     
         $ret = $entity->modify($dao);
         if($ret === false){
@@ -72,7 +74,7 @@ class AddressAction extends AjaxAction
         echo json_encode($json);
     }
     
-public function del(){
+    public function del(){
         $pk = isset($_POST["pkid "]) ? intval($_POST["pkid "]) : null;
         $json = new stdClass();
         if(empty($pk)){
@@ -96,7 +98,7 @@ public function del(){
     }
     
     public function getall(){
-        $user = 1;
+         $user = $this->userInfo->fk_pkId;
         $json = new stdClass();        
         $entity = new AddressEntity();
         $all = $entity->getall($user);
@@ -108,6 +110,29 @@ public function del(){
             $json->msg = $all;
         }
         
+        echo json_encode($json);
+    }
+    
+    public function setDefault(){
+        $pk = isset($_POST["pkid "]) ? intval($_POST["pkid "]) : null;
+        $user = $this->userInfo->fk_pkId;
+        $json = new stdClass();
+        if(empty($pk)){
+            $json->status = ErrorCode::E_ERROR;
+            $json->msg = ErrorCode::getErrDesc(ErrorCode::E_ERROR);
+            echo json_encode($json);
+            return;
+        }
+    
+        $entity = new AddressEntity();
+        $ret = $entity->setDefault($user, $pk);
+        if($ret === false){
+            $json->status = ErrorCode::E_DB_ERR;
+            $json->msg = ErrorCode::getErrDesc(ErrorCode::E_DB_ERR);
+        }else{
+            $json->status = ErrorCode::E_SUCCESS;
+            $json->msg = ErrorCode::getErrDesc(ErrorCode::E_SUCCESS);
+        }
         echo json_encode($json);
     }
 }
