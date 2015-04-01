@@ -1,6 +1,8 @@
 <script type="text/javascript">
 $(function(){
+
 	var cart_hover = false;
+
 	$('.cart .cart-t').hover(function(){
 		$('.cart .detail').fadeIn();
 	},
