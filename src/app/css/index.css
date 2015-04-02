@@ -318,6 +318,18 @@ h4 {
 	margin-left: 45px;
 	font-weight: bold;	
 }
+#menu-container li
+{
+	position:relative;
+}
+
+#menu-container li .sub-menu
+{
+	position:absolute;	
+	width:200px;
+	height:200px;
+	font-size:16px;
+}
 
 .index-adv .shift
 {

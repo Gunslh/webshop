@@ -1,6 +1,10 @@
+<script type="text/javascript">
+$(function(){
 
-<ul>
-	<li style="list-style: none">ZENTAIL</li>
+});
+</script>
+<ul id= "menu-container" >
+	<li style="list-style: none">ZENTAIL<div class="sub-menu">1</div></li>
 	<li>ZENTAIKIDS</li>
 	<li>SUPERHEROS</li>
 	<li>HALLOWEEN</li>
