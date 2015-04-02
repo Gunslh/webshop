@@ -94,6 +94,8 @@
 
 	});
 	
-	
+	$('.super-link').live('click', function(){
+		 window.location.href = $(this).attr('link');
+	});
 	
 })(jQuery);
