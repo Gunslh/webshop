@@ -181,13 +181,12 @@ $(function(){
 	
 	function shiftRight()
 	{
+		
 		shift = true;
-		var left = obj.css('left');
-		var newVal = parseInt(left) + 5;
+		var left = obj.css('left');		
+		var newVal = parseInt(left) + 5;		
 		obj.css('left', newVal);
 		len -= 5;	
-		if( newVal > 0)
-			return;
 		if(len > 0 )
 			setTimeout(shiftRight, 5);
 		else
@@ -208,6 +207,7 @@ $(function(){
 		shiftLeft();
 	});
 	$('.index-hotsale .right-arrow').click(function(){
+		
 		if(shift == true)
 			return;
 		obj = $('.sales-container ul');

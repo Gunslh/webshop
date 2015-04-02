@@ -524,6 +524,7 @@ h4 {
 }
 .sales-container ul
 {
+	left: 0px;
 	position:absolute;
 }
 .index-hotsale
