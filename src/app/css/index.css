@@ -579,7 +579,7 @@ h4 {
 .index-vip
 {
 	height: 524px;
-	background: url("../../images/vip.png");
+	background: url("../../images/vip.jpg");
 }
 
 .left-arrow
@@ -596,7 +596,7 @@ h4 {
 {
 	position: absolute;
 	top: 25%;
-	right: -5%;
+	right: 0%;
 	width: 60px;
 	height: 85px;
 	cursor: pointer;
