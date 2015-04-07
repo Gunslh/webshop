@@ -1,12 +1,47 @@
 <script src="/app/js/ui.js"></script>
+<script src="/app/js/products.js"></script>
 <script type="text/javascript">
 $(function(){
-	$('#menu-container li').hover(function(){
-		$(this).find('.sub-menu').show();
-	},
-	function(){
-		$(this).find('.sub-menu').hide();
+	$('#menu-container li').live ("hover", function(event){
+		if(event.type=='mouseenter')
+			$(this).find('.sub-menu').show();
+		else
+			$(this).find('.sub-menu').hide();
 	});
+
+	function menuParse(json)
+	{
+		var html = "";
+		var container = $('#menu-container');
+		container.html("");
+		
+		//alert(JSON.stringify(json));
+		for (var i in json)
+		{
+			var sub = json[i].sub;
+			var obj = json[i];
+			if(i == 0)
+				html += " <li style='list-style: none' ><p class='super-link' link='category/"+obj.t_pkId+".html'>" + obj.t_cateName+'</p>';
+				
+			else
+				html += " <li><p class='super-link' link='/category/"+obj.t_pkId+".html'>" + obj.t_cateName+'</p>';
+			
+			if(sub){
+				console.log(JSON.stringify(sub));
+				html += '<div class="sub-menu"><ul>'
+				for(var j in sub)
+				{
+					var subobj = sub[j];
+					html += '<li class="super-link" link="/submenu/'+subobj.t_pkId+'.html">'+subobj.t_menuName+'</li>';
+				}
+				html +='</ul></div>';
+			}
+			html += "</li>";
+			
+		}
+		container.html(html);
+	}
+	$.product.GetAllMenuList(menuParse);
 });
 </script>
 <ul id= "menu-container" >

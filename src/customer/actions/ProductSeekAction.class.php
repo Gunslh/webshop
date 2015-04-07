@@ -4,6 +4,33 @@
 <?php
 class ProductSeekAction extends CustomerBaseAction
 {  
+	
+	public function selectAllMenu(){
+		$json = new stdClass();
+		$entity = new CategoryEntity();
+		$cats = $entity->SelectAllCategory();
+		$subentity = new SubMenuEntity();
+		$objs = array();
+		
+		if($cats === false){
+			$json->status = ErrorCode::E_DB_ERR;
+			$json->msg = ErrorCode::getErrDesc(ErrorCode::E_DB_ERR);
+		}else{
+			$json->status = ErrorCode::E_SUCCESS;
+			$json->msg = $cats;
+			foreach ($cats as $cat)
+			{
+				//var_dump($cat);
+				$sub = $subentity->FindByCategory($cat->t_pkId);
+				if($sub != false) $cat->sub = $sub;
+
+				array_push($objs, $cat);
+			}
+		}
+
+		echo json_encode($json);
+	}
+	
     public function selectAllCategory(){
         $json = new stdClass();
         
