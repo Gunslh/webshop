@@ -18,11 +18,15 @@ class URLHandler
         return $uri;
     }
     
+    public static function trans2UnixPath($path)
+    {
+        return str_replace('\\', '/', $path);
+    }
+    
     public static function getWebRoot()
     {
-    	return "/";
         //return str_replace('frwk/index.php', '', $_SERVER['PHP_SELF']);
-        return str_replace($_SERVER['DOCUMENT_ROOT'], '', self::getAppDir());
+        return str_replace(self::trans2UnixPath($_SERVER['DOCUMENT_ROOT']), '', self::trans2UnixPath(self::getAppDir()));
     }
     
     public static function getAppDir()
