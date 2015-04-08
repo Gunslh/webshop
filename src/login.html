@@ -19,8 +19,9 @@
 						<div class="i-name ico"></div>
 					</div>
 					<div class="item-info">
-						<input id="nloginpwd" name="nloginpwd" class="text" tabindex="2"	autocomplete="off" placeholder="Password" type="password"/>
-							<div class="i-pass ico"></div>
+						<input id="nloginpwd" name="nloginpwd" class="text" tabindex="2"
+							autocomplete="off" placeholder="Password" type="password" />
+						<div class="i-pass ico"></div>
 					</div>
 					<div class="item-info login-btn2013">
 						<input id="loginsubmit" class="btn-img btn-entry" type="button"
@@ -44,41 +45,16 @@
 			$.template.loadSearchBanner($('.index-search'));
 			$.template.loadMenuBanner($(".index-menu"));
 			$.template.loadFoot($(".footer"));
-			
-			$('#loginname , #nloginpwd').focus(function(){
-				$(this).css('border','1px solid green');
-			});
-			$('#loginname , #nloginpwd').blur(function(){
-				$(this).css('border','1px solid #ccc');
-			});
-			$('#loginsubmit').click(
-					function() {
-						var data = 'usrname=' + $('#loginname').val() + '&usrpwd=' + hex_md5($('#nloginpwd').val());
 
-						$.ajax({
-							url : 'customer/UserAction/login',
-							type : 'post',
-							data : data,//form.serialize(),
-							cache : false,
-							dataType : "json",
-							error : function(XMLHttpRequest, textStatus,
-									errorThrown) {
-								alert("服务器无响应! status: " + textStatus);
-							},
-							success : function(json, textStatus) {
-								switch (json['status']) {
-								case 0:
-									alert(JSON.stringify(json));
-									//window.location.href = './';
-									break;
-								default:
-									alert(json['msg']);
-									break;
-								}
-							}
-						});
-						return false;
-					});
+			$('#loginname , #nloginpwd').focus(function() {
+				$(this).css('border', '1px solid green');
+			});
+			$('#loginname , #nloginpwd').blur(function() {
+				$(this).css('border', '1px solid #ccc');
+			});
+			$('#loginsubmit').click(function() {
+					$.User.Auth($('#loginname').val(), hex_md5($('#nloginpwd').val()));
+			});
 		});
 	</script>
 </body>

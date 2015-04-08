@@ -1,3 +1,4 @@
+<script src="/app/js/user.js"></script>
 <script type="text/javascript">
 $(function(){
 
@@ -21,6 +22,12 @@ $(function(){
 		$('.cart .detail').hide();
 		cart_hover = false;
 	});
+
+	$.User.GetInfo(function(json){
+		//alert(JSON.stringify(json));
+		
+		$('.loginfo').html("<p>"+json[0].t_usrName+"</p>");
+	});
 });
 </script>
 
@@ -34,12 +41,14 @@ $(function(){
 		<li class="bd-right"><div class="search-btn "></div></li>
 	</ul>
 </div>
-<div class="left d-right login-area">
-	<a class="login-url" href="login.html">login</a>
+
+<div class="left d-right login-area loginfo">
+ 	<a class="login-url" href="/login.html">login</a>
+		
 </div>
 <div class="left d-right-most login-area">
 	<div class="cart">
-		<p class="cart-t">Cart</p>
+		<p class="cart-t super-link" link="/order.html">Cart</p>
 		<!-- 		<div class="detail"> -->
 		<!-- 			<b class="no-goods"></b><b class="no-goods-text">Your cart is empty;</b>  -->
 		<!-- 		</div> -->
@@ -105,7 +114,7 @@ $(function(){
 				</div>
 				<div class="smb ar">
 					共<b>1</b>件商品 共计<strong>￥ 1690.00</strong><br> <a
-						href="order.html"
+						href="/order.html"
 						title="去购物车结算" id="btn-payforgoods">去购物车结算</a>
 				</div>
 			</div>

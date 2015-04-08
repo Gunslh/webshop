@@ -215,19 +215,7 @@ $(function(){
 	$.template.loadMenuBanner($(".index-menu"));
 	$.template.loadFoot($(".footer"));
 	
-	$('.c-title').click(function(){
-		var sub = $(this).parent('li').find('.sub-nav');
-		sub.fadeToggle();
-
-		if(sub.css("opacity") == 0)
-		{
-			$(this).parent('li').addClass("select");
-		}
-		else
-		{
-			$(this).parent('li').removeClass("select");
-		}
-	});
+	
 });
 </script>
 </body>

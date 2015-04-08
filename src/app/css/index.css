@@ -602,3 +602,9 @@ h4 {
 	cursor: pointer;
 	background: url("../../images/right.png");
 }
+
+.loginfo p
+{
+	font-size: 18px;
+	margin-top: 18px;
+}
