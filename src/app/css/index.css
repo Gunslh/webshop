@@ -309,13 +309,13 @@ h4 {
 {
 	list-style: disc;
 	color:rgb(231,31,25);	
-	font-size: 24px;
+	font-size: 28px;
 	margin-left: -150px;
 }
 .index-menu ul li
 {
 	float:left;
-	margin-left: 35px;
+	margin-left: 40px;
 	font-weight: bold;	
 }
 .index-menu ul li
@@ -350,7 +350,8 @@ h4 {
 }
 .super-link
 {
-	cursor:pointer
+	cursor:pointer;
+	margin: 0px;
 }
 .super-link:hover
 {
@@ -578,7 +579,7 @@ h4 {
 .index-vip
 {
 	height: 524px;
-	background: url("../../images/vip.png");
+	background: url("../../images/vip.jpg");
 }
 
 .left-arrow
@@ -595,9 +596,15 @@ h4 {
 {
 	position: absolute;
 	top: 25%;
-	right: -5%;
+	right: 0%;
 	width: 60px;
 	height: 85px;
 	cursor: pointer;
 	background: url("../../images/right.png");
+}
+
+.loginfo p
+{
+	font-size: 18px;
+	margin-top: 18px;
 }

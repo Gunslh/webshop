@@ -20,6 +20,7 @@ class URLHandler
     
     public static function getWebRoot()
     {
+    	return "/";
         //return str_replace('frwk/index.php', '', $_SERVER['PHP_SELF']);
         return str_replace($_SERVER['DOCUMENT_ROOT'], '', self::getAppDir());
     }

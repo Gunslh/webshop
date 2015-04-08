@@ -26,23 +26,23 @@
 	$.template = {
 		loadHead:function(obj, path){
 			path = path || ''; 
-			loadPage(path + 'views/common/css2js.php',headAppend, null);
+			loadPage(path + '/views/common/css2js.php',headAppend, null);
 		},
 		loadTopBanner:function(obj, path){
 			path = path || '';
-			loadPage(path +'views/common/head.php',null, obj);
+			loadPage(path +'/views/common/head.php',null, obj);
 		},
 		loadSearchBanner:function(obj, path){
 			path = path || '';
-			loadPage(path +'views/common/search.php',null, obj);
+			loadPage(path +'/views/common/search.php',null, obj);
 		},
 		loadMenuBanner:function(obj, path){
 			path = path || '';
-			loadPage(path +'views/common/menu.php',null, obj);
+			loadPage(path +'/views/common/menu.php',null, obj);
 		},
 		loadFoot:function(obj, path){
 			path = path || '';
-			loadPage(path +'views/common/foot.php',null, obj);			
+			loadPage(path +'/views/common/foot.php',null, obj);			
 		},
 		loadYouMaylike:function(obj, path){
 			path = path || '';

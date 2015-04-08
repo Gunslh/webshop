@@ -48,7 +48,6 @@
 {
     background: url("/picture/arrow-left.gif") no-repeat scroll 0px -1px transparent;
     text-align: left;
-	text-indent: 70px;
 	margin-bottom: 20px;
 	font-size: 20px;
 	cursor: pointer;
@@ -109,8 +108,11 @@
 }
 .maylikes 
 {
-	border: 1px solid black;
-	margin-left: 40px;
+	border: 1px solid #000;
+	margin: 0px;
+	padding-left: 0px;
+	margin-left: 30px;
+	margin-right: 30px;
 }
 .maylikes  li
 {
