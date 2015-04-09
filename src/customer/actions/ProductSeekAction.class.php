@@ -1,5 +1,6 @@
 <?php include_once dirname(__FILE__).'/./CustomerBaseAction.class.php';?>
 <?php include_once dirname(__FILE__).'/../../common/entity/ProductEntity.class.php';?>
+<?php include_once dirname(__FILE__).'/../../common/entity/PictureEntity.class.php';?>
 <?php include_once dirname(__FILE__).'/../../common/tools/PageTool.class.php';?>
 <?php
 class ProductSeekAction extends CustomerBaseAction
@@ -28,6 +29,22 @@ class ProductSeekAction extends CustomerBaseAction
 			}
 		}
 
+		echo json_encode($json);
+	}
+	
+	public function getCateInfo()
+	{
+		$json = new stdClass();
+		$catId = isset($_POST["catId"]) ? $_POST["catId"] : "";
+		$entity = new CategoryEntity();
+		$cats = $entity->FindById($catId);
+		if($cats === false){
+			$json->status = ErrorCode::E_DB_ERR;
+			$json->msg = ErrorCode::getErrDesc(ErrorCode::E_DB_ERR);
+		}else{
+			$json->status = ErrorCode::E_SUCCESS;
+			$json->msg = $cats;
+		}
 		echo json_encode($json);
 	}
 	
@@ -94,6 +111,23 @@ class ProductSeekAction extends CustomerBaseAction
             $json->msg = $all;
         }
         echo json_encode($json);
+    }
+    //获取图片
+    public function getProductMedia()
+    {
+    	$mediaId = isset($_POST["mediaId"]) ? $_POST["mediaId"] : "24";
+    	$entity = new PictureEntity();
+    	$json = new stdClass();
+    	$pictures =  $entity->getPictures($mediaId);
+    	$json->status = ErrorCode::E_SUCCESS;
+    	if($pictures == false)
+    	{    		
+    		$json->status = ErrorCode::E_NOT_EXISTS;
+    		$json->msg = ErrorCode::getErrDesc(ErrorCode::E_NOT_EXISTS);
+    	}
+    	else
+    		$json->msg = $pictures;
+    	echo json_encode($json);
     }
     
     public function getProductCountBySubmenuId(){

@@ -24,6 +24,10 @@
 	}
 	
 	$.template = {
+		setTitle:function()
+		{
+			
+		},
 		loadHead:function(obj, path){
 			path = path || ''; 
 			loadPage(path + '/views/common/css2js.php',headAppend, null);

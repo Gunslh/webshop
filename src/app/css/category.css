@@ -94,17 +94,18 @@
 }
 .detail-container .sale-item .descr
 {
-	font-size: 14px;
+	font-size: 16px;
 	text-align: center;
 	color: rgb(124,124,124);
 	width: 160px;
 	margin-left: 45px;
-	margin-top: 25px;
+	margin-top: 15px;
 }
 .detail-container .sale-item .price
 {
 	text-align: center;
 	color: rgb(147,30,35);
+	margin-top: 10px;
 }
 .maylikes 
 {
@@ -143,12 +144,11 @@
 }
 .page-index
 {
-	position: absolute;
-	top: 2320px;
-	right: 250px;
+	position: relative;
 	width: 450px;
 	height: 40px;
-	background-color: #e9eeee;
+	margin-left: 200px;
+	margin-top: 30px;
 }
 .page-index ul
 {
@@ -166,8 +166,20 @@
 {
 	width:70px;
 }
-.page-index ul li:hover
+.page-index ul li:hover,
+.page-index ul .check
 {
 	background-color: #8c3ce1;
 	cursor: pointer;
+}
+.sale-item img
+{
+	height:256px;
+}
+.page-count
+{
+	position: absolute;
+	left: -120px;
+	top: 8px;
+	font-size: 18px;
 }
