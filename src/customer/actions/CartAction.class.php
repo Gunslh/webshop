@@ -6,7 +6,7 @@ class CartAction extends CustomerBaseAction
     private function totalPrice($all){
         $total = 0;
         foreach ($all as $val){
-            $total += doubleval($val->t_price);
+            $total += doubleval($val->t_price) *doubleval($val->t_total);
         }
         return $total;
     }
@@ -15,16 +15,24 @@ class CartAction extends CustomerBaseAction
         $json = new stdClass();
         $json->status = ErrorCode::E_SUCCESS;
         $entity = new CartEntity();
-        $user = $this->userInfo->fk_pkId;
-        $all = $entity->allcart($user);
-        if($all === false){
-            $json->status = ErrorCode::E_DB_ERR;
-            $json->msg = ErrorCode::getErrDesc(ErrorCode::E_DB_ERR);
-        }else{
-            $t = new stdClass();
-            $t->totalPrice = $this->totalPrice($all);
-            array_push($all, $t);
-            $json->msg = $all;
+        
+        if(!($this->userInfo)){
+        	$json->status = ErrorCode::E_WARNING;
+        	$json->msg = ErrorCode::getErrDesc(ErrorCode::E_WARNING);
+        }
+        else
+        {
+	        $user = $this->userInfo[0]->t_pkid;
+	        $all = $entity->allcart($user);
+	        if($all === false){
+	            $json->status = ErrorCode::E_DB_ERR;
+	            $json->msg = ErrorCode::getErrDesc(ErrorCode::E_DB_ERR);
+	        }else{
+	            $t = new stdClass();
+	            $t->totalPrice = $this->totalPrice($all);
+	            array_push($all, $t);
+	            $json->msg = $all;
+	        }
         }
         echo json_encode($json);
     }
@@ -34,7 +42,7 @@ class CartAction extends CustomerBaseAction
         $total = isset($_POST["total"]) ? $_POST["total"] : 1;
         $selected = isset($_POST["selected"]) ? $_POST["selected"] : 1;
         $price = isset($_POST["price"]) ? $_POST["price"] : 0;
-        $user = $this->userInfo->fk_pkId;
+        $user = $this->userInfo[0]->t_pkid;
         $json = new stdClass();
         $json->status = ErrorCode::E_SUCCESS;
         $entity = new CartEntity();

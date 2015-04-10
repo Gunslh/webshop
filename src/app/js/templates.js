@@ -8,6 +8,7 @@
 	        data : null,//form.serialize(),
 	        cache : false,
 	        dataType : "text",
+	        async:false,
 	        error : function(XMLHttpRequest, textStatus, errorThrown) {
 	            alert("服务器无响应! status: " + textStatus);
 	         },

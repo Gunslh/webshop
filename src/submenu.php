@@ -1,17 +1,18 @@
-<?php include_once dirname(__FILE__).'/common/entity/ProductEntity.class.php';?>
+<?php include_once dirname(__FILE__).'/common/entity/SubMenuEntity.class.php';?>
 <?php include_once dirname(__FILE__).'/common/tools/Tool.class.php';?>
 <?php
-$catId = isset($_GET["id"]) ? $_GET["id"] : "";
+$menuId = isset($_GET["id"]) ? $_GET["id"] : "";
 $page = isset($_GET["page"]) ? $_GET["page"] : 1;
-$entity = new CategoryEntity();
-$cats = $entity->FindById($catId); 
+$entity = new SubMenuEntity();
+$menu = $entity->FindById($menuId);
+//var_dump($menu);	
 ?>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<?php echo Tool::toHtmlHead($cats); ?>
+<?php echo Tool::toHtmlHead($menu); ?>
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
 <link href="/app/css/category.css" type="text/css" rel="stylesheet" />
 </head>
@@ -25,7 +26,7 @@ $cats = $entity->FindById($catId);
 	<div class="index-menu">
 	</div>
 	<div class="category-container">
-		<div class="c-info"><p><?php echo $cats->t_cateDescr?></p></div>
+		<div class="c-info"><p><?php echo $menu->t_menuDescr?></p></div>
 		<div class="c-body">
 			<div class="c-menu">
 				<ul class="menu">
@@ -115,7 +116,7 @@ $cats = $entity->FindById($catId);
 </div>
 <script src="/lib/js/jquery-1.8.1.min.js"></script>
 <script src="/app/js/templates.js"></script>
-<script src="/app/js/category.js"></script>
+<script src="/app/js/submenu.js"></script>
 <script type="text/javascript">
 $(function(){
 	$.template.loadHead();
@@ -123,8 +124,8 @@ $(function(){
 	$.template.loadSearchBanner($('.index-search'));
 	$.template.loadMenuBanner($(".index-menu"));
 	$.template.loadFoot($(".footer"));
-		
-	$.Category.LoadProduct(<?php echo $catId?> ,<?php echo $page?> ,function(json){
+
+	$.Submenu.LoadProduct(<?php echo $menuId?> ,<?php echo $page?> ,function(json){
 		//alert(JSON.stringify(json));	
 		var data = json.msg;
 		var obj = $('.detail-container .pd-list');
@@ -154,12 +155,11 @@ $(function(){
 				}
 				
 			});
-		}
-		
+		}		
 	});
 
 	//初始化分页
-	$.Category.LoadProductCount(<?php echo $catId?> ,function(json){
+	$.Submenu.LoadProductCount(<?php echo $menuId?> ,function(json){
 		var curr = <?php echo $page?>;
 		var pagetotal = json.pageTotal;
 

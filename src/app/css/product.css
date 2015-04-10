@@ -37,7 +37,9 @@
 
 .product-pic .small
 {
-	width:85px;
+	width: 55px;
+	height: 450px;
+	overflow: hidden;
 }
 .product-pic .small ul
 {
@@ -59,12 +61,18 @@
 }
 .product-pic .small img
 {
-	height:85px;	
+	height: 55px;
+}
+.product-pic .big
+{
+	height:460px;
+    overflow: hidden;
 }
 .product-pic .big img
 {
-	margin-left:50px;
-	width:280px;	
+	margin-left: 20px;
+	width: 350px;
+	margin-top: 30px;
 }
 .product-pic ,.product-detail, .big , .small
 {
@@ -194,4 +202,34 @@ padding: 0px;
 .size-banner img
 {
 	width:1000px;
+}
+.tb-btn-add a {
+    width: 180px;
+    color: #FFF;
+    border-color: #F40;
+    background: none repeat scroll 0% 0% #F40;
+    display: block;
+	cursor: pointer;
+	height: 38px;
+	text-align: center;
+	font-family: "Hiragino Sans GB","microsoft yahei",sans-serif;
+	font-size: 16px;
+	line-height: 38px;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 2px;
+    
+}
+.tb-action .tb-btn-add i {
+    vertical-align: bottom;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    margin-right: 10px;
+}
+
+.tb-btn-add
+{
+	margin-top: 100px;
+	margin-left: 250px;
 }

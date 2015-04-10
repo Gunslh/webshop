@@ -1,4 +1,4 @@
 <IfModule mod_rewrite.c>
     RewriteEngine on
-    RewriteRule ^(.*)\.htm* ../product.html?id=$1 [NC]    
+    RewriteRule ^(.*)\.htm* ../product.php?id=$1 [NC]    
 </IfModule>
