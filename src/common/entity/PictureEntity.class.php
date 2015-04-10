@@ -17,5 +17,9 @@ class PictureEntity extends BaseEntity{
 		}
 		return $id;
 	}
+	public function getPictures($mediaId)
+	{
+		return $this->query("select *from shop_picture where fk_mediaId=".$mediaId);		
+	}
 }
 ?>

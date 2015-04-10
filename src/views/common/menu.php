@@ -21,7 +21,7 @@ $(function(){
 			var sub = json[i].sub;
 			var obj = json[i];
 			if(i == 0)
-				html += " <li style='list-style: none' ><p class='super-link' link='category/"+obj.t_pkId+".html'>" + obj.t_cateName+'</p>';
+				html += " <li style='list-style: none' ><p class='super-link' link='/category/"+obj.t_pkId+".html'>" + obj.t_cateName+'</p>';
 				
 			else
 				html += " <li><p class='super-link' link='/category/"+obj.t_pkId+".html'>" + obj.t_cateName+'</p>';

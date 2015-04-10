@@ -284,7 +284,8 @@ h4 {
 }
 .p-img, .p-name, .p-price, .p-market, .p-detail  {
     overflow: hidden;
-    font-size:12px;
+    font-size:15px;
+    position: relative;
 }
 .ar {
     text-align: right;
@@ -295,8 +296,12 @@ h4 {
 }
 .p-price strong{
     color: #E4393C;
+   
+	
 }
 .delete {
+	 margin-top: 6px;
+	display: block;
     color: #005EA7;
 }
 
