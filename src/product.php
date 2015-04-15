@@ -76,9 +76,21 @@ $product = $entity->FindById($productId);
 
 					</ul>
 					<div class="clear"></div>
+					<ul>
+						<li class="size-name">Number:</li>
+						<li>
+							<span class="tb-stock" id="count">
+							 	<a  class="tb-reduce  iconfont tb-disable-reduce">ƛ</a>
+							 	<input id="amount" class="tb-text num_postive" value="1" maxlength="8" title="请输入购买量" type="text">
+							 	<a class="tb-increase  iconfont">ƚ</a>
+							 </span>
+						</li>
+					</ul>
+					<div class="clear"></div>
 				</div>
 				<div class="tb-btn-add">
-					<a>
+					
+					<a><i class="iconfont">ŭ</i>
 					Add to Cart</a>
 				</div>
 			</div>
@@ -140,6 +152,54 @@ $(function(){
 	$('.small ul li').live ("hover", function(){
 		$('.big').html($(this).html());
 	});
+
+	function countRefresh()
+	{
+		var obj  = $('#count');
+		var reduce = obj.find('.tb-reduce');
+		var increase = obj.find('.tb-increase');
+		if(parseInt(obj.find('input').val()) == 1)
+		{
+			reduce.addClass('tb-disable-reduce');
+		}
+		else
+			reduce.removeClass('tb-disable-reduce');
+	}
+	function countIncr(num)
+	{
+		var obj  = $('#count');
+		var amonut = parseInt(obj.find('input').val());
+		obj.find('input').val(amonut+ num) ;
+		countRefresh();
+	}
+	function countReduce(num)
+	{
+		var obj  = $('#count');
+		var amonut = parseInt(obj.find('input').val());
+		obj.find('input').val(amonut -num) ;
+		countRefresh();
+	}
+	$('#count .tb-reduce').click(function(){
+		if(parseInt($(this).parent('span').find('input').val()) > 1 )
+		{
+			countReduce(1);
+		}
+	});
+
+	//进行正数类型判断
+	$(".num_postive").on('input',function(e){
+		var amount = parseInt($(this).val());  
+		if(!amount || amount < 0)
+		{
+			$(this).val("1"); 
+		}
+		countRefresh();
+	});
+	
+	countRefresh();
+	$('#count .tb-increase').click(function(){
+		countIncr(1);
+	});
 	$('.option').click(function(){
 		if ($(this).hasClass("active"))
 		{
@@ -172,10 +232,12 @@ $(function(){
 		
 	});
 	$('.tb-btn-add a').click(function(){
+		var obj  = $('#count');
+		var amonut = parseInt(obj.find('input').val());
 		var id = <?php echo $product->t_pkId?>;
 		var price = <?php echo $product->t_price?>;
-		var count = 2;
-		$.User.AddToCart(id, count, price);
+		
+		$.User.AddToCart(id, amonut, price);
 	});
 });
 </script>

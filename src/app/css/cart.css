@@ -97,6 +97,10 @@
     text-align: center;
     overflow: hidden;
 }
+.goods-item .p-img img
+{
+	height:80px;
+}
 .goods-item .p-name {
     height: 40px;
     line-height: 20px;

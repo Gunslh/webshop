@@ -13,6 +13,10 @@ ul
 {
 	list-style:none;
 }
+@font-face {
+  font-family: "iconfont";
+  src: url("../font/icon.woff") format("woff");
+}
 .inline 
 {
 	display: inline;

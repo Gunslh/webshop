@@ -72,7 +72,7 @@ class CartAction extends CustomerBaseAction
     
 public function del(){
         $productId = isset($_POST["productId"]) ? $_POST["productId"] : null;
-        $user = $this->userInfo->fk_pkId;
+        $user = $this->userInfo[0]->t_pkid;
         $json = new stdClass();
         $json->status = ErrorCode::E_SUCCESS;
         $entity = new CartEntity();

@@ -22,10 +22,10 @@ $(function(){
 				var mediaId = json[i].fk_mediaId;
 				var id = json[i].t_pkId;
 				obj.append('<li attid="'+id+'" media="'+mediaId+'"><div class="p-img fl">'+
-						'<a href="http://item.jd.com/1332512.html" target="_blank">'+
-						'<img src="http://img12.360buyimg.com/n5/jfs/t478/247/1005991500/73051/b1750a55/54c60e20N36193191.jpg" alt="" height="50" width="50"> </a>'+
+						'<a href="/product/'+id+'.html">'+
+						'<img src="" alt="" height="50" width="50"> </a>'+
 						'</div><div class="p-name fl">'+
-						'<span></span><a href="http://item.jd.com/1332512.html">'+
+						'<span></span><a href="/product/'+id+'.html">'+
 						json[i].t_title+'<br>'+json[i].t_descr+'</a></div><div class="p-detail fr ar">'+
 						'<span class="p-price"><strong>$'+
 						json[i].t_price+'</strong>x'+json[i].t_total+'</span> <br> <a '+
@@ -45,7 +45,10 @@ $(function(){
 			}
 		});
 	}
-	
+	$('#mcart-mz li .delete').live("click",function(){
+		var id = $(this).parent('div').parent('li').attr('attid');
+		$.User.RemoveFromCart(id);
+	});
 	$('.cart .cart-t').hover(function(){
 		$('.cart .detail').fadeIn();
 		cartReload();
@@ -91,7 +94,7 @@ $(function(){
 </div>
 <div class="left d-right-most login-area">
 	<div class="cart">
-		<p class="cart-t super-link" link="/order.html">Cart</p>
+		<p class="cart-t super-link" link="/cart.html">Cart</p>
 		<!-- 		<div class="detail"> -->
 		<!-- 			<b class="no-goods"></b><b class="no-goods-text">Your cart is empty;</b>  -->
 		<!-- 		</div> -->

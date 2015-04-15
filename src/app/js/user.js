@@ -30,6 +30,32 @@
 				});
 				return false;
 		},
+		RemoveFromCart:function(id){
+			var data = "productId="+id;
+			console.log(data);
+			$.ajax({
+				url : '/customer/CartAction/del',
+				type : 'post',
+				data : data,// form.serialize(),
+				cache : false,
+				dataType : "json",
+				error : function(XMLHttpRequest, textStatus,
+						errorThrown) {
+					alert("服务器无响应! status: " + textStatus);
+				},
+				success : function(json, textStatus) {		
+					//alert(JSON.stringify(json));
+					switch (json['status']) {
+					case 0:				
+						//window.location.href = '/';
+						alert('Remove from Cart Success');
+						break;
+					default:
+						break;
+					}
+				}
+			});
+		},
 		AddToCart:function(id, count, price){
 			var data = "productId="+id+"&total="+count+"&price="+price;
 			console.log(data);
@@ -44,10 +70,11 @@
 					alert("服务器无响应! status: " + textStatus);
 				},
 				success : function(json, textStatus) {		
-					alert(JSON.stringify(json));
+					//alert(JSON.stringify(json));
 					switch (json['status']) {
 					case 0:				
 						//window.location.href = '/';
+						alert('Add to Cart Success');
 						break;
 					default:
 						break;
