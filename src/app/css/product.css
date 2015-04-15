@@ -220,6 +220,12 @@ padding: 0px;
 	border-radius: 2px;
     
 }
+.tb-btn-add i {
+    font-size: 22px;
+    font-weight: 400;
+    font-style: normal;
+    margin-right: 10px;
+}
 .tb-action .tb-btn-add i {
     vertical-align: bottom;
     font-size: 18px;
@@ -230,6 +236,51 @@ padding: 0px;
 
 .tb-btn-add
 {
-	margin-top: 100px;
-	margin-left: 250px;
+	margin-top: 30px;
+	margin-left: 10px;
+}
+.tb-stock a{
+    display: block;
+    float: left;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #CCC;
+    line-height: 26px;
+    padding: 0px;
+    vertical-align: top;
+    text-align: center;
+    background-color: #EDEDED;
+    overflow: hidden;
+}
+.iconfont {
+    font-family: iconfont !important;
+    font-size: 12px;
+    font-style: normal;
+    -moz-user-select: none;
+}
+.tb-stock .tb-increase {
+    border-left: 0px none !important;
+    margin-right: 8px;
+}
+.tb-stock .tb-disable-reduce, 
+.tb-stock .tb-disable-reduce:hover  {
+    color: #CCC;
+	cursor: not-allowed;
+	background-color: #EDEDED;
+}
+
+.tb-stock input {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 48px;
+    height: 26px;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #666;
+    border: 1px solid #CCC;
+    outline: 0px none;
+    background: none repeat scroll 0% 0% #FFF;
+    ime-mode: disabled;
 }

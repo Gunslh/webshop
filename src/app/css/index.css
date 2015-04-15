@@ -270,7 +270,7 @@ h4 {
 }
 
 #mcart-mz .p-name {
-    width: 150px;
+    width: 180px;
     height: 52px;
 }
 .fr {
@@ -291,18 +291,23 @@ h4 {
     text-align: right;
 }
 .p-price {
-    font-weight: 700;
     color: #999;
 }
 .p-price strong{
     color: #E4393C;
-   
+   font-size: 18px;
 	
+}
+.p-detail
+{
+	width:80px;
+	text-align:left;
 }
 .delete {
 	 margin-top: 6px;
 	display: block;
     color: #005EA7;
+    font-size: 12px;
 }
 
 .index-menu
