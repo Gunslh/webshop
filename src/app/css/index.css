@@ -110,8 +110,7 @@ img
 	color: #000;
 	padding-top: 20px;
 	display: block;
-	text-indent: 80px;
-}
+
 }
 .login-url em
 {
@@ -179,6 +178,35 @@ h4 {
 	position: absolute;
 	left: 130px;
 	top: 45px;
+}
+.login-area 
+{
+	position:relative;
+}
+
+.login-area .t-list ul
+{
+	padding: 0px;
+	margin: 0px 0px 5px;
+}
+
+.login-area .t-list ul li
+{
+	margin-top: 5px;
+}
+
+.login-area .t-list
+{
+	display:none;
+	position: absolute;
+	left: 0px;
+	top: 50px;
+	z-index: 2;
+	width: 150px;
+	background: none repeat scroll 0% 0% #FFF;
+
+	border: 1px solid;
+	border-radius: 15px;
 }
 #settleup-content {
     position: relative;
@@ -319,8 +347,9 @@ h4 {
 {
 	list-style: disc;
 	color:rgb(231,31,25);	
-	font-size: 28px;
-	margin-left: -150px;
+	font-size: 26px;
+	margin: 0px 0px 0px -40px;	
+	padding: 0px;
 }
 .index-menu ul li
 {

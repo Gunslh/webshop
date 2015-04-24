@@ -78,7 +78,7 @@
 			$.template.loadSearchBanner($('.index-search'));
 			$.template.loadMenuBanner($(".index-menu"));
 			$.template.loadFoot($(".footer"));
-
+			$.User.LoginTest('/cart.html');
 			function updateTotal(quntity_form, val) {
 				var head = quntity_form.parent('div').parent('div');
 				var price = getPrice(head.parent('div').attr("attid"));
