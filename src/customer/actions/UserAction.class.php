@@ -27,6 +27,20 @@ class UserAction extends CustomerBaseAction
     	echo json_encode($json);
     }
     
+    public function logout(){
+    	$json = new stdClass();
+    	$json->status = ErrorCode::E_SUCCESS;
+    	$json->msg = ErrorCode::getErrDesc(ErrorCode::E_SUCCESS); 
+    	SessionManagement::clrUserLoginSession();
+    	echo json_encode($json);
+    }
+    public function loginTest(){
+    	$json = new stdClass();
+    	$json->status = ErrorCode::E_SUCCESS;
+    	$json->msg = ErrorCode::getErrDesc(ErrorCode::E_SUCCESS);
+    	SessionManagement::clrUserLoginSession();
+    	echo json_encode($json);
+    }
     public function login(){
         $json['status'] = ErrorCode::E_SUCCESS;
         

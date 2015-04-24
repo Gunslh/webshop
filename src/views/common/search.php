@@ -4,7 +4,7 @@
 $(function(){
 
 	var cart_hover = false;
-
+	var user_hover = false;
 	function cartReload()
 	{
 		$.User.GetCart(function(json){
@@ -71,8 +71,32 @@ $(function(){
 
 	$.User.GetInfo(function(json){
 		//alert(JSON.stringify(json));
-		
-		$('.loginfo').html("<p>"+json[0].t_usrName+"</p>");
+		$('.login-area .tt').addClass('user');
+		$('.loginfo .tt').html("<p>"+json[0].t_usrName+"</p>");
+	});
+
+	$('.login-area .user').live ("hover", function(event){
+		if(event.type=='mouseenter')
+				$('.login-area .t-list').fadeIn();
+		else
+			setTimeout(function(){
+				if(user_hover == false)
+					$('.login-area .t-list').fadeOut();
+			},500);
+	});
+
+	
+	$('.login-area .t-list').hover(function(){
+		$('.login-area .t-list').fadeIn();
+		user_hover = true;
+	},
+	function(){
+		$('.login-area .t-list').hide();
+		user_hover = false;
+	});
+
+	$('.login-area .logout').click(function(){
+		$.User.Logout();
 	});
 });
 </script>
@@ -89,7 +113,13 @@ $(function(){
 </div>
 
 <div class="left d-right login-area loginfo">
- 	<a class="login-url" href="/login.html">login</a>
+	<div class="tt"><a class="login-url" href="/login.html">login</a></div>
+	<div class="t-list">
+		<ul>
+			<li class="super-link logout" >Logout</li>
+		</ul>
+	</div>
+ 	
 		
 </div>
 <div class="left d-right-most login-area">
