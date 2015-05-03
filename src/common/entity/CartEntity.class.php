@@ -58,12 +58,29 @@ class CartEntity extends BaseEntity
     
     public function allcart($user){
        $sql =  "SELECT * FROM ".self::TABLE_NAME." as a LEFT JOIN shop_product as b ON a.fk_product=b.t_pkId where a.fk_user=$user";
-       $all = $this->query($sql);
+       $all = $this->query($sql);;
        if($all === false)
            return false;
        return $all;
     }
     
+    public function check($user, $id)
+    {
+    	$sql = "UPDATE ".self::TABLE_NAME." SET `t_selected`=1 WHERE `fk_user`=$user and `fk_product`=$id";
+    	//return $sql;
+    	$all = $this->query($sql);
+    	if($all === false)
+    		return false;
+    	return true;
+    }
+    public function uncheck($user, $id)
+    {
+    	$sql = "UPDATE ".self::TABLE_NAME." SET `t_selected`=0 WHERE `fk_user`=$user and `fk_product`=$id";
+    	$all = $this->query($sql);
+    	if($all === false)
+    		return false;
+    	return true;
+    }
     public function allSelect($user)
     {
         $sql = "UPDATE ".self::TABLE_NAME." SET `t_selected`=1 WHERE `fk_user`=$user";

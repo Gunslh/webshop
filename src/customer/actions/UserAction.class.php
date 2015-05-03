@@ -122,5 +122,15 @@ class UserAction extends CustomerBaseAction
         }
         echo json_encode($json);     
     }
+    public function addressAdd()
+    {
+    	$usr = isset($_POST["name"])?$_POST["name"]:null;
+    	$country = isset($_POST["country"])?$_POST["country"]:null;
+    	$state = isset($_POST["state"])?$_POST["state"]:null;
+    	$city = isset($_POST["city"])?$_POST["city"]:null;
+    	$usrid = $this->userInfo[0]->t_pkid;
+    	echo $usrid;
+    }
+    
 }
 ?>

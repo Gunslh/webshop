@@ -24,6 +24,7 @@ class CartAction extends CustomerBaseAction
         {
 	        $user = $this->userInfo[0]->t_pkid;
 	        $all = $entity->allcart($user);
+	        
 	        if($all === false){
 	            $json->status = ErrorCode::E_DB_ERR;
 	            $json->msg = ErrorCode::getErrDesc(ErrorCode::E_DB_ERR);
@@ -91,6 +92,42 @@ public function del(){
         echo json_encode($json);
     }
     
+    public function SetCheck(){
+    	$id = isset($_POST["id"]) ? $_POST["id"] : null;
+    	$user = $this->userInfo[0]->t_pkid;
+    	$json = new stdClass();
+    	$json->status = ErrorCode::E_SUCCESS;
+    	$entity = new CartEntity();
+    
+    	$ret = $entity->check($user, $id);
+    	
+    	if($ret === false){
+    		$json->status = ErrorCode::E_DB_ERR;
+    		$json->msg = ErrorCode::getErrDesc(ErrorCode::E_DB_ERR);
+    	}else{
+    		$json->msg = ErrorCode::getErrDesc(ErrorCode::E_SUCCESS);
+    	}
+    
+    	echo json_encode($json);
+    }
+    public function SetUnCheck(){
+    	$id = isset($_POST["id"]) ? $_POST["id"] : null;
+    	$user = $this->userInfo[0]->t_pkid;
+    	$json = new stdClass();
+    	$json->status = ErrorCode::E_SUCCESS;
+    	$entity = new CartEntity();
+    
+    	$ret = $entity->uncheck($user, $id);
+    	 
+    	if($ret === false){
+    		$json->status = ErrorCode::E_DB_ERR;
+    		$json->msg = ErrorCode::getErrDesc(ErrorCode::E_DB_ERR);
+    	}else{
+    		$json->msg = ErrorCode::getErrDesc(ErrorCode::E_SUCCESS);
+    	}
+    
+    	echo json_encode($json);
+    }
     public function allSelect(){
         $user = $this->userInfo->fk_pkId;
         $json = new stdClass();

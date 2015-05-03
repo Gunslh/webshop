@@ -36,7 +36,16 @@ ul
     width: 120px;    
     display: block;
 }
-
+.mask {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.75;
+    background-color: #000;
+    z-index: 2;
+}
 .num {
     color: #FF7519;
     font-size: 28px;

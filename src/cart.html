@@ -38,9 +38,7 @@
 								<div class="normal">
 									<div class="comm-right">
 										<div class="btn-area">
-											<a data-bind="1" href="javascript:void(0);"
-												onclick="return false;"
-												clstag="clickcart|keycount|xincart|cart_gotoOrder"
+											<a href="/order.html"
 												class="submit-btn "> Check Out<b></b></a>
 											<!-- <a href="javascript:void(0);" class="submit-btn submit-btn-disabled">
 										去结算<b></b></a> -->
@@ -113,7 +111,14 @@
 			}
 			
 			function getPrice(id) {
-				return 100.01;
+				var price = 0;
+				$('.cart-list').each(function(){
+					if($(this).attr('attid') == id)
+					{
+						price = $(this).find('.item-list').find('.item-price').find('strong').html();						
+					}
+				});
+				return price;
 			}
 
 			
@@ -128,20 +133,26 @@
 			});
 
 			$(".item-check input[type='checkbox']").live ("change", function() {
-					if ($(this).attr('checked')) {
-						$(this).parent('div').parent('div').addClass(
-								'item-selected');
-					} else
-						$(this).parent('div').parent('div').removeClass(
-								'item-selected');
-					totalRefresh();
-				});
+				$.public.mask(true);
+				if ($(this).attr('checked')) {
+					$(this).parent('div').parent('div').addClass(
+							'item-selected');
+					//alert($(this).parent('div').parent('div').parent('div').attr('attid'));
+					$.User.CartItemCheck($(this).parent('div').parent('div').parent('div').attr('attid'));
+				} else{
+					$(this).parent('div').parent('div').removeClass(
+							'item-selected');
+					$.User.CartItemUnCheck($(this).parent('div').parent('div').parent('div').attr('attid'));
+				}
+				totalRefresh();
+				$.public.mask(false);
+			});
 			$(".check input[type='checkbox'], .cart-checkbox input[type='checkbox']").live ("click", function() {
 				if ($(this).attr('checked')) {
 					$('.item-list').each(function() {
 						if (!$(this).find('.item-check input[type="checkbox"]').attr('checked'))
 							$(this).find('.item-check input[type="checkbox"]').click();
-
+							
 					});
 				} else {
 					$('.item-list').each(function() {
@@ -165,9 +176,10 @@
 							break;
 						var mediaId = json[i].fk_mediaId;
 						var id = json[i].t_pkId;
+						var pdid = json[i].fk_product;
 
 						obj.after(''+
-						'<div class="cart-list"  attid="'+id+'">'+
+						'<div class="cart-list"  attid="'+pdid+'">'+
 							'<div class="item-list">'+
 								'<div class="item-check left">'+
 									'<input type="checkbox"> </input>'+
@@ -194,7 +206,7 @@
 							'</div>'+
 							'<div class="item-number left cart-cell">'+
 								'<div class="quantity-form">'+
-									'<a href="javascript:void(0);" class="decrement disabled">-</a> <input '+
+									'<a href="javascript:void(0);" class="decrement">-</a> <input '+
 										'autocomplete="off" class="itxt" value="'+json[i].t_total+'" type="text"></input>'+
 									'<a href="javascript:void(0);" class="increment">+</a>'+
 								'</div>'+
@@ -222,7 +234,8 @@
 							$('.cart-list').each(function(){
 								var input = $(this).find('.item-list').find('.item-check').find('input');
 								if(json[i].t_pkId == $(this).attr('attid'))
-									input.attr('checked','checked');
+									//input.attr('checked','checked');
+									input.click();
 							});
 						}
 					}

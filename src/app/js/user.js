@@ -162,6 +162,54 @@
 				}
 			});
 		},
+		CartItemCheck:function(id){
+			var data = 'id='+id;
+			$.ajax({
+				url : '/customer/CartAction/SetCheck',
+				type : 'post',
+				data : data,// form.serialize(),
+				cache : false,
+				dataType : "json",
+				async:false,
+				error : function(XMLHttpRequest, textStatus,
+						errorThrown) {
+					alert("服务器无响应! status: " + textStatus);
+				},
+				success : function(json, textStatus) {		
+					//alert(JSON.stringify(json));
+					switch (json['status']) {
+					case 0:		
+						break;
+					default:
+						break;
+					}
+				}
+			});
+		},
+		CartItemUnCheck:function(id){
+			var data = 'id='+id;
+			$.ajax({
+				url : '/customer/CartAction/SetUnCheck',
+				type : 'post',
+				data : data,// form.serialize(),
+				cache : false,
+				dataType : "json",
+				async:false,
+				error : function(XMLHttpRequest, textStatus,
+						errorThrown) {
+					alert("服务器无响应! status: " + textStatus);
+				},
+				success : function(json, textStatus) {		
+					//alert(JSON.stringify(json));
+					switch (json['status']) {
+					case 0:		
+						break;
+					default:
+						break;
+					}
+				}
+			});
+		},
 		GetInfo:function(func){
 			$.ajax({
 				url : '/customer/UserAction/getSession',
@@ -178,6 +226,30 @@
 					case 0:				
 						//window.location.href = '/';
 						if(func) func(json['msg']);
+						break;
+					default:
+						break;
+					}
+				}
+			});
+		},
+		AddressAdd(){
+			var data = 'id='+id;
+			$.ajax({
+				url : '/customer/CartAction/SetCheck',
+				type : 'post',
+				data : data,// form.serialize(),
+				cache : false,
+				dataType : "json",
+				async:false,
+				error : function(XMLHttpRequest, textStatus,
+						errorThrown) {
+					alert("服务器无响应! status: " + textStatus);
+				},
+				success : function(json, textStatus) {		
+					//alert(JSON.stringify(json));
+					switch (json['status']) {
+					case 0:		
 						break;
 					default:
 						break;
