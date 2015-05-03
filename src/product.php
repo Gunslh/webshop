@@ -4,7 +4,7 @@
 $productId = isset($_GET["id"]) ? $_GET["id"] : "";
 $entity = new ProductEntity();
 $product = $entity->FindById($productId);
-///var_dump($product);	
+//var_dump($product);	
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -237,7 +237,8 @@ $(function(){
 		var id = <?php echo $product->t_pkId?>;
 		var price = <?php echo $product->t_price?>;
 		
-		$.User.AddToCart(id, amonut, price);
+		$.User.LoginTest("/product/<?php echo $product->t_pkId?>.html");
+		//$.User.AddToCart(id, amonut, price);
 	});
 });
 </script>

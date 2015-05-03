@@ -4,7 +4,35 @@
 // JavaScript Document
 (function($) {
 	$.User = {
-		Auth:function(usrname, usrpwd){
+		
+		LoginTest:function(url){
+			$.ajax({
+				url : 'customer/UserAction/getSession',
+				type : 'post',
+				data : false,// form.serialize(),
+				cache : false,
+				dataType : "json",
+				error : function(XMLHttpRequest, textStatus,
+						errorThrown) {
+					alert("服务器无响应! status: " + textStatus);
+				},
+				success : function(json, textStatus) {
+					switch (json['status']) {
+					case 0:
+						break;
+					default:
+							alert('You have to Login first. ');
+							if(url==null)
+								window.location.href = '/login.html';
+							else
+								window.location.href = '/login.html?url='+url;
+						break;
+					}
+				}
+			});
+			return false;
+		},
+		Auth:function(usrname, usrpwd, url){
 				var data = 'usrname=' + usrname + '&usrpwd=' + usrpwd;
 				$.ajax({
 					url : 'customer/UserAction/login',
@@ -20,7 +48,10 @@
 						switch (json['status']) {
 						case 0:
 							// alert(JSON.stringify(json));
-							window.location.href = '/';
+							if(url==null)
+								window.location.href = '/';
+							else
+								window.location.href = url;
 							break;
 						default:
 							alert(json['msg']);
@@ -29,6 +60,31 @@
 					}
 				});
 				return false;
+		},
+		Logout:function(){
+			$.ajax({
+				url : 'customer/UserAction/logout',
+				type : 'post',
+				data : false,// form.serialize(),
+				cache : false,
+				dataType : "json",
+				error : function(XMLHttpRequest, textStatus,
+						errorThrown) {
+					alert("服务器无响应! status: " + textStatus);
+				},
+				success : function(json, textStatus) {
+					switch (json['status']) {
+					case 0:
+						// alert(JSON.stringify(json));
+						window.location.href = '/';
+						break;
+					default:
+						alert(json['msg']);
+						break;
+					}
+				}
+			});
+			return false;
 		},
 		RemoveFromCart:function(id){
 			var data = "productId="+id;
@@ -106,6 +162,54 @@
 				}
 			});
 		},
+		CartItemCheck:function(id){
+			var data = 'id='+id;
+			$.ajax({
+				url : '/customer/CartAction/SetCheck',
+				type : 'post',
+				data : data,// form.serialize(),
+				cache : false,
+				dataType : "json",
+				async:false,
+				error : function(XMLHttpRequest, textStatus,
+						errorThrown) {
+					alert("服务器无响应! status: " + textStatus);
+				},
+				success : function(json, textStatus) {		
+					//alert(JSON.stringify(json));
+					switch (json['status']) {
+					case 0:		
+						break;
+					default:
+						break;
+					}
+				}
+			});
+		},
+		CartItemUnCheck:function(id){
+			var data = 'id='+id;
+			$.ajax({
+				url : '/customer/CartAction/SetUnCheck',
+				type : 'post',
+				data : data,// form.serialize(),
+				cache : false,
+				dataType : "json",
+				async:false,
+				error : function(XMLHttpRequest, textStatus,
+						errorThrown) {
+					alert("服务器无响应! status: " + textStatus);
+				},
+				success : function(json, textStatus) {		
+					//alert(JSON.stringify(json));
+					switch (json['status']) {
+					case 0:		
+						break;
+					default:
+						break;
+					}
+				}
+			});
+		},
 		GetInfo:function(func){
 			$.ajax({
 				url : '/customer/UserAction/getSession',
@@ -122,6 +226,30 @@
 					case 0:				
 						//window.location.href = '/';
 						if(func) func(json['msg']);
+						break;
+					default:
+						break;
+					}
+				}
+			});
+		},
+		AddressAdd(){
+			var data = 'id='+id;
+			$.ajax({
+				url : '/customer/CartAction/SetCheck',
+				type : 'post',
+				data : data,// form.serialize(),
+				cache : false,
+				dataType : "json",
+				async:false,
+				error : function(XMLHttpRequest, textStatus,
+						errorThrown) {
+					alert("服务器无响应! status: " + textStatus);
+				},
+				success : function(json, textStatus) {		
+					//alert(JSON.stringify(json));
+					switch (json['status']) {
+					case 0:		
 						break;
 					default:
 						break;

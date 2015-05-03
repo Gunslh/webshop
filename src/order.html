@@ -94,11 +94,7 @@
 										<form>
 											<div class="consignee-form"
 												style="padding-left: 12px; display: none;">
-												<input value="0" id="consignee_form_id"
-													name="consigneeParam.id" type="hidden"> <input
-													id="consignee_type" name="consigneeParam.type"
-													type="hidden"> <input id="consignee_ceshi1"
-														name="consignee_ceshi1" type="hidden">
+
 															<div class="list" id="name_div">
 																<span class="label"><em>*</em>Your Name：</span>
 																<div class="field">
@@ -107,47 +103,43 @@
 																</div>
 																<span class="status error" id="name_div_error"></span>
 															</div>
-															<div class="list select-address" id="area_div">
+															<div class="list" id="area_div">
 																<span class="label"><em>*</em>Country：</span>
 																<div class="field">
 																	<span id="span_area"> <span id="span_province">
 																			<select id="country-select">
 																		</select>
 																	</span>
-																	</span> <span class="form-tip"><span
-																		class="status error" id="area_div_error"></span>&nbsp;&nbsp;</span>
+																	
 																</div>
 															</div>
-															<div class="list full-address" id="address_div">
-																<span class="label"><em>*</em>Address：</span>
+															<div class="list">
+																<span class="label"><em>*</em>State：</span>
 																<div class="field">
 																	<span class="fl selected-address" id="areaNameTxt"></span>
-																	<input class="textbox" id="consignee_address"
-																		type="text">
+																	<input class="textbox" id="State" type="text"></input>
 																</div>
-																<span class="status error" id="address_div_error"></span>
+															</div>
+															<div class="list">
+																<span class="label"><em>*</em>City</span>
+																<div class="field">
+																	<span class="fl selected-address" ></span>
+																	<input class="textbox" id="City" type="text"></input>
+																</div>
+															</div>
+															<div class="list" >
+																<span class="label"><em>*</em>Street</span>
+																<div class="field">
+																	<span class="fl selected-address" id="areaNameTxt"></span>
+																	<input class="textbox" id="Street" type="text"></input>
+																</div>
 															</div>
 															<div class="list" id="call_div">
-																<span class="label"><em>*</em>Mobile：</span>
+																<span class="label"><em>*</em>Telephone：</span>
 																<div class="field">
-																	<div class="phone">
-																		<input class="textbox" id="consignee_mobile"
-																			name="consigneeParam.mobile" maxlength="11" value=""
-																			type="text"> <em>或</em> <span>Telephone：</span>
-																			<input class="textbox" id="consignee_phone" value=""
-																			type="text">
-																	</div>
+																		<input class="textbox" id="mobile" maxlength="11" value="" type="text"> </input>
 																	<span class="status error" id="call_div_error"></span>
 																</div>
-															</div>
-															<div class="list" id="email_div">
-																<span class="label"><em></em>Email：</span>
-																<div class="field">
-																	<input class="textbox" id="consignee_email"
-																		maxlength="50" type="text"> <span
-																		class="form-tip">For service purpose</span>
-																</div>
-																<span class="status error" id="email_div_error"></span>
 															</div>
 											</div>
 										</form>
@@ -200,7 +192,7 @@
 						<div class="step-tit">
 							<h3>送货清单</h3>
 							<div class="extra-r">
-								<a href="http://cart.jd.com/cart/cart.html" id="cartRetureUrl"
+								<a href="cart.html" id="cartRetureUrl"
 									class="return-edit ftx-05">返回修改购物车</a>
 							</div>
 						</div>
@@ -208,68 +200,19 @@
 							<div class="shopping-lists" id="shopping-lists">
 								<div class="shopping-list ABTest">
 									<div class="goods-list">
-										<!--购物车单品商品-->
-										<!--一般套装商品-->
-										<!--满返套装商品-->
-										<!--满赠套装商品-->
-										<!--配送方式-->
-										<h4 class="vendor_name_h" id="0">商家：京东自营</h4>
-										<!--单品开始-->
-										<div class="goods-items"></div>
-										<!--单品结束-->
-										<!--一般套装开始-->
-										<!--一般套装结束-->
-										<!--满返套装开始-->
-										<!--满返套装结束-->
-										<!--满赠套装开始-->
-										
+
+										<h4 class="vendor_name_h" id="0">Item Lists</h4>
+
 										<div class="goods-suit goods-last">
 											<div class="goods-suit-tit">
-												<span class="sales-icon">满赠</span> <strong>
-
-													已购满10.00元 ，再加6.00元，可返回购物车领取赠品 </strong>
-											</div>
-
-											<div class="goods-item goods-item-extra">
-
-												<div class="p-img">
-													<a target="_blank" href="http://item.jd.com/679773.html"><img
-														src="http://img14.360buyimg.com/N4/jfs/t682/252/371911092/108585/fcb50098/5461a74bNc31a3d82.jpg"
-														alt=""></a>
-												</div>
-												<div class="goods-msg">
-													<div class="p-name">
-														<a href="http://item.jd.com/679773.html" target="_blank">
-															闪迪（SanDisk）至尊高速MicroSDHC-TF存储卡32G-Class10-48MB/S </a>
-													</div>
-													<div class="p-price">
-														<!--增加预售金额显示 begin   预售分阶段支付类型（1：一阶梯全款支付；2：一阶梯定金支付(全款或定金可选)；3：三阶梯仅定金支付） -->
-														<strong>￥75.00</strong>
-														<!--增加预售金额显示 end-->
-														<span class="ml20"> x1 </span> <span
-															class="ml20 p-inventory" skuid="679773">有货</span>
-
-													</div>
-													<i class="p-icon p-icon-w"></i><span class="ftx-04">7天无理由退货</span>
-												</div>
-												<div class="clr"></div>
-												<!-- 京券和东券显示 -->
-
-												<!-- 延保显示 -->
-											</div>
+												<strong> </strong>
+											</div>											
 										</div>
-										<!--满赠套装结束-->
+
+
 									</div>
-									<!--goods-list 结束-->
 									<div class="dis-modes">
-										<!--购物车单品商品-->
-										<!--一般套装商品-->
-										<!--满返套装商品-->
-										<!--满赠套装商品-->
-										<!--配送方式-->
-										<!--以下为京东配送方式-->
-										<!--配送方式-->
-										<!--配送方式-->
+
 										<div class="mode-item mode-tab">
 											<h4>
 												配送方式：（<a id="jd-goods-item" class="ftx-05 alink"
@@ -337,21 +280,12 @@
 										class="price" id="warePriceId" v="79.9">￥79.90</em>
 								</div>
 								<div class="list">
-									<span>返现：</span> <em class="price" id="cachBackId" v="0">
-										-￥0.00</em>
-								</div>
-								<div class="list">
 									<span>运费：</span> <em class="price" id="freightPriceId"><font
 										color="#000000"> ￥0.00</font></em>
 								</div>
 								<div style="display: block;" class="list" id="showCouponPrice">
 									<span>商品优惠：</span><em class="price" id="couponPriceId">-￥0.00</em>
 								</div>
-								<div style="display: block;" class="list" id="showFreeFreight">
-									<span>运费优惠：</span><em class="price" id="freeFreightPriceId">
-										-￥0.00</em>
-								</div>
-
 								<div class="list">
 									<span>应付总额：</span> <em class="price" id="sumPayPriceId">￥79.90</em>
 								</div>
@@ -483,6 +417,79 @@
 						$('#consignee_edit_action a').html("Modify");
 					}
 				});
+				
+				//处理地址部分
+				$('#saveConsigneeTitleDiv').click(function(){
+					if($('#use-new-address').hasClass('item-selected'))
+					{
+						alert('new address');
+					}
+				});
+				
+				//读取购物车内容
+				
+				var total = 0;
+				var count = 0;
+				function cartReload()
+				{
+					$.User.GetCart(function(json){
+						
+						var itemcount = json.length -1;
+						var total =json[itemcount].totalPrice;
+						//alert(JSON.stringify(json));
+						var obj = $('.cart-detail .banner');
+						count = itemcount;
+						for (var i in json)
+						{		
+							if(json[i].totalPrice)
+								total = json[i].totalPrice;
+							if(json[i].t_selected == "1")
+							{
+							
+								if(i == itemcount)
+									break;
+								var mediaId = json[i].fk_mediaId;
+								var id = json[i].t_pkId;
+								var pdid = json[i].fk_product;
+	
+								$('.goods-list h4').after(''+
+								'<div class="goods-item goods-item-extra" attid="'+pdid+'">'+
+									'<div class="p-img" media="'+mediaId+'">'+
+										'<a target="_blank" href="/product/'+id+'.html"><img'+
+											' src=""	alt=""></a>'+
+									'</div>'+
+									'<div class="goods-msg">'+
+										'<div class="p-name">'+
+											'<a href="/product/'+id+'.html" target="_blank">'+
+												json[i].t_descr+ '</a>'+
+										'</div>'+
+										'<div class="p-price">'+
+											'<strong>'+json[i].t_price+'</strong> <span class="ml20"> x'+json[i].t_total+' </span> <span'+
+												'class="ml20 p-inventory" skuid="679773">In Stock</span>'+
+										'</div>'+
+									'</div>'+
+									'<div class="clr"></div>'+
+								'</div>'		
+								);
+								
+								
+								$.Media.Load(mediaId, function(json1){
+									//alert(JSON.stringify(json));	
+									$('.goods-item .p-img').each(function(){
+										if(parseInt($(this).attr('media')) == parseInt(json1[0].fk_mediaId))
+										{
+											$(this).find('a').find('img').attr('src', '/'+json1[0].t_url);							
+										}
+									});
+								});
+							}
+						}
+						$('.statistic #warePriceId').html('$'+total);
+						$('.statistic .ftx-01').html(count);
+					});
+				}
+				cartReload();
+				
 			});
 		</script>
 </body>

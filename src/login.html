@@ -54,7 +54,8 @@
 				$(this).css('border', '1px solid #ccc');
 			});
 			$('#loginsubmit').click(function() {
-					$.User.Auth($('#loginname').val(), hex_md5($('#nloginpwd').val()));
+				//alert($.public.getQueryString('url'));
+				$.User.Auth($('#loginname').val(), hex_md5($('#nloginpwd').val()), $.public.getQueryString('url'));
 			});
 			$.key.enter(function(){
 				$('#loginsubmit').click()
