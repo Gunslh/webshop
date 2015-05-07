@@ -103,5 +103,12 @@
 		if($(this).attr('link'))
 			window.location.href = $(this).attr('link');
 	});
-	
+	function conturyInit() {
+		$('.contury').each(function() {
+			var html = '<option opid=0>NotSet</option>'
+			html += '<option opid=1>China</option>'
+			$(this).html(html);
+		});
+	}
+	conturyInit();
 })(jQuery);

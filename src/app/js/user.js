@@ -233,10 +233,34 @@
 				}
 			});
 		},
-		AddressAdd(){
+		AddressAdd:function(){
 			var data = 'id='+id;
 			$.ajax({
-				url : '/customer/CartAction/SetCheck',
+				url : '/customer/CartAction/AddressAdd',
+				type : 'post',
+				data : data,// form.serialize(),
+				cache : false,
+				dataType : "json",
+				async:false,
+				error : function(XMLHttpRequest, textStatus,
+						errorThrown) {
+					alert("服务器无响应! status: " + textStatus);
+				},
+				success : function(json, textStatus) {		
+					//alert(JSON.stringify(json));
+					switch (json['status']) {
+					case 0:		
+						break;
+					default:
+						break;
+					}
+				}
+			});
+		},
+		AddressDel:function(id){
+			var data = 'id='+id;
+			$.ajax({
+				url : '/customer/CartAction/AddressDel',
 				type : 'post',
 				data : data,// form.serialize(),
 				cache : false,

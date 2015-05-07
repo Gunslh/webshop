@@ -129,8 +129,17 @@ class UserAction extends CustomerBaseAction
     	$state = isset($_POST["state"])?$_POST["state"]:null;
     	$city = isset($_POST["city"])?$_POST["city"]:null;
     	$usrid = $this->userInfo[0]->t_pkid;
+    	$entity = new AddressEntity();
     	echo $usrid;
     }
-    
+    public function addressDel()
+    {
+    	$id = isset($_POST["id"])?$_POST["id"]:null;
+    	$entity = new AddressEntity();
+    	$usrid = $this->userInfo[0]->t_pkid;
+    	if($id) 
+    		$entity->del($id);
+    	echo $usrid;
+    }
 }
 ?>
