@@ -29,54 +29,18 @@
 							<div class="sbox">
 								<div class="s-content">
 									<p class="show">
-										胡秋 &nbsp; 189****7357 &nbsp; 189****7357 &nbsp; <br> 四川
-											成都市 双流县 万安镇 &nbsp; 白沙镇成都双流县麓山大道二段19号雅居乐花园62栋701 
+										
 									</p>
 									<div class="form">
 										<div id="consignee-list" name="consignee-list">
-											<div class="item" index="consignee_index_1">
-												<input class="hookbox" type="radio" attr="1"> <label
-													for="consignee_radio_26377362"> <b>胡秋</b>&nbsp;
-														四川成都市双流县万安镇白沙镇成都双流县麓山大道二段19号雅居乐花园62栋701 &nbsp; 189****7357
-														&nbsp;
-												</label> <span class="item-action"> <a
-														onclick="setAllDefaultAddress('26377362')" href="#none">Default</a>
-														<a href="#none" onclick="show_ConsigneeDetail('26377362')">Edit</a>
-														&nbsp; <a href="#none"
-														onclick="delete_Consignee('26377362')">Delete</a>&nbsp;
-												</span>
-											</div>
-											<div class="item" index="consignee_index_1">
-												<input class="hookbox" type="radio" attr="2"> <label
-													for="consignee_radio_26377362"> <b>胡秋</b>&nbsp;
-														四川成都市双流县万安镇白沙镇成都双流县麓山大道二段19号雅居乐花园62栋701 &nbsp; 189****7357
-														&nbsp;
-												</label> <span class="item-action"> <a
-														onclick="setAllDefaultAddress('26377362')" href="#none">设为默认地址</a>
-														<a href="#none" onclick="show_ConsigneeDetail('26377362')">编辑</a>
-														&nbsp; <a href="#none"
-														onclick="delete_Consignee('26377362')">删除</a>&nbsp;
-												</span>
-											</div>
-											<div class="item" index="consignee_index_1">
-												<input class="hookbox" type="radio" attr="3"> <label
-													for="consignee_radio_26377362"> <b>胡秋</b>&nbsp;
-														四川成都市双流县万安镇白沙镇成都双流县麓山大道二段19号雅居乐花园62栋701 &nbsp; 189****7357
-														&nbsp;
-												</label> <span class="item-action"> <a
-														onclick="setAllDefaultAddress('26377362')" href="#none">设为默认地址</a>
-														<a href="#none" onclick="show_ConsigneeDetail('26377362')">编辑</a>
-														&nbsp; <a href="#none"
-														onclick="delete_Consignee('26377362')">删除</a>&nbsp;
-												</span>
-											</div>
+
 										</div>
 
 										<!--更多常用收货人--->
 										<div class="address-list">
 											<div class="inner group">
 												<div id="select-more" class="select-expand">
-													<span onclick="open_MoreConsignee()">More Address</span><s></s>
+													<span >More Address</span><s></s>
 												</div>
 											</div>
 										</div>
@@ -84,77 +48,67 @@
 
 										<!---详细收货人信息表单--->
 										<div class="item" id="use-new-address">
-											<a name="editConsignee"></a> <input class="hookbox"
-												name="consignee_radio" type="radio" attr="new"> <label
-												for="consignee_radio_new">New Address</label><span
-												id="addNumLimitNote" class="status error"
-												style="display: none">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-													当前地址数量已达上限，若要继续添加新地址，请先删除部分收货地址。</span>
+											<a name="editConsignee"></a> 
+											<input class="hookbox" name="consignee_radio" type="radio" attr="new"> 
+											<labelfor="consignee_radio_new">New Address</label>
 										</div>
 										<form>
 											<div class="consignee-form"
 												style="padding-left: 12px; display: none;">
 
-															<div class="list" id="name_div">
-																<span class="label"><em>*</em>Your Name：</span>
-																<div class="field">
-																	<input class="textbox" id="consignee_name"
-																		name="consigneeParam.name" maxlength="20" type="text">
-																</div>
-																<span class="status error" id="name_div_error"></span>
-															</div>
-															<div class="list" id="area_div">
-																<span class="label"><em>*</em>Country：</span>
-																<div class="field">
-																	<span id="span_area"> <span id="span_province">
-																			<select id="country-select" class="contury" style="width: 145px; height: 26px;">
-																		</select>
-																	</span>
-																	
-																</div>
-															</div>
-															<div class="list">
-																<span class="label"><em>*</em>State：</span>
-																<div class="field">
-																	<span class="fl selected-address" id="areaNameTxt"></span>
-																	<input class="textbox" id="State" type="text"></input>
-																</div>
-															</div>
-															<div class="list">
-																<span class="label"><em>*</em>City</span>
-																<div class="field">
-																	<span class="fl selected-address" ></span>
-																	<input class="textbox" id="City" type="text"></input>
-																</div>
-															</div>
-															<div class="list" >
-																<span class="label"><em>*</em>Street</span>
-																<div class="field">
-																	<span class="fl selected-address" id="areaNameTxt"></span>
-																	<input class="textbox" id="Street" type="text"></input>
-																</div>
-															</div>
-															<div class="list" id="call_div">
-																<span class="label"><em>*</em>Telephone：</span>
-																<div class="field">
-																		<input class="textbox" id="mobile" maxlength="11" value="" type="text"> </input>
-																	<span class="status error" id="call_div_error"></span>
-																</div>
-															</div>
+												<div class="list" id="name_div">
+													<span class="label"><em>*</em>Your Name：</span>
+													<div class="field">
+														<input class="textbox" id="consignee_name"
+															name="consigneeParam.name" maxlength="20" type="text">
+													</div>
+													<span class="status error" id="name_div_error"></span>
+												</div>
+												<div class="list" id="area_div">
+													<span class="label"><em>*</em>Country：</span>
+													<div class="field">
+														<span id="span_area"> <span id="span_province">
+																<select id="country-select" class="contury" style="width: 145px; height: 26px;">
+															</select>
+														</span>
+														
+													</div>
+												</div>
+												<div class="list">
+													<span class="label"><em>*</em>State：</span>
+													<div class="field">
+														<span class="fl selected-address" id="areaNameTxt"></span>
+														<input class="textbox" id="State" type="text"></input>
+													</div>
+												</div>
+												<div class="list">
+													<span class="label"><em>*</em>City：</span>
+													<div class="field">
+														<span class="fl selected-address" ></span>
+														<input class="textbox" id="City" type="text"></input>
+													</div>
+												</div>
+												<div class="list" >
+													<span class="label"><em>*</em>Street：</span>
+													<div class="field">
+														<span class="fl selected-address" id="areaNameTxt"></span>
+														<input class="textbox" id="Street" type="text"></input>
+													</div>
+												</div>
+												<div class="list" id="call_div">
+													<span class="label"><em>*</em>Telephone：</span>
+													<div class="field">
+															<input class="textbox" id="mobile" maxlength="11" value="" type="text"> </input>
+														<span class="status error" id="call_div_error"></span>
+													</div>
+												</div>
 											</div>
 										</form>
 										<div class="form-btn group">
-											<a href="#none" class="btn-submit" onclick="save_Consignee()"><span
+											<a href="#none" class="btn-submit"><span
 												id="saveConsigneeTitleDiv">Save Selection</span></a>
-											<div class="loading loading-1" style="display: none">
-												<b></b>正在提交信息，请等待！
-											</div>
 										</div>
-
-
 									</div>
-
-
 								</div>
 							</div>
 						</div>
@@ -171,14 +125,14 @@
 							<div class="payment-list" id="">
 								<div class="list-cont">
 									<ul id="payment-list">
-										<li style="cursor: pointer;" onclick="save_Pay(1);">
+										<li style="cursor: pointer;" >
 											<div class="payment-item item-selected online-payment"
 												for="pay-method-1" payname="货到付款" payid="1">
 												<b></b> Cheque<span class="qmark-icon qmark-tip"
 													data-tips="送货上门后再收款，支持现金、POS机刷卡、支票支付 <a href='http://help.jd.com/help/distribution-768-2-2813-2863-0-1410707152669.html' target='_blank' class='ftx-05'>查看服务及配送范围</a>"></span>
 											</div>
 										</li>
-										<li style="cursor: pointer;" onclick="save_Pay(1);">
+										<li style="cursor: pointer;">
 											<div class="payment-item" for="pay-method-1" payname="货到付款"
 												payid="1">
 												<b></b> PayPal<span class="qmark-icon qmark-tip"
@@ -341,6 +295,7 @@
 		<script src="/app/js/templates.js"></script>
 		<script src="/app/js/order.js"></script>
 		<script src="/app/js/ui.js"></script>
+		<script src="/app/js/user.js"></script>
 		<script type="text/javascript">
 			$(function() {
 				$.template.loadHead();
@@ -349,7 +304,7 @@
 				$.template.loadMenuBanner($(".index-menu"));
 				$.template.loadFoot($(".footer"));
 
-				$('.hookbox').change(
+				$('.hookbox').live ("click",
 						function() {
 							var attr = $(this).attr('attr');
 							$('.hookbox').each(
@@ -407,23 +362,149 @@
 								$('.consignee-form').css('display', 'none');
 							//hook.attr("checked",true);
 						});
+				
+				//处理地址部分
+				function addressLoad()
+				{
+					$.public.mask(true);
+					var addrList = $.User.AddressLoad();
+					var obj = $('#consignee #consignee-list');
+					var html = '';
+					var def = -1;
+					//alert(JSON.stringify(addrList));
+					obj.html("");
+					for (var i in addrList)
+					{
+						html += ''+
+							'<div class="item" index="consignee_index_1">'+
+									'<input class="hookbox" type="radio" attr="'+addrList[i].t_pkId+'"> <label'+
+									'for="consignee_radio_26377362"> <b>'+addrList[i].t_name+'</b>&nbsp;'+
+										addrList[i].t_country+' '+addrList[i].t_state+' '+addrList[i].t_city+' '+addrList[i].t_street+' &nbsp; '+addrList[i].t_phone+
+										'&nbsp;</label> '+
+								'<span class="item-action"> '+
+										'<a href="#none" class="default_btn">Default</a>'+
+										//'<a href="#none" class="edit_btn">Edit</a>&nbsp;'+
+										' <a href="#none" class="del_btn" >Delete</a>&nbsp;'+
+								'</span>'+
+							'</div>';
+						if(parseInt(addrList[i].isDefault) == 1)
+						{
+							$('#consignee .show').html(addrList[i].t_name+' &nbsp; '+ addrList[i].t_phone +'&nbsp; <br>'+
+									addrList[i].t_country+' '+addrList[i].t_state+' '+addrList[i].t_city+' '+addrList[i].t_street+' &nbsp; ');
+							def = addrList[i].t_pkId;
+						}
+						//alert(JSON.stringify(addrList[i]));
+					}
+					obj.html(html);		
+					$('.hookbox').each(function(){
+						if(parseInt($(this).attr('attr')) == def)
+							$(this).click();
+							
+					})
+					$.public.mask(false);
+					//setup default address
+				}
+				addressLoad();
 				$('#consignee_edit_action a').click(function() {
-					if ($(this).html() == "Modify") {
+					if ($(this).html() == "Modify") {						
 						$(".s-content .form").show();
 						$(".s-content .show").hide();
 						$('#consignee_edit_action a').html("Save");
+						
 					} else if ($(this).html() == "Save") {
 						$(".s-content .form").hide();
 						$(".s-content .show").show();
 						$('#consignee_edit_action a').html("Modify");
 					}
 				});
-				
-				//处理地址部分
+				//设置默认地址
+				$('.item .default_btn').live("click",function(){
+					$.User.AddressDefault($(this).parent('span').parent().prev().attr('attr'));
+					addressLoad();
+				});
+				$('.item .edit_btn').live("click",function(){
+					
+				});
+				//删除按钮
+				$('.item .del_btn').live("click",function(){
+					//alert($(this).parent('span').parent().prev().attr('attr'));
+					$.User.AddressDel($(this).parent('span').parent().prev().attr('attr'));
+					addressLoad();
+				});
+				function newAddressTest(){
+					if($.test.empty($('#consignee_name'), function(obj, ret , msg){
+							if (ret == false )
+							{ 
+								alert('Name need to be filled');
+								obj.focus();
+							}
+						}) == false){
+						return false;
+					};
+					
+					if($.test.empty($('#State'), function(obj, ret , msg){
+							if (ret == false )
+							{ 
+								alert('State need to be filled');
+								obj.focus();
+							}
+						})== false){
+						return false;
+					};
+					
+					if($.test.empty($('#City'), function(obj, ret , msg){
+							if (ret == false )
+							{ 
+								alert('City need to be filled');
+								obj.focus();
+							}
+						})== false){
+						return false;
+					};
+					
+					if($.test.empty($('#Street'), function(obj, ret , msg){
+							if (ret == false )
+							{ 
+								alert('Street need to be filled');
+								obj.focus();
+							}
+						})== false){
+						return false;
+					};
+					if($.test.empty($('#mobile'), function(obj, ret , msg){
+							if (ret == false )
+							{ 
+								alert('mobile need to be filled');
+								obj.focus();
+							}
+						})== false){
+						return false;
+					};
+					if($('#country-select option:selected').html() == 'NotSet')
+					{
+						alert('select a country');
+						return false;
+					}	
+					return true;
+				}
 				$('#saveConsigneeTitleDiv').click(function(){
 					if($('#use-new-address').hasClass('item-selected'))
 					{
-						alert('new address');
+						if (newAddressTest() == false) return;
+						var name = $('#consignee_name').val();
+						var conutry = $('#country-select option:selected').html();
+						var state = $('#State').val();
+						var city = $('#City').val();
+						var street = $('#Street').val();
+						var mobile = $('#mobile').val();
+						$.User.AddressAdd(name,conutry,state,city,street,mobile);
+						addressLoad();
+					}
+					else
+					{
+						$(".s-content .form").hide();
+						$(".s-content .show").show();
+						$('#consignee_edit_action a').html("Modify");
 					}
 				});
 				

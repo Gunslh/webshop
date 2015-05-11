@@ -48,11 +48,9 @@
 		empty:function(obj, cb)
 		{
 			if(obj.val() == ''){
-				cb(obj, true,"不能为空");
+				cb(obj, false,"not null");
 				return false;
 			}
-			else
-				cb(obj, false);
 			return true;
 		},
 		digital:function (obj, cb)

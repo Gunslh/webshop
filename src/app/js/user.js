@@ -233,10 +233,36 @@
 				}
 			});
 		},
-		AddressAdd:function(){
-			var data = 'id='+id;
+		AddressLoad:function(){		
+			var list = null;
 			$.ajax({
-				url : '/customer/CartAction/AddressAdd',
+				url : '/customer/UserAction/AddressLoad',
+				type : 'post',
+				data : false,// form.serialize(),
+				cache : false,
+				dataType : "json",
+				async:false,
+				error : function(XMLHttpRequest, textStatus,
+						errorThrown) {
+					alert("服务器无响应! status: " + textStatus);
+				},
+				success : function(json, textStatus) {		
+					
+					list = json['msg'];
+					switch (json['status']) {
+					case 0:		
+						break;
+					default:
+						break;
+					}
+				}
+			});
+			return list;
+		},
+		AddressAdd:function(name,country,state,city,street,telephone){
+			var data = 'name='+name+'&country='+country+'&state='+state+'&city='+city+'&street='+street+'&phone='+telephone;
+			$.ajax({
+				url : '/customer/UserAction/AddressAdd',
 				type : 'post',
 				data : data,// form.serialize(),
 				cache : false,
@@ -260,7 +286,31 @@
 		AddressDel:function(id){
 			var data = 'id='+id;
 			$.ajax({
-				url : '/customer/CartAction/AddressDel',
+				url : '/customer/UserAction/AddressDel',
+				type : 'post',
+				data : data,// form.serialize(),
+				cache : false,
+				dataType : "json",
+				async:false,
+				error : function(XMLHttpRequest, textStatus,
+						errorThrown) {
+					alert("服务器无响应! status: " + textStatus);
+				},
+				success : function(json, textStatus) {		
+					//alert(JSON.stringify(json));
+					switch (json['status']) {
+					case 0:		
+						break;
+					default:
+						break;
+					}
+				}
+			});
+		},
+		AddressDefault:function(id){
+			var data = 'id='+id;
+			$.ajax({
+				url : '/customer/UserAction/addressDefault',
 				type : 'post',
 				data : data,// form.serialize(),
 				cache : false,
