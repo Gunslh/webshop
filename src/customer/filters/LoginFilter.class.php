@@ -20,6 +20,7 @@ class LoginFilter extends BaseFilter
 			10=>'/customer/CartAction/watchCart',
 			11=>'/customer/actions/ProductSeekAction/getProductBySubId',
 			12=>'/customer/actions/ProductSeekAction/getProductCountBySubmenuId',
+			13=>'/customer/UserAction/registerCheck',
 			);
 	
 	private function whitelistFilter(BaseRequest $request){
