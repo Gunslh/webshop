@@ -9,9 +9,9 @@
 }
 .c-info
 {
-	background-color: #8C3CE1;
-	color: white;
-	
+	background: url("/images/categoryBanner.png") no-repeat scroll 0px -1px transparent;
+	width:1000px;
+	height:147px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	font-size: 18px;
@@ -26,18 +26,26 @@
 {
 	width:324px;
 	float:left;
-	color: #8C3CE1;
+	color: rgb(10,77,161);
 	min-height:50px;
+}
+.c-menu .c-title
+{
+	font-size:22px;
 }
 .liketext
 {
-	background-color: #8C3CE1;
-	color: white;
-	text-align: left;
+	background-color: #A5539B;
+	color: #FFF;
+	text-align: center;
 	text-indent: 5px;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	font-size: 28px;
+	font-size: 24px;
+	width: 260px;
+	margin-left: 30px;
+	border-radius: 1px;
+	box-shadow: 1px 1px 1px #A5539B;
 
 }
 .c-menu .menu
@@ -49,7 +57,7 @@
     background: url("/picture/arrow-left.gif") no-repeat scroll 0px -1px transparent;
     text-align: left;
 	margin-bottom: 20px;
-	font-size: 20px;
+	font-size: 18px;
 	cursor: pointer;
 	font-weight: bold;
 }
@@ -84,8 +92,7 @@
 .detail-container ul li
 {
 	float:left;
-	width:220px;
-	margin-left:5px;
+	width:233px;
 	margin-top:15px;
 }
 .detail-container .sale-item p
@@ -182,4 +189,35 @@
 	left: -120px;
 	top: 8px;
 	font-size: 18px;
+}
+.price_check ul
+{
+	margin:0px;
+	padding:0px;
+}
+.price_check ul li
+{
+    margin-left: 100px;
+    text-align: left;
+    width: 200px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.detail-text p
+{
+	padding:0px;
+	margin:0px;
+}
+.detail-text .dt-head
+{
+	font-size: 46px;
+	color: #A5539B;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.detail-text .dt-content
+{
+	font-size: 24px;
+	color: #A5539B;
+	text-align: left;
 }

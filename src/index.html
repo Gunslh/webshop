@@ -48,13 +48,7 @@
 	</div>
 	<div class="index-category">
 		<div class="cate-text">
-			<p>Let your imagination run riot by viewing our brilliant range of 
-			fancy dress costumes. MorphCostumes, formally known as Morphsuits, 
-			have the newest and coolest outfits - from superhero favourites 
-			like Spiderman and Ironman to our scarily good selection of Halloween
-			 costumes, perfect for the best party of the year. Stand out from the 
-			 rest of the crowd by choosing one of our terrifyingly realistic interactive 
-			 costumes, some with real life beating hearts!</p>
+			
 		</div>
 		<div class="cate-pics">
 			<ul>
@@ -177,13 +171,14 @@ $(function(){
 			}
 	});
 	test.show(); */
+	var shiftFactor = 5;
 	function shiftLeft()
 	{
 		shift = true;
 		var left = obj.css('left');
-		var newVal = parseInt(left) - 5;
+		var newVal = parseInt(left) - shiftFactor;
 		obj.css('left', newVal);
-		len -= 5;		
+		len -= shiftFactor;		
 
 		if(len > 0 )
 			setTimeout(shiftLeft, 5);
@@ -196,9 +191,9 @@ $(function(){
 		
 		shift = true;
 		var left = obj.css('left');		
-		var newVal = parseInt(left) + 5;		
+		var newVal = parseInt(left) + shiftFactor;		
 		obj.css('left', newVal);
-		len -= 5;	
+		len -= shiftFactor;	
 		if(len > 0 )
 			setTimeout(shiftRight, 5);
 		else

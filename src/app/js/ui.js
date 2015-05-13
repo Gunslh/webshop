@@ -48,11 +48,9 @@
 		empty:function(obj, cb)
 		{
 			if(obj.val() == ''){
-				cb(obj, true,"不能为空");
+				cb(obj, false,"not null");
 				return false;
 			}
-			else
-				cb(obj, false);
 			return true;
 		},
 		digital:function (obj, cb)
@@ -103,5 +101,12 @@
 		if($(this).attr('link'))
 			window.location.href = $(this).attr('link');
 	});
-	
+	function conturyInit() {
+		$('.contury').each(function() {
+			var html = '<option opid=0>NotSet</option>'
+			html += '<option opid=1>China</option>'
+			$(this).html(html);
+		});
+	}
+	conturyInit();
 })(jQuery);

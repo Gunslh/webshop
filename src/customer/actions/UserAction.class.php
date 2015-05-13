@@ -1,4 +1,5 @@
 <?php include_once dirname(__FILE__).'/../../common/entity/UserEntity.class.php';?>
+<?php include_once dirname(__FILE__).'/../../common/entity/AddressEntity.class.php';?>
 <?php
 class UserAction extends CustomerBaseAction
 {
@@ -122,15 +123,59 @@ class UserAction extends CustomerBaseAction
         }
         echo json_encode($json);     
     }
+    public function addressLoad()
+    {
+    	$json = new stdClass();
+    	$entity = new AddressEntity();
+    	 
+    	$list = $entity->getall($this->userInfo[0]->t_pkid);
+    	$json->msg = $list;
+    	$json->status = ErrorCode::E_SUCCESS;
+    	echo json_encode($json);
+    }
     public function addressAdd()
     {
-    	$usr = isset($_POST["name"])?$_POST["name"]:null;
-    	$country = isset($_POST["country"])?$_POST["country"]:null;
-    	$state = isset($_POST["state"])?$_POST["state"]:null;
-    	$city = isset($_POST["city"])?$_POST["city"]:null;
-    	$usrid = $this->userInfo[0]->t_pkid;
-    	echo $usrid;
+    	$dao = new stdClass();
+    	$json = new stdClass();
+    	$dao->t_name = isset($_POST["name"])?$_POST["name"]:null;
+    	$dao->t_country = isset($_POST["country"])?$_POST["country"]:null;
+    	$dao->t_state = isset($_POST["state"])?$_POST["state"]:null;
+    	$dao->t_city = isset($_POST["city"])?$_POST["city"]:null;
+    	$dao->t_street = isset($_POST["street"])?$_POST["street"]:null;
+    	$dao->t_phone = isset($_POST["phone"])?$_POST["phone"]:null;
+    	$dao->fk_usrId = $this->userInfo[0]->t_pkid;
+    	$entity = new AddressEntity();
+    	
+    	$entity->add($dao);
+    	
+    	$json->status = ErrorCode::E_SUCCESS;
+        $json->msg = ErrorCode::getErrDesc(ErrorCode::E_SUCCESS);
+        
+        echo json_encode($json);
     }
+    public function addressDel()
+    {
+    	$json = new stdClass();
+    	$id = isset($_POST["id"])?$_POST["id"]:null;
+    	$entity = new AddressEntity();
+    	$usrid = $this->userInfo[0]->t_pkid;
+    	$entity->del($id);
+    	$json->status = ErrorCode::E_SUCCESS;
+        $json->msg = ErrorCode::getErrDesc(ErrorCode::E_SUCCESS);
+        
+        echo json_encode($json);
+    }
+    public function addressDefault()
+    {
+    	$json = new stdClass();
+    	$id = isset($_POST["id"])?$_POST["id"]:null;
+    	$entity = new AddressEntity();
+    	$usrid = $this->userInfo[0]->t_pkid;
+    	$entity->setDefault($usrid,$id);
+    	$json->status = ErrorCode::E_SUCCESS;
+    	$json->msg = ErrorCode::getErrDesc(ErrorCode::E_SUCCESS);
     
+    	echo json_encode($json);
+    }
 }
 ?>

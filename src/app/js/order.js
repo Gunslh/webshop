@@ -42,6 +42,7 @@
 		//alert(li.height()+"="+ li.width());
 		tip.css('top', X + li.height());
 		tip.css('left', Y + li.width()-29);
+		
 		tipInner.html($(this).attr('data-tips'));
 		tip.show();
 	},
@@ -65,7 +66,7 @@
 		//alert($(this).height()+"="+ $(this).width());
 		tip.css('top', X + $(this).height());
 		tip.css('left', Y + $(this).width()-29);
-		$().html($(this).attr('data-tips'));
+		tipInner.html($(this).attr('data-tips'));
 		tip.show();
 	},
 	function(){

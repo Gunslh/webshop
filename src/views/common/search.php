@@ -102,7 +102,7 @@ $(function(){
 </script>
 
 <div class="d-left left">
-	<p>FREE SHIPPING ON ORDER</p>
+	
 </div>
 <div class="left d-middle">
 	<ul>

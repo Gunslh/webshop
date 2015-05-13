@@ -26,8 +26,8 @@ img
 .index-search .d-left
 {
 	height:56px;
-	width:250px;
-	background:url('/images/world.gif') no-repeat 0px 0px;
+	width:244px;
+	background:url('/images/world.png') no-repeat 0px 0px;
 	padding-left: 54px;
 	
 }
@@ -379,8 +379,8 @@ h4 {
 .index-adv .shift
 {
 	margin-left: -40px;
-	width:700px;
-	height:400px;
+	width:780px;
+	height:420px;
 	position: relative;
 }
 .sub-menu
@@ -395,6 +395,11 @@ h4 {
 .super-link:hover
 {
 	color:red;
+}
+.shift ul li img
+{
+	height: 394px;
+	width: 732px;
 }
 .sub-menu ul
 {
@@ -448,13 +453,12 @@ h4 {
 }
 .index-adv .fix
 {
-	margin-left:10px;
-	width:300px;
+	width:280px;
 }
 .index-adv .fix ul li
 {
 	width: 220px;
-	height: 78px;
+	height: 81px;
 	border: 3px solid #666;
 	margin-bottom: 15px;
 	position: relative;
@@ -509,9 +513,15 @@ h4 {
 
 .index-category .cate-text,.index-category .cate-pics
 {
-	width: 950px;
+	
+	width: 1011px;
+	
 }
-
+.index-category .cate-text
+{
+	height:338px;
+	background:url('/images/welcome.png') no-repeat 0px 0px;
+}
 .cate-text p
 {
 	margin:0px;
@@ -552,8 +562,9 @@ h4 {
 {
 	width:900px;
 	position:relative;
-	height: 330px;
+	height: 360px;
 	overflow: hidden;
+	margin-left: 50px;
 }
 .index-hotsale ul li
 {
@@ -617,15 +628,15 @@ h4 {
 }
 .index-vip
 {
-	height: 524px;
+	height: 526px;
 	background: url("../../images/vip.jpg");
 }
 
 .left-arrow
 {
 	position: absolute;
-	top: 25%;
-	left: -10%;
+	top: 35%;
+	left: 0%;
 	width: 60px;
 	height: 85px;
 	cursor: pointer;
@@ -634,8 +645,8 @@ h4 {
 .right-arrow
 {
 	position: absolute;
-	top: 25%;
-	right: 0%;
+	top: 35%;
+	right: 2%;
 	width: 60px;
 	height: 85px;
 	cursor: pointer;
