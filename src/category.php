@@ -25,9 +25,14 @@ $cats = $entity->FindById($catId);
 	<div class="index-menu">
 	</div>
 	<div class="category-container">
-		<div class="c-info"><p><?php echo $cats->t_cateDescr?></p></div>
+		<div class="c-info">
+			<p>
+				<?php //echo $cats->t_cateDescr?>
+			</p>
+		</div>
 		<div class="c-body">
 			<div class="c-menu">
+				<p class="liketext">Classification</p>
 				<ul class="menu">
 					<li>
 						<p class="c-title">ZENTAI</p>
@@ -50,43 +55,56 @@ $cats = $entity->FindById($catId);
 						</div>
 					</li>
 				</ul>
-				<p class="liketext">You May Like</p>
-					<ul class="maylikes">
-						<li>
-						<div class="sale-item">
-							<img src="/images/sale-1.jpg"></img>
-							<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
-							<p class="price">$65</p>
-						</div>
-						</li>
-						<li>
-							<div class="sale-item">
-								<img src="/images/sale-2.jpg"></img>
-								<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
-								<p class="price">$65</p>
-							</div>
-						</li>
-						<li>
-							<div class="sale-item">
-								<img src="/images/sale-3.jpg"></img>
-								<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
-								<p class="price">$65</p>
-							</div>
-						</li>
-						<li>
-							<div class="sale-item">
-								<img src="/images/sale-4.jpg"></img>
-								<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
-								<p class="price">$65</p>
-							</div>
-						</li>
+				<p class="liketext">By Price</p>
+<!-- 					<ul class="maylikes"> -->
+<!-- 						<li> -->
+<!-- 						<div class="sale-item"> -->
+<!-- 							<img src="/images/sale-1.jpg"></img> -->
+<!-- 							<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p> -->
+<!-- 							<p class="price">$65</p> -->
+<!-- 						</div> -->
+<!-- 						</li> -->
+<!-- 						<li> -->
+<!-- 							<div class="sale-item"> -->
+<!-- 								<img src="/images/sale-2.jpg"></img> -->
+<!-- 								<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p> -->
+<!-- 								<p class="price">$65</p> -->
+<!-- 							</div> -->
+<!-- 						</li> -->
+<!-- 						<li> -->
+<!-- 							<div class="sale-item"> -->
+<!-- 								<img src="/images/sale-3.jpg"></img> -->
+<!-- 								<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p> -->
+<!-- 								<p class="price">$65</p> -->
+<!-- 							</div> -->
+<!-- 						</li> -->
+<!-- 						<li> -->
+<!-- 							<div class="sale-item"> -->
+<!-- 								<img src="/images/sale-4.jpg"></img> -->
+<!-- 								<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p> -->
+<!-- 								<p class="price">$65</p> -->
+<!-- 							</div> -->
+<!-- 						</li> -->
 						
+<!-- 					</ul> -->
+				<div class='price_check'>
+					<ul >
+						<li><input type="radio"></input> 0  - 20 $</li>
+						<li><input type="radio"></input> 20 - 50  $</li>
+						<li><input type="radio"></input> 50 - 100 $</li>
+						<li><input type="radio"></input> 100+ $</li>
 					</ul>
+				</div>
+				
 
 			</div>
 			<!-- finish menu -->
 			<div class="c-detail">
 				<div class="detail-container">
+					<div class='detail-text'>
+						<p class='dt-head'><?php echo $cats->t_cateName?></p>
+						<p class='dt-content'><?php echo $cats->t_cateDescr?></p>
+					</div>
 					<ul class="pd-list">				
 					</ul>
 					<div class="clear"></div>

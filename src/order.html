@@ -126,17 +126,15 @@
 								<div class="list-cont">
 									<ul id="payment-list">
 										<li style="cursor: pointer;" >
-											<div class="payment-item item-selected online-payment"
-												for="pay-method-1" payname="货到付款" payid="1">
+											<div class="payment-item item-selected online-payment" payid="1">
 												<b></b> Cheque<span class="qmark-icon qmark-tip"
-													data-tips="送货上门后再收款，支持现金、POS机刷卡、支票支付 <a href='http://help.jd.com/help/distribution-768-2-2813-2863-0-1410707152669.html' target='_blank' class='ftx-05'>查看服务及配送范围</a>"></span>
+													data-tips=""></span>
 											</div>
 										</li>
 										<li style="cursor: pointer;">
-											<div class="payment-item" for="pay-method-1" payname="货到付款"
-												payid="1">
+											<div class="payment-item" payid="2">
 												<b></b> PayPal<span class="qmark-icon qmark-tip"
-													data-tips="即时到帐，支持绝大数银行借记卡及部分银行信用卡 <a href='http://www.jd.com/help/onlinepay.aspx' target='_blank' class='ftx-05'> 查看银行及限额</a>"></span>
+													data-tips=""></span>
 											</div>
 										</li>
 									</ul>
@@ -144,10 +142,10 @@
 							</div>
 						</div>
 						<div class="step-tit">
-							<h3>送货清单</h3>
+							<h3>Delivery List</h3>
 							<div class="extra-r">
 								<a href="cart.html" id="cartRetureUrl"
-									class="return-edit ftx-05">返回修改购物车</a>
+									class="return-edit ftx-05">Back to Cart</a>
 							</div>
 						</div>
 						<div class="step-cont" id="skuPayAndShipment-cont">
@@ -169,42 +167,39 @@
 
 										<div class="mode-item mode-tab">
 											<h4>
-												配送方式：（<a id="jd-goods-item" class="ftx-05 alink"
-													href="#none">对应商品</a>）
+												Method：
 											</h4>
 											<div class="mode-tab-nav">
 												<ul>
-													<li class="mode-tab-item curr" id="jd_shipment_item"
-														onclick="doSwithTab('pay')"><span
+													<li class="mode-tab-item curr" id="free"><span class="m-txt">Free<i
+															class="qmark-icon qmark-tip"
+															data-tips="Fast by need payment"></i></span><b></b>
+													</li>
+													<li class="mode-tab-item " id="ems"><span
 														id="jdShip-span-tip" class="m-txt">EMS<i
 															class="qmark-icon qmark-tip"
-															data-tips="由京东公司负责配送，速度很快，还接受上门刷卡付款服务"></i></span><b></b></li>
-													<li class="mode-tab-item" id="pick_shipment_item"
-														onclick="doSwithTab('picksite')"><span class="m-txt">TNT<i
+															data-tips="Free But speed low"></i></span><b></b></li>
+													<li class="mode-tab-item" id="tnt" ><span class="m-txt">TNT<i
 															class="qmark-icon qmark-tip"
-															data-tips="自提时付款，支持现金、POS刷卡、支票支付<a href='http://help.jd.com/help/question-64.html' target='_blank' class='ftx-05'>查看自提流程</a>"></i></span><b></b>
+															data-tips="Fast by need payment"></i></span><b></b>
 													</li>
 												</ul>
 											</div>
 											<div class="mode-tab-con ui-switchable-panel-selected"
 												id="jd_shipment">
 												<ul class="mode-list">
-													<li>
+													<!-- <li>
 														<div class="fore1" id="payment_name_div">
 															<span class="ftx-03">付款方式：</span>现金
 														</div>
 														<div class="fore2" onclick="doEditPayway('0')">
 															<a href="#none" class="ftx-05 payment-edit">修改</a>
 														</div>
-													</li>
+													</li> -->
 
 													<li>
 														<div class="fore1" id="jd_shipment_calendar_date">
-															<span class="ftx-03">配送时间：</span>预计&nbsp;3月28日[周六]&nbsp;09:00-15:00&nbsp;送达
-														</div>
-														<div class="fore2" id="jdshipdate_eidt_id"
-															onclick="doEdit311Time()">
-															<a href="#none" class="ftx-05">修改</a>
+															<span class="ftx-03 timecost">TimeCost： 60 days</span>
 														</div>
 													</li>
 												</ul>
@@ -212,17 +207,13 @@
 
 
 										</div>
-										<!--以下为京东大家电配送-->
 
-										<!--以下为京东第三方配送-->
-										<!--以下为第三方配送-->
-										<!--如果是SOP快递或者是京东中小件商品，但是不支持配送，则采用快递运输-->
 									</div>
 									<!--dis-modes 结束-->
 									<div class="clr"></div>
 									<div class="freight-cont">
 										<strong class="ftx-01" style="color: #666"
-											freightbyvenderid="0" popjdshipment="false">免运费</strong>
+											freightbyvenderid="0" popjdshipment="false"></strong>
 									</div>
 								</div>
 							</div>
@@ -230,18 +221,18 @@
 						<div class="order-summary">
 							<div class="statistic fr">
 								<div class="list">
-									<span><em class="ftx-01">1</em> 件商品，总商品金额：</span> <em
-										class="price" id="warePriceId" v="79.9">￥79.90</em>
+									<span><em class="ftx-01">1</em> Proucts, Total Gross：</span> <em
+										class="price" id="warePriceId" v="79.9">0</em>
 								</div>
 								<div class="list">
-									<span>运费：</span> <em class="price" id="freightPriceId"><font
-										color="#000000"> ￥0.00</font></em>
+									<span>Delivery：</span> <em class="price" id="freightPriceId"><font
+										color="#000000"> 0</font></em>
 								</div>
 								<div style="display: block;" class="list" id="showCouponPrice">
-									<span>商品优惠：</span><em class="price" id="couponPriceId">-￥0.00</em>
+									<span>Discount：</span><em class="price" id="couponPriceId">0</em>
 								</div>
 								<div class="list">
-									<span>应付总额：</span> <em class="price" id="sumPayPriceId">￥79.90</em>
+									<span>Total Payment：</span> <em class="price" id="sumPayPriceId">0</em>
 								</div>
 							</div>
 							<div class="clr"></div>
@@ -257,16 +248,12 @@
 						<div class="sticky-wrap">
 							<div class="inner">
 								<button type="submit" class="checkout-submit btn-1"
-									id="order-submit" onclick="javascript:submit_Order();">
-									提交订单<b></b>
+									id="order-submit" style="font-size: 22px;">
+									Submit
 								</button>
-								<span class="total">应付总额：<strong id="payPriceId">￥79.90</strong>
+								<span class="total">Total Payment：<strong id="payPriceId">0</strong>
 
 								</span> <span id="checkCodeDiv"></span>
-								<div class="checkout-submit-tip" id="changeAreaAndPrice"
-									style="display: none;">由于价格可能发生变化，请核对后再提交订单</div>
-								<div style="display: none" id="factoryShipCodShowDivBottom"
-									class="dispatching">部分商品货到付款方式：先由京东配送“提货单”并收款，然后厂商发货。</div>
 							</div>
 							<span id="submit_message" style="display: none"
 								class="submit-error"></span>
@@ -508,10 +495,10 @@
 					}
 				});
 				
-				//读取购物车内容
-				
-				var total = 0;
+				//读取购物车内容				
+				var totalGross = 0;
 				var count = 0;
+				var delivery = 10;
 				function cartReload()
 				{
 					$.User.GetCart(function(json){
@@ -523,8 +510,9 @@
 						count = itemcount;
 						for (var i in json)
 						{		
-							if(json[i].totalPrice)
-								total = json[i].totalPrice;
+							if(json[i].totalPrice){
+								totalGross = json[i].totalPrice;
+							}
 							if(json[i].t_selected == "1")
 							{
 							
@@ -566,11 +554,40 @@
 								});
 							}
 						}
-						$('.statistic #warePriceId').html('$'+total);
+						//alert(parseInt(total)+parseInt(delivery));
+						payRefresh();
+						/* $('.statistic #warePriceId').html('$'+total);
+						$('#payPriceId, #sumPayPriceId').html('$'+total); */
 						$('.statistic .ftx-01').html(count);
 					});
 				}
+				function payRefresh()
+				{
+					//alert(parseInt(totalGross)+parseInt(delivery));
+					$('#freightPriceId').html('$'+delivery);
+					$('.statistic #warePriceId').html('$'+(parseInt(totalGross)));
+					$('#payPriceId, #sumPayPriceId').html('$'+(parseInt(totalGross)+parseInt(delivery)));
+				}
 				cartReload();
+				
+				//运费
+				$('#free').click(function(){
+					delivery = 0;
+					payRefresh();
+					$('.timecost').html('TimeCost： 60 days');
+				});
+				
+				$('#ems').click(function(){
+					delivery = 5;
+					payRefresh();
+					$('.timecost').html('TimeCost： 30 days');
+				});
+				$('#tnt').click(function(){
+					delivery = 10;
+					payRefresh();
+					$('.timecost').html('TimeCost： 7 days');
+				});
+				//alert(parseInt(totalGross)+parseInt(delivery));
 				
 			});
 		</script>

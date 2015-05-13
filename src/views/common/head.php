@@ -1,1 +1,1 @@
-		<img src="/images/title.gif"></img>
+		<a href="/"><img src="/images/title.gif"></img></a>

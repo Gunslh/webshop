@@ -1,16 +1,25 @@
 @CHARSET "UTF-8";
+.c-info
+{
+	background: url("/images/categoryBanner.png") no-repeat scroll 0px 0px transparent;
+	width:1000px;
+	height:147px;
+	margin-bottom: 30px;
+	font-size: 18px;
+}
 .special-options
 {
 	width:100%;
 	position: relative;
-	margin-bottom: 200px;
+	margin-bottom: 20px;
 }
 .special-options .op-banner
 {
 	width:1024px;
 	margin-left:0px;
 	height:40px;
-	background-color: #abbec1;
+	background-color: #8C3CE1;
+	margin-bottom: 10px;
 }
 
 .op-banner p
@@ -33,6 +42,7 @@
 .product-pic
 {
 	width:455px;
+	margin-left: 50px;
 }
 
 .product-pic .small
@@ -86,24 +96,24 @@
 .product-detail
 {
 	text-align: left;
-	width:550px;
+	width:500px;
 }
 
 .product-detail .pd-title
 {
-	font-size: 35px;
+	font-size: 26px;
 	font-weight: bold;
 	margin-bottom: 15px;
 }
 .product-detail .pd-price
 {
-	color:#650d0d;
-	font-size: 45px;
+	color:rgb(232,35,27);
+	font-size: 28px;
 	margin-bottom: 15px;
 }
 .product-detail .pd-size
 {
-	font-size: 30px;
+	font-size: 26px;
 	margin-bottom: 20px;
 }
 .size-form ul
@@ -115,8 +125,8 @@ padding: 0px;
 {
 	float:left;
 	
-	margin: 10px;
-	font-size: 20px;
+	margin: 7px;
+	font-size: 16px;
 }
 .size-name
 {
@@ -124,11 +134,11 @@ padding: 0px;
 }
 .option
 {
-	border: 2px solid #A2B3B8;
+	border: 2px solid black;
 	padding-left: 8px;
 	padding-right: 8px;
 	cursor:pointer;
-	background-color:#ece7f5;
+	
 }
 .option:hover
 {
@@ -148,7 +158,8 @@ padding: 0px;
 	margin:0px;
 	padding:0px;
 	float:left;
-	width:50%;
+	width: 40%;
+	margin-left: 20px;
 }
 .op-detail ul li
 {
@@ -187,12 +198,12 @@ padding: 0px;
 	color:black;
 	text-align: left;
 	margin: 0px;
-	font-size: 30px;
+	font-size: 26px;
 	font-weight: bold;
 	padding-top: 5px;
 	padding-left: 20px;
-	background-color: #617880;
 	width: 200px;
+	margin-bottom: 20px;
 }
 .size-banner .guid-text
 {
@@ -201,9 +212,10 @@ padding: 0px;
 }
 .size-banner img
 {
+	margin-left: 12px;
 	width:1000px;
 }
-.tb-btn-add a {
+.tb-btn-add a, .tb-btn-buynow a {
     width: 180px;
     color: #FFF;
     border-color: #F40;
@@ -220,6 +232,10 @@ padding: 0px;
 	border-radius: 2px;
     
 }
+.tb-btn-buynow a
+{
+	width:150px;	
+}
 .tb-btn-add i {
     font-size: 22px;
     font-weight: 400;
@@ -234,7 +250,7 @@ padding: 0px;
     margin-right: 10px;
 }
 
-.tb-btn-add
+.tb-btn-add, .tb-btn-buynow
 {
 	margin-top: 30px;
 	margin-left: 10px;

@@ -24,8 +24,10 @@ $product = $entity->FindById($productId);
 		<div class="index-menu">
 		</div>
 		
-		<div class="path">
-			WHERE YOU ARE
+		<div class="c-info">
+			<p>
+				<?php //echo $cats->t_cateDescr?>
+			</p>
 		</div>
 		
 		<div class="product-info">
@@ -45,7 +47,7 @@ $product = $entity->FindById($productId);
 				<div class="pd-size">SIZE:</div>
 				<div class="size-form">
 					<ul>
-						<li class="size-name">FEMALE:</li>
+						<li class="size-name">MALE:</li>
 						<li class="option" data="1">XS</li>
 						<li class="option" data="2">S</li>
 						<li class="option" data="3">M</li>
@@ -56,7 +58,7 @@ $product = $entity->FindById($productId);
 					</ul>
 					<div class="clear"></div>
 					<ul>
-						<li class="size-name">MALE:</li>
+						<li class="size-name">FEMALE:</li>
 						<li class="option" data="11">XS</li>
 						<li class="option" data="12">S</li>
 						<li class="option" data="13">M</li>
@@ -88,7 +90,10 @@ $product = $entity->FindById($productId);
 					</ul>
 					<div class="clear"></div>
 				</div>
-				<div class="tb-btn-add">
+				<div class="tb-btn-buynow left">					
+					<a>BUY NOW</a>
+				</div>
+				<div class="tb-btn-add left">
 					
 					<a><i class="iconfont">ŭ</i>
 					Add to Cart</a>
@@ -119,22 +124,95 @@ $product = $entity->FindById($productId);
 					<li><input type="checkbox" id="op-15"/><p>Feet Detachable(Under )(+$5.00)</p></li>
 				</ul>				
 			</div>
-			<div class="op-info">
-			Description:
-			</div>
+<!-- 			<div class="op-info"> -->
+<!-- 			Description: -->
+<!-- 			</div> -->
 			<div class="clear"></div>
 		</div>
 		
 		<div class="size-guide">
 			<div class="size-banner">
-				<p class="guid">SIZE GUIDE</p>
-				<p class="guid-text">aaaaaaaaaaaaaaaaaaaaaaaaa</p>
-				<img src="/images/size_table.gif"></img>
+				<p class="guid">More</p>
+				<img src="/images/size_table.png"></img>
 			</div>
 		</div>
 		
-		<div class="likes">
+		<div class="index-hotsale">
+		<p>HOT SALE</p>
+		<div class="sales-container">
+			<ul>
+				<li>
+					<div class="sale-item">
+						<img src="/images/sale-1.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+				<li>
+					<div class="sale-item">
+						<img src="/images/sale-2.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+				<li>
+					<div class="sale-item">
+						<img src="/images/sale-3.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+				<li>
+					<div class="sale-item">
+						<img src="/images/sale-4.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+				<li>
+					<div class="sale-item">
+						<img src="/images/sale-5.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+				<li>
+					<div class="sale-item">
+						<img src="/images/sale-6.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+				<li>
+					<div class="sale-item">
+						<img src="/images/sale-1.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+				<li>
+					<div class="sale-item">
+						<img src="/images/sale-2.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+				<li>
+					<div class="sale-item">
+						<img src="/images/sale-3.jpg"></img>
+						<p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+						<p class="price">$65</p>
+					</div>
+				</li>
+			</ul>
+			<div class="clear"></div>
+			
+			
 		</div>
+		<div class="left-arrow"></div>
+			<div class="right-arrow"></div>
+		<div class="clear"></div>
+	</div>
 		<div class="footer">
 		</div>
 	</div>
@@ -239,6 +317,67 @@ $(function(){
 		
 		$.User.LoginTest("/product/<?php echo $product->t_pkId?>.html");
 		//$.User.AddToCart(id, amonut, price);
+	});
+
+	//hotsale
+	var obj = null;
+	var shift = false;
+	var len = 0;
+	var shiftFactor = 5;
+	function shiftLeft()
+	{
+		shift = true;
+		var left = obj.css('left');
+		var newVal = parseInt(left) - shiftFactor;
+		obj.css('left', newVal);
+		len -= shiftFactor;		
+
+		if(len > 0 )
+			setTimeout(shiftLeft, 5);
+		else
+			shift = false;
+	}
+	
+	function shiftRight()
+	{
+		
+		shift = true;
+		var left = obj.css('left');		
+		var newVal = parseInt(left) + shiftFactor;		
+		obj.css('left', newVal);
+		len -= shiftFactor;	
+		if(len > 0 )
+			setTimeout(shiftRight, 5);
+		else
+			shift = false;
+	}
+	//热门
+	$('.index-hotsale .left-arrow').click(function(){
+		if(shift == true)
+			return;
+		obj = $('.sales-container ul');
+		var left = parseInt(obj.css('left'));
+
+		if(left <= -1800)
+			obj.css('left', 0);
+		
+		len = 915;
+
+		shiftLeft();
+	});
+	$('.index-hotsale .right-arrow').click(function(){
+		
+		if(shift == true)
+			return;
+		obj = $('.sales-container ul');
+		var left = obj.css('left');
+		len = 915;
+		
+
+		if(parseInt(left) >= 0)
+			obj.css('left', -1830);
+		
+		shiftRight();
 	});
 });
 </script>
