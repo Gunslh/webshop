@@ -7,7 +7,7 @@
 		
 		LoginTest:function(url){
 			$.ajax({
-				url : 'customer/UserAction/getSession',
+				url : '/customer/UserAction/getSession',
 				type : 'post',
 				data : false,// form.serialize(),
 				cache : false,
@@ -35,7 +35,7 @@
 		Auth:function(usrname, usrpwd, url){
 				var data = 'usrname=' + usrname + '&usrpwd=' + usrpwd;
 				$.ajax({
-					url : 'customer/UserAction/login',
+					url : '/customer/UserAction/login',
 					type : 'post',
 					data : data,// form.serialize(),
 					cache : false,
@@ -63,7 +63,7 @@
 		},
 		Logout:function(){
 			$.ajax({
-				url : 'customer/UserAction/logout',
+				url : '/customer/UserAction/logout',
 				type : 'post',
 				data : false,// form.serialize(),
 				cache : false,
