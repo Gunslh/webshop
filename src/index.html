@@ -52,12 +52,12 @@
 		</div>
 		<div class="cate-pics">
 			<ul>
-				<li><img src="/images/cate1.jpg" ></img></li>
-				<li><img src="/images/cate2.jpg" ></img></li>
-				<li><img src="/images/cate3.jpg" ></img></li>
-				<li><img src="/images/cate4.jpg" ></img></li>
-				<li><img src="/images/cate5.jpg" ></img></li>
-				<li><img src="/images/cate6.jpg" ></img></li>
+				<li class="super-link" link='/category/1.html'><img src="/images/cate1.jpg" ></img><div class="cp-banner cpb-1" >ZENTAI</div></li>
+				<li class="super-link" link='/category/2.html'><img src="/images/cate2.jpg" ></img><div class="cp-banner cpb-2" >COSPLAY</div></li>
+				<li class="super-link" link='/category/3.html'><img src="/images/cate3.jpg" ></img><div class="cp-banner cpb-3 ">SUPERHEROS</div></li>
+				<li class="super-link" link='/category/4.html'><img src="/images/cate4.jpg" ></img><div class="cp-banner cpb-4">LATEX</div></li>
+				<li class="super-link" link='/category/5.html'><img src="/images/cate5.jpg" ></img><div class="cp-banner cpb-5">CATSUIT</div></li>
+				<li class="super-link" link='/category/6.html'><img src="/images/cate6.jpg" ></img><div class="cp-banner cpb-6">ACCESSORIES</div></li>
 			</ul>
 		</div>
 		<div class="clear"></div>
@@ -275,7 +275,10 @@ $(function(){
 		
 	};
 	setInterval (AdvShift,2000);
-	
+	//vip 调整
+	$('.index-vip').click(function(){
+		window.location.href='customized.html';
+	});
 });
 </script>
 </body>

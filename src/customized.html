@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Customized</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+<body>
+	<div class="body-container">
+		<div class="index-top"></div>
+		<div class="index-search"></div>
+		<div class="index-menu"></div>
+		<div class="cc-info">
+		</div>
+		<div class="customized-container">
+			<div class="cc-form left">
+				<div class="cc-name"><input type="text"></input></div>
+				<div class="cc-lastname"><input type="text"></input></div>				
+				<div class="cc-email"><input type="text"></input></div>
+				<div class="cc-phone"><input type="text"></input></div>
+				<div class="cc-description"><textarea></textarea></div>
+				<div class="cc-height"><input type="text"></input></div>				
+				<div class="cc-bust"><input type="text"></input></div>
+				<div class="cc-waist"><input type="text"></input></div>
+				<div class="cc-hip"><input type="text"></input></div>
+				<div class="cc-weight"><input type="text"></input></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="footer"></div>
+	</div>
+	<script src="lib/js/jquery-1.8.1.min.js"></script>
+	<script src="app/js/templates.js"></script>
+	<script src="app/js/public.js"></script>
+	<script type="text/javascript" src="lib/js/md5-min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$.template.loadHead();
+			$.template.loadTopBanner($('.index-top'));
+			$.template.loadSearchBanner($('.index-search'));
+			$.template.loadMenuBanner($(".index-menu"));
+			$.template.loadFoot($(".footer"));
+
+			
+		});
+	</script>
+</body>
+</html>

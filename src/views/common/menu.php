@@ -8,7 +8,7 @@ $(function(){
 		else
 			$(this).find('.sub-menu').hide();
 	});
-
+	var menuhook = null;
 	function menuParse(json)
 	{
 		var html = "";
@@ -25,7 +25,8 @@ $(function(){
 				
 			else
 				html += " <li><p class='super-link' link='/category/"+obj.t_pkId+".html'>" + obj.t_cateName+'</p>';
-			
+
+
 			if(sub){
 				//console.log(JSON.stringify(sub));
 				html += '<div class="sub-menu"><ul>'
