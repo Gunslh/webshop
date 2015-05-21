@@ -202,3 +202,24 @@ CREATE TABLE `shop_cart` (
     PRIMARY KEY (`t_pkId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `shop_customized` (
+  `t_pkId` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `t_name` varchar(64) DEFAULT NULL,
+  `t_lastname` varchar(64) DEFAULT NULL,
+  `t_email` varchar(64) DEFAULT NULL,
+  `t_phone` varchar(64) DEFAULT NULL,
+  `t_descr` varchar(256) DEFAULT NULL,
+  `t_height` int(11) DEFAULT NULL,
+  `t_bust` int(11) DEFAULT NULL,
+  `t_waist` int(11) DEFAULT NULL,
+  `t_hip` int(11) DEFAULT NULL,
+  `t_weight` int(11) DEFAULT NULL,
+  `t_pic1` varchar(128) DEFAULT NULL COMMENT '提交图片',
+  `t_pic2` varchar(128) DEFAULT NULL COMMENT '提交图片',
+  `fk_usr_id` int(11) DEFAULT NULL COMMENT '用户id',
+  `t_state` int(11) DEFAULT '0' COMMENT '当前状态  0  未处理 1 已经处理',
+  `t_guid` varchar(64) DEFAULT NULL,
+  PRIMARY KEY (`t_pkId`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='自定义产品';
+
+

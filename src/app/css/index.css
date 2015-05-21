@@ -783,8 +783,45 @@ h4 {
 
 .customized-container .cc-form .cc-weight input
 {
+	width:60px;	
+}
+.cc-send
+{
+	position: absolute;
+	top:600px;
+	right:300px;
 	width:60px;
-	
+	height:32px;
+	background: url("/images/custom_send.png") no-repeat scroll 0px 0px transparent;
+}
+.cc-text
+{
+	position: absolute;
+	top: 540px;
+	right: 50px;
+	width: 300px;
+	height: 60px;
+	text-align: left;
+	font-weight: bold;
+	font-size: 13px;
+}
+.cc-file1, .cc-file2
+{
+	height:20px;
+	width: 220px;
+	overflow: hidden;
+}
+.cc-file1
+{
+	position: absolute;
+	top:480px;
+	right:130px;
+}
+.cc-file2
+{
+	position: absolute;
+	top:510px;
+	right:130px;
 }
 .cc-info
 {
@@ -796,4 +833,14 @@ h4 {
 	font-size: 18px;
 	margin-top: 20px;
 	margin-bottom: 10px;
+}
+.cc-done
+{
+	text-align: left;
+	font-size: 28px;
+}
+.guid
+{
+	color: red;
+	font-size: 22px;
 }
