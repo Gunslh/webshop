@@ -3,8 +3,7 @@
  */
 // JavaScript Document
 (function($) {
-	$.User = {
-		
+	$.User = {		
 		LoginTest:function(url){
 			$.ajax({
 				url : '/customer/UserAction/getSession',
@@ -12,6 +11,7 @@
 				data : false,// form.serialize(),
 				cache : false,
 				dataType : "json",
+				async:false,
 				error : function(XMLHttpRequest, textStatus,
 						errorThrown) {
 					alert("服务器无响应! status: " + textStatus);
