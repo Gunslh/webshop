@@ -540,17 +540,50 @@ h4 {
 .cate-pics ul li
 {
 	float:left;
-	width:300px;
+	width:320px;
 	height:210px;
-	margin-left:5px;
+	margin-left:10px;
 	margin-top:15px;
+	overflow-y: hidden;
+	position:relative;
 }
 .cate-pics ul li img
 {
-	width:290px; 
-	height:210px
+	width:320px; 
 }
-
+.cp-banner
+{
+	position:absolute;
+	bottom:0px;
+	height:40px;
+	width:100%;	
+	font-size: 32px;
+	color: white;
+}
+.cpb-1
+{
+	background-color:rgb(118,58,128);
+}
+.cpb-2
+{
+	background-color:rgb(83,93,82);
+}
+.cpb-3
+{
+	background-color:rgb(36,54,102);
+}
+.cpb-4
+{
+	background-color:rgb(102,120,103);
+}
+.cpb-5
+{
+	background-color:rgb(172,62,45);
+}
+.cpb-6
+{
+	background-color:rgb(165,165,49);
+}
 .index-hotsale p
 {
 	text-align: left;
@@ -631,7 +664,10 @@ h4 {
 	height: 526px;
 	background: url("../../images/vip.jpg");
 }
-
+.index-vip:hover
+{
+	cursor:pointer;
+}
 .left-arrow
 {
 	position: absolute;
@@ -657,4 +693,154 @@ h4 {
 {
 	font-size: 18px;
 	margin-top: 18px;
+}
+
+.customized-container .cc-form
+{
+	width: 930px;
+	height: 700px;
+	background: url("/images/customized_form.png");
+	position: relative;
+}
+
+.customized-container .cc-form .cc-lastname, 
+.customized-container .cc-form .cc-name
+{
+	top: 68px;
+}
+.customized-container .cc-form .cc-name
+{
+	position: absolute;	
+	right: 230px;
+}
+.customized-container .cc-form .cc-lastname
+{
+	position: absolute;
+	right: 60px;
+}
+.customized-container .cc-form  input[type='text']
+{
+	width: 80px;
+	border: 0px none;
+}
+
+.customized-container .cc-form .cc-email,.customized-container .cc-form .cc-phone
+{
+	top: 95px;
+}
+
+.customized-container .cc-form .cc-email
+{
+	position: absolute;	
+	right: 225px;
+}
+.customized-container .cc-form .cc-phone
+{
+	position: absolute;
+	right: 55px;
+}
+.customized-container .cc-form .cc-description
+{
+	position: absolute;
+	right: 32px;
+	top: 143px;
+}
+.customized-container  textarea
+{
+	width: 280px;
+	height: 131px;
+	background-color: rgb(245,245,245);
+	border: 0px;
+}
+
+.cc-height , .cc-bust , .cc-waist, .cc-hip, .cc-weight
+{
+	position: absolute;
+	right:215px;
+}
+.cc-height
+{
+	top: 315px;
+}
+.cc-bust
+{
+	top:341px;
+}
+.cc-waist
+{
+	top:369px;
+}
+.cc-hip
+{
+	top:397px;
+}
+
+.cc-weight
+{
+	top:424px;
+	right:225px;
+}
+
+.customized-container .cc-form .cc-weight input
+{
+	width:60px;	
+}
+.cc-send
+{
+	position: absolute;
+	top:600px;
+	right:300px;
+	width:60px;
+	height:32px;
+	background: url("/images/custom_send.png") no-repeat scroll 0px 0px transparent;
+}
+.cc-text
+{
+	position: absolute;
+	top: 540px;
+	right: 50px;
+	width: 300px;
+	height: 60px;
+	text-align: left;
+	font-weight: bold;
+	font-size: 13px;
+}
+.cc-file1, .cc-file2
+{
+	height:20px;
+	width: 220px;
+	overflow: hidden;
+}
+.cc-file1
+{
+	position: absolute;
+	top:480px;
+	right:130px;
+}
+.cc-file2
+{
+	position: absolute;
+	top:510px;
+	right:130px;
+}
+.cc-info
+{
+	background: url("/images/categoryBanner.png") no-repeat scroll 0px -1px transparent;
+	width:1000px;
+	height:147px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 18px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.cc-done
+{
+	text-align: left;
+	font-size: 28px;
+}
+.guid
+{
+	color: red;
+	font-size: 22px;
 }

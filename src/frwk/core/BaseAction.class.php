@@ -24,7 +24,9 @@ class BaseAction
 	
 	public function redirect($url)
 	{
+		echo WEB_ROOT;
 		$this->response->header('Location',WEB_ROOT.$url);
+		
 		$this->response->send();
 	}
 	
