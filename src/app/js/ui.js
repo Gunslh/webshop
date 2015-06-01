@@ -97,6 +97,11 @@
 
 	});
 	
+	$('img').each(function(){
+		if($(this).attr('src') == '')
+			$(this).attr("src","/images/pic_not_found.png");
+	});
+	
 	$('.super-link').live('click', function(){
 		if($(this).attr('link'))
 			window.location.href = $(this).attr('link');

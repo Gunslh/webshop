@@ -1,5 +1,5 @@
 @CHARSET "UTF-8";
-
+body img{err:expression(onerror='this.src="/images/pic_not_found.png"')}
 .fail_info
 {
 	color: #B11516;
@@ -39,6 +39,7 @@
 
 .showInfo
 {
+	position:relative;
 	display: inline-block;
 	width:600px;
 	z-index: 3;
@@ -69,4 +70,29 @@
 .showInfo .controls
 {
 	margin-left: 120px;
+}
+
+.cp-pic1, .cp-pic2
+{
+	overflow: hidden;
+}
+.cp-pic1 img, .cp-pic2 img
+{
+	width: 145px;
+}
+.cp-pic1
+{
+	position: absolute;
+	top: 25px;
+	left: 295px;
+	width: 145px;
+	height: 145px;
+}
+.cp-pic2
+{
+	position:absolute;
+	top: 25px;
+	right: 5px;
+	width: 145px;
+	height: 145px;
 }

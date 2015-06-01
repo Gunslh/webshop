@@ -41,8 +41,45 @@ class CustomizedAction extends CustomerBaseAction
 		}
 		$entity->add($name, $lastname,$email,$phone,
 				$descr,$height,$bust, $waist,$hip, $weight, $pic, $pic1,$this->userInfo[0]->t_pkid, $guid);
+		
 		$this->redirect("customized_done.html?guid=".$guid);
 
+	}
+	
+	public function comfired()
+	{
+		$json = new stdClass();
+		$entity = new CustomizedEntity();
+		$id = isset($_POST["id"])?$_POST["id"]:0;
+		if($entity->comfired($id) == true)
+		{
+			$json->status = ErrorCode::E_SUCCESS;
+			$json->msg = ErrorCode::getErrDesc(ErrorCode::E_SUCCESS);
+		}
+		else
+		{
+			$json->status = ErrorCode::E_DB_ERR;
+			$json->msg = ErrorCode::getErrDesc(ErrorCode::E_DB_ERR);
+		}
+		echo json_encode($json);
+	}
+	public function get()
+	{
+		$json = new stdClass();
+		$entity = new CustomizedEntity();
+		$id = isset($_POST["id"])?$_POST["id"]:0;
+		$ret = $entity->getById($id);
+		if($ret != false)
+		{
+			$json->status = ErrorCode::E_SUCCESS;
+			$json->msg = $ret;
+		}
+		else
+		{
+			$json->status = ErrorCode::E_DB_ERR;
+			$json->msg = ErrorCode::getErrDesc(ErrorCode::E_DB_ERR);
+		}
+		echo json_encode($json);
 	}
 	private function guid(){
 
