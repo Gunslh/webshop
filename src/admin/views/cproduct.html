@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>customized product</title>
+<?php include_once dirname(__FILE__).'/common/head.html';?>
+</head>
+<body>
+<?php include_once dirname(__FILE__).'/common/nav.html';?>
+<?php include_once dirname(__FILE__).'/../inner/CustomizedInnerPOJO.class.php';?>
+<?php
+$subid = isset($_GET['subid'])? $_GET['subid']:1;
+$cust = new CustomizedInnerPOJO();
+$pds = $cust->getAllUncomfired();
+?>
+<div id="content">
+    <div class="container">
+    <div class="row">
+        <div class="span3">
+        <?php include_once dirname(__FILE__).'/common/menu.html';?>
+        </div>
+        <div class="span9">
+            <h1 class="page-title">
+                <i class="icon-home"></i>
+                    定制产品        
+            </h1>       
+            <div class="row">
+                    <div class="span9">
+                        <div class="widget">
+                            <div class="widget-header">
+                            <i class="icon-th-list"></i>
+                                <h3>定制产品列表    </h3>
+                            </div> <!-- /widget-header -->
+                                <div class="widget-content">                                                                
+                                    
+                                <div class="tabbable">                              
+                                        <div class="tab-content">
+                                        <div class="tab-pane <?php if ($subid == 1) {?> active <?php }?>" id="1">
+                                            <div class="widget-content">            
+                                            分类    <select id="show_cateselect">
+                                                <option value="0" selected>未选中</option>
+                                                <?php
+                                                    foreach ($categorys as $cate){
+                                                        $out =  "<option value=\"".$cate->t_pkId."\">".$cate->t_cateName."</option>";
+                                                        echo $out;
+                                                    } 
+                                                ?>
+                                            </select> 子目录  
+                                            <select id="show_subselect">
+                                                <option value="0" selected>未选中</option>
+                                            </select>           
+                                            <table class="table table-striped table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>产品描述</th>
+                                                        <th>图片1</th>
+                                                        <th>图片2</th>
+                                                        <th>状态</th>
+                                                        <th>操作</th>
+                                                    </tr>
+                                                </thead>
+                                                
+                                                <tbody id="pd_table">
+                                                    <?php if(!empty($pds)) { ?>
+                                                    <?php foreach($pds as $product ){ ?>
+                                                    <tr msgid="<?php echo $product->t_pkId ?>">
+                                                        <td width="50px"><?php echo $product->t_pkId ?></td>
+                                                        <td><?php echo substr($product->t_descr,0,20) ?></td>
+                                                        <td width="150px"><img width="150px" onerror="javascript:this.src='/images/pic_not_found.png'" src="<?php echo $product->t_pic1 ?>"></img></td>
+                                                        <td width="150px"><img width="150px" onerror="javascript:this.src='/images/pic_not_found.png'" src="<?php echo $product->t_pic2 ?>"></img></td>
+                                                        <td width="50px"><?php 	if ($product->t_state == 0 )
+																		echo "<font color='red'>未处理 </font>";
+																	elseif ($product->t_state == 1 )
+																		echo "<font color='green'>已处理 </font>";
+															 ?></td>
+                                                        <td class="action-td" width="70px">
+                                                        <a href="javascript:;" class="btn btn-small btn-warning showbtn">
+                                                                <i class="icon-zoom-in"></i>                                
+                                                            </a>        
+                                                            <?php if ($product->t_state == 0) { ?>         
+                                                            <a href="javascript:;" class="btn btn-small editlbtn">
+                                                                <i class="icon-edit"></i>                     
+                                                            </a>
+                                                            <?php }?>
+                                                        </td>
+                                                    </tr>
+                                                    <?php } } ?>
+                                                </tbody>
+                                            </table>
+                                        
+                                        </div> <!-- /widget-content -->
+                                     </div>  
+                                </div> <!-- /widget-content -->     
+                                </div>
+                            </div>
+                        </div> <!-- /widget -->
+                    </div> <!-- /span9 -->
+                </div> <!-- /row -->            
+            </div> <!-- /widget -->
+        </div>
+    </div>
+</div>
+<div class="showMiddle">
+    <div class="showInfo">
+        <form id="edit-profile" class="form-horizontal" >
+            <fieldset>                                                                                                                  
+                <div class="control-group">                                         
+                    <label class="control-label" for="firstname">Id</label>
+                    <div class="controls">
+                        <input type="text" class="input-medium" value="11" id="id" disabled />
+                    </div> <!-- /controls -->               
+                </div> <!-- /control-group -->              
+                
+                <div class="control-group">                                         
+                    <label class="control-label" for="lastname">Name</label>
+                    <div class="controls">
+                    	<input type="text" class="input-medium" value="11" id="name" disabled />
+                    </div> <!-- /controls -->               
+                </div> <!-- /control-group -->
+                <div class="control-group">                                         
+                    <label class="control-label" for="firstname">Eamil</label>
+                    <div class="controls">
+                        <input type="text" class="input-medium" id="email" value="" disabled />    
+                    </div> <!-- /controls -->
+                            
+                </div> <!-- /control-group -->
+                <div class="control-group">                                         
+                    <label class="control-label" for="firstname">Phone</label>
+                    <div class="controls">
+                        <input type="text" class="input-medium" id="phone" value="" disabled />
+                    </div> <!-- /controls -->               
+                </div> <!-- /control-group -->
+                
+                <div class="control-group">                                         
+                    <label class="control-label" for="lastname">Description</label>
+                    <div class="controls">
+                        <textarea type="text" class="input-medium span5" id="descr" value="" rows="10" cols="40" disabled></textarea>
+                    </div> <!-- /controls -->               
+                </div> <!-- /control-group -->
+                
+                <div class="control-group">                                         
+                    <label class="control-label" for="lastname">Guid</label>
+                    <div class="controls">
+                        <input type="text" class="input-medium span3" id="guid" value="" />
+                    </div> <!-- /controls -->               
+                </div> <!-- /control-group -->
+                <div class="control-group">
+                    <label class="control-label" for="accountadvanced">Size</label>
+                    <div class="controls">
+                           <textarea type="text" class="input-medium span5" id="size" value="" rows="3" cols="40" disabled></textarea>                       
+                    </div>
+                </div>                                                                                                                                                                                          
+                <div class="form-actions">
+                    <button type="button" id="modcancel" class="btn btn-primary cancelbtn">完成</button> 
+                </div> <!-- /form-actions -->
+                <div class="cp-pic1"><img></img></div>
+                <div class="cp-pic2"><img></img></div>
+            </fieldset>
+        </form>
+    </div>
+</div>  
+
+<?php include_once dirname(__FILE__).'/common/footer.html';?>
+<script type="text/javascript" src="<?php echo WEB_ROOT?>lib/js/ajaxfileupload.js"></script>
+<script type="text/javascript" src="<?php echo WEB_ROOT?>app/js/ui.js"></script>
+<script type="text/javascript" src="<?php echo WEB_ROOT?>app/js/customize.js"></script>
+<script type="text/javascript">
+$(function(){
+    $.public.initMenu('#product', '#customizeproduct');
+
+    function viewFill(json)
+    {
+    	var sizeStr ='heigt:'+json.t_height+'  bust:'+json.t_bust+' \n'+
+    	'waist:'+json.t_waist+' hip:'+json.t_hip+' \n'+
+    	'weight:'+json.t_weight;
+    	
+    	$('#id').val(json.t_pkId);
+    	$('#name').val(json.t_lastname+','+json.t_name);
+    	$('#email').val(json.t_email);
+    	$('#phone').val(json.t_phone);
+    	$('#descr').val(json.t_descr);
+    	$('#guid').val(json.t_guid);
+    	$('#size').val(sizeStr);
+    	$('.cp-pic1 img').attr('src',json.t_pic1 );
+    	$('.cp-pic2 img').attr('src',json.t_pic2 );
+    	$('.showMiddle').show();
+    }
+    $('.showbtn').click(function(){
+    	var id = $(this).parent('td').parent('tr').attr('msgid');
+    	$.customize.get(id, viewFill);
+    	
+    });
+    $('#modcancel').click(function(){
+    	$('.showMiddle').hide();
+    });
+    $('.editlbtn').click(function(){
+    	if(confirm('是否确认已处理'))
+    	{
+    		$.customize.comfired($(this).parent('td').parent('tr').attr('msgid'),function(){
+    			window.location.href =window.location.href;
+    		});
+    		//alert('已经处理'+$(this).parent('td').parent('tr').attr('msgid'));
+    		
+    	}
+    	else
+    	{
+    		alert('取消');
+    	}
+    });
+});
+</script>	
+</body>
+</html>

@@ -219,7 +219,8 @@ CREATE TABLE `shop_customized` (
   `fk_usr_id` int(11) DEFAULT NULL COMMENT '用户id',
   `t_state` int(11) DEFAULT '0' COMMENT '当前状态  0  未处理 1 已经处理',
   `t_guid` varchar(64) DEFAULT NULL,
+  `t_createDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`t_pkId`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COMMENT='自定义产品';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='自定义产品';
 
 
