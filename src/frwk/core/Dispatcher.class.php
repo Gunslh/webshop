@@ -34,9 +34,8 @@ class Dispatcher implements EventListener
             }
         } catch (Exception $e) {
             echo $e;
-        }finally {
-            return $controller;
         }
+        return $controller;
     	//return new Controller($request,$response);
     }
     

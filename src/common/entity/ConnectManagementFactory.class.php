@@ -3,9 +3,9 @@
 class ConnectManagementFactory
 {
 	const DB_INFO = 'mysql5.6';
-	const DB_HOST = '127.0.0.1';
+	const DB_HOST = 'localhost';
 	const DB_USER = 'root';
-	const DB_PWD = '123456';
+	const DB_PWD = '';
 	const DB_NAME = 'webshop';
 
 	private static $_connection = null;
