@@ -35,16 +35,10 @@
 
         <div class="left fix">
             <ul>
-                <li class="sales">
-                    <div class="upto">UPTO</div>
-                    <div class="num-70">70</div>
-                    <div class="percent">%</div>
-                    <div class="off">OFF</div>
-                    <div class="daily">Daily deals</div>
-                </li>
-                <li>1</li>
-                <li>1</li>
-                <li>1</li>
+                <li class="sales"><img src="/images/ad_tab1.jpg" width="200" height="81" alt=""/></li>
+                <li><img src="/images/ad_tab2.jpg" width="200" height="81" alt=""/></li>
+                <li><img src="/images/ad_tab3.jpg" width="200" height="81" alt=""/></li>
+                <li><img src="/images/ad_tab4.jpg" width="200" height="81" alt=""/></li>
             </ul>
         </div>
         <div class="clear"></div>
@@ -172,13 +166,11 @@
         <div class="clear"></div>
     </div>
     <div class="clear"></div>
-
     <div class="footer">
         <?php include_once __DIR__ . '/views/common/foot.php'; ?>
     </div>
 </div>
-<script src="/app/js/templates.js"></script>
-<script src="/app/js/test.js"></script>
+<script type="text/javascript" src="/app/js/test.js"></script>
 <script type="text/javascript">
 $(function () {
     var obj = null;
@@ -290,7 +282,7 @@ $(function () {
     setInterval(AdvShift, 2000);
     //vip 调整
     $('.index-vip').click(function () {
-        window.location.href = 'customized.html';
+        window.location.href = 'customized.php';
     });
 });
 </script>

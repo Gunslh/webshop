@@ -1,5 +1,5 @@
-<script src="/app/js/ui.js"></script>
-<script src="/app/js/products.js"></script>
+<script type="text/javascript" src="/app/js/ui.js"></script>
+<script type="text/javascript" src="/app/js/products.js"></script>
 <script type="text/javascript">
 $(function(){
 	$('#menu-container li').live ("hover", function(event){
@@ -21,7 +21,7 @@ $(function(){
 			var sub = json[i].sub;
 			var obj = json[i];
 			if(i == 0)
-				html += " <li style='list-style: none' ><p class='super-link' link='/category/"+obj.t_pkId+".html'>" + obj.t_cateName.toUpperCase()+'</p>';
+				html += " <li style='list-style: none;margin-left:0;' ><p class='super-link' link='/category/"+obj.t_pkId+".html'>" + obj.t_cateName.toUpperCase()+'</p>';
 				
 			else
 				html += " <li><p class='super-link' link='/category/"+obj.t_pkId+".html'>" + obj.t_cateName.toUpperCase()+'</p>';
@@ -46,7 +46,7 @@ $(function(){
 });
 </script>
 <ul id= "menu-container">
-    <li style="list-style: none">ZENTAIL
+    <!--<li style="list-style: none; margin-left: 0;">ZENTAIL
         <div class="sub-menu">
             <ul>
                 <li class="super-link" link="order.html">shiny zentai suits</li>
@@ -93,5 +93,5 @@ $(function(){
     <li>LATEX</li>
     <li>ZENTAIKIDS</li>
     <li>ACCESSORIES</li>
-    <li>JERSEY</li>
+    <li>JERSEY</li>-->
 </ul>

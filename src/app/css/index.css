@@ -1,8 +1,8 @@
 @CHARSET "UTF-8";
 .body-container
 {
-	text-align:center; 
-	margin-left:auto; 
+	text-align:center;
+	margin-left:auto;
 	margin-right:auto;
 	width:1024px;
 }
@@ -27,9 +27,9 @@ img
 {
 	height:56px;
 	width:244px;
-	background:url('/images/world.png') no-repeat 0px 0px;
+	background:url('../../images/world.png') no-repeat 0px 0px;
 	padding-left: 54px;
-	
+
 }
 .index-search .d-left p
 {
@@ -46,7 +46,7 @@ img
 {
 	height:56px;
 	width:450px;
-	
+
 }
 .index-search .d-middle ul
 {
@@ -74,7 +74,7 @@ img
 .index-search .d-middle .search-input
 {
 	width:400px;
-	
+
 }
 .index-search .d-middle .search-input input
 {
@@ -86,21 +86,21 @@ img
 
 .index-search .d-middle .search-btn
 {
-	background:url('/images/search-bar.jpg') no-repeat 0px 0px;
+	background:url('../../images/search-bar.jpg') no-repeat 0px 0px;
 	height:35px;
 	width:35px;
 }
 
 .index-search .d-middle .search-btn:hover
 {
-	background:url('/images/search-bar-hover.jpg') no-repeat 0px 0px;
+	background:url('../../images/search-bar-hover.jpg') no-repeat 0px 0px;
 }
 
 .index-search .d-right
 {
 	height:56px;
 	width:150px;
-	
+
 }
 
 .login-url
@@ -124,7 +124,7 @@ img
 }
 .cart
 {
-	background:url('/images/cart.png') no-repeat 0px 0px;
+	background:url('../../images/cart.png') no-repeat 0px 0px;
 	height:56px;
 	margin: 0px;
 	position:relative;
@@ -170,7 +170,7 @@ h4 {
 	left: 20px;
 	top: 30px;
 	background-position: 0px 0px;
-	background-image: url("/images/cart_icon.png");
+	background-image: url("../../images/cart_icon.png");
 	background-repeat: no-repeat;
 }
 .no-goods-text
@@ -179,7 +179,7 @@ h4 {
 	left: 130px;
 	top: 45px;
 }
-.login-area 
+.login-area
 {
 	position:relative;
 }
@@ -308,7 +308,7 @@ h4 {
 .p-name, .p-detail {
     word-break: break-all;
     word-wrap: break-word;
-    
+
 }
 .p-img, .p-name, .p-price, .p-market, .p-detail  {
     overflow: hidden;
@@ -324,7 +324,7 @@ h4 {
 .p-price strong{
     color: #E4393C;
    font-size: 18px;
-	
+
 }
 .p-detail
 {
@@ -346,16 +346,16 @@ h4 {
 .index-menu ul
 {
 	list-style: disc;
-	color:rgb(231,31,25);	
-	font-size: 26px;
-	margin: 0px 0px 0px -40px;	
+	color:rgb(231,31,25);
+    font-size: 22px;
+	margin: 0px 0px 0px -40px;
 	padding: 0px;
 }
 .index-menu ul li
 {
 	float:left;
 	margin-left: 40px;
-	font-weight: bold;	
+	font-weight: bold;
 }
 .index-menu ul li
 {
@@ -420,7 +420,7 @@ h4 {
 }
 .shift ul li
 {
-	
+
 	position: absolute;
 }
 .slide-control
@@ -466,7 +466,7 @@ h4 {
 .sales
 {
 	font-family: Tahoma;
-	background:url('/images/sales.png') no-repeat 130px 0px;
+	background:url('../../images/sales.png') no-repeat 130px 0px;
 }
 .sales .upto
 {
@@ -508,19 +508,19 @@ h4 {
 	color: #7b7a7b;
 	font-weight: bold;
 	font-size:11px;
-	
+
 }
 
 .index-category .cate-text,.index-category .cate-pics
 {
-	
+
 	width: 1011px;
-	
+
 }
 .index-category .cate-text
 {
 	height:338px;
-	background:url('/images/welcome.png') no-repeat 0px 0px;
+	background:url('../../images/welcome.png') no-repeat 0px 0px;
 }
 .cate-text p
 {
@@ -549,14 +549,14 @@ h4 {
 }
 .cate-pics ul li img
 {
-	width:320px; 
+	width:320px;
 }
 .cp-banner
 {
 	position:absolute;
 	bottom:0px;
 	height:40px;
-	width:100%;	
+	width:100%;
 	font-size: 32px;
 	color: white;
 }
@@ -651,7 +651,7 @@ h4 {
 }
 .footer .f-detail
 {
-	color:rgb(122,123,123);	
+	color:rgb(122,123,123);
 }
 .footer .banner
 {
@@ -699,18 +699,18 @@ h4 {
 {
 	width: 930px;
 	height: 700px;
-	background: url("/images/customized_form.png");
+	background: url("../../images/customized_form.png");
 	position: relative;
 }
 
-.customized-container .cc-form .cc-lastname, 
+.customized-container .cc-form .cc-lastname,
 .customized-container .cc-form .cc-name
 {
 	top: 68px;
 }
 .customized-container .cc-form .cc-name
 {
-	position: absolute;	
+	position: absolute;
 	right: 230px;
 }
 .customized-container .cc-form .cc-lastname
@@ -731,7 +731,7 @@ h4 {
 
 .customized-container .cc-form .cc-email
 {
-	position: absolute;	
+	position: absolute;
 	right: 225px;
 }
 .customized-container .cc-form .cc-phone
@@ -783,7 +783,7 @@ h4 {
 
 .customized-container .cc-form .cc-weight input
 {
-	width:60px;	
+	width:60px;
 }
 .cc-send
 {
@@ -792,7 +792,7 @@ h4 {
 	right:300px;
 	width:60px;
 	height:32px;
-	background: url("/images/custom_send.png") no-repeat scroll 0px 0px transparent;
+	background: url("../../images/custom_send.png") no-repeat scroll 0px 0px transparent;
 }
 .cc-text
 {
@@ -825,7 +825,7 @@ h4 {
 }
 .cc-info
 {
-	background: url("/images/categoryBanner.png") no-repeat scroll 0px -1px transparent;
+	background: url("../../images/categoryBanner.png") no-repeat scroll 0px -1px transparent;
 	width:1000px;
 	height:147px;
 	padding-top: 10px;
