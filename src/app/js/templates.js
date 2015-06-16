@@ -53,7 +53,7 @@
 			path = path || '';
 			$('head').append('<link href="/app/css/likes.css" type="text/css" rel="stylesheet" />');
 			loadPage(path +'views/common/youmaylike.php',null, obj);
-		},
+		}
 	};
 
 })(jQuery);
