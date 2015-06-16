@@ -1,5 +1,5 @@
-<script src="/app/js/user.js"></script>
-<script src="/app/js/media.js"></script>
+<script type="text/javascript" src="/app/js/user.js"></script>
+<script type="text/javascript" src="/app/js/media.js"></script>
 <script type="text/javascript">
 $(function(){
 
