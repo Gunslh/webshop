@@ -87,72 +87,72 @@
             <ul>
                 <li>
                     <div class="sale-item">
-                        <img src="/images/sale-1.jpg" />
+                        <a href="#"><img src="/images/sale-1.jpg" /></a>
 
-                        <p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
-
-                        <p class="price">$65</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="sale-item">
-                        <img src="/images/sale-2.jpg" />
-
-                        <p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+                        <p class="descr"><a href="#">3D Cut Spiderman Printed Costume with Muscle Shades</a></p>
 
                         <p class="price">$65</p>
                     </div>
                 </li>
                 <li>
                     <div class="sale-item">
-                        <img src="/images/sale-3.jpg" />
+                        <a href="#"><img src="/images/sale-2.jpg" /></a>
 
-                        <p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
-
-                        <p class="price">$65</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="sale-item">
-                        <img src="/images/sale-4.jpg" />
-
-                        <p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+                        <p class="descr"><a href="#">3D Cut Spiderman Printed Costume with Muscle Shades</a></p>
 
                         <p class="price">$65</p>
                     </div>
                 </li>
                 <li>
                     <div class="sale-item">
-                        <img src="/images/sale-5.jpg" />
-                        <p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+                        <a href="#"><img src="/images/sale-3.jpg" /></a>
+
+                        <p class="descr"><a href="#">3D Cut Spiderman Printed Costume with Muscle Shades</a></p>
+
                         <p class="price">$65</p>
                     </div>
                 </li>
                 <li>
                     <div class="sale-item">
-                        <img src="/images/sale-6.jpg" />
-                        <p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+                        <a href="#"><img src="/images/sale-4.jpg" /></a>
+
+                        <p class="descr"><a href="#">3D Cut Spiderman Printed Costume with Muscle Shades</a></p>
+
                         <p class="price">$65</p>
                     </div>
                 </li>
                 <li>
                     <div class="sale-item">
-                        <img src="/images/sale-1.jpg" />
-                        <p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+                        <a href="#"><img src="/images/sale-5.jpg" /></a>
+                        <p class="descr"><a href="#">3D Cut Spiderman Printed Costume with Muscle Shades</a></p>
                         <p class="price">$65</p>
                     </div>
                 </li>
                 <li>
                     <div class="sale-item">
-                        <img src="/images/sale-2.jpg" />
-                        <p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+                        <a href="#"><img src="/images/sale-6.jpg" /></a>
+                        <p class="descr"><a href="#">3D Cut Spiderman Printed Costume with Muscle Shades</a></p>
                         <p class="price">$65</p>
                     </div>
                 </li>
                 <li>
                     <div class="sale-item">
-                        <img src="/images/sale-3.jpg" />
-                        <p class="descr">3D Cut Spiderman Printed Costume with Muscle Shades</p>
+                        <a href="#"><img src="/images/sale-1.jpg" /></a>
+                        <p class="descr"><a href="#">3D Cut Spiderman Printed Costume with Muscle Shades</a></p>
+                        <p class="price">$65</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="sale-item">
+                        <a href="#"><img src="/images/sale-2.jpg" /></a>
+                        <p class="descr"><a href="#">3D Cut Spiderman Printed Costume with Muscle Shades</a></p>
+                        <p class="price">$65</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="sale-item">
+                        <a href="#"><img src="/images/sale-3.jpg" /></a>
+                        <p class="descr"><a href="#">3D Cut Spiderman Printed Costume with Muscle Shades</a></p>
                         <p class="price">$65</p>
                     </div>
                 </li>

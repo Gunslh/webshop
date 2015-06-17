@@ -134,9 +134,7 @@ $cats = $entity->FindById($catId);
     </div>
 
 </div>
-<script src="/lib/js/jquery-1.8.1.min.js"></script>
-<script src="/app/js/templates.js"></script>
-<script src="/app/js/category.js"></script>
+<script type="text/javascript" src="/app/js/category.js"></script>
 <script type="text/javascript">
 $(function () {
     $.Category.LoadProduct(<?php echo $catId?>, <?php echo $page?>, function (json) {

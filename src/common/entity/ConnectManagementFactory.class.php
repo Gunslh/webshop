@@ -5,7 +5,7 @@ class ConnectManagementFactory
 	const DB_INFO = 'mysql5.6';
 	const DB_HOST = 'localhost';
 	const DB_USER = 'root';
-	const DB_PWD = '';
+	const DB_PWD = 'root';
 	const DB_NAME = 'webshop';
 
 	private static $_connection = null;
