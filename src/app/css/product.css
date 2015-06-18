@@ -1,0 +1,302 @@
+@CHARSET "UTF-8";
+.c-info
+{
+	background: url("/images/categoryBanner.png") no-repeat scroll 0px 0px transparent;
+	width:1000px;
+	height:147px;
+	margin-bottom: 30px;
+	font-size: 18px;
+}
+.special-options
+{
+	width:100%;
+	position: relative;
+	margin-bottom: 20px;
+}
+.special-options .op-banner
+{
+	width:1024px;
+	margin-left:0px;
+	height:40px;
+	background-color: #8C3CE1;
+	margin-bottom: 10px;
+}
+
+.op-banner p
+{
+	text-align: left;
+	margin: 0px;
+	font-size: 20px;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-left: 8px;
+}
+
+.path
+{
+	margin-top:30px;
+	text-align: left;
+	font-size: 20px;
+}
+
+.product-pic
+{
+	width:455px;
+	margin-left: 50px;
+}
+
+.product-pic .small
+{
+	width: 55px;
+	height: 450px;
+	overflow: hidden;
+}
+.product-pic .small ul
+{
+	margin:0px;
+	padding: 0px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.product-pic .small ul li
+{
+	border: 3px solid #A2B3B8;
+	margin-bottom: 20px;
+}
+.product-pic .small ul li:hover
+{
+	 -moz-box-shadow: 3px 3px 4px #000;
+    -webkit-box-shadow: 3px 3px 4px #000;
+    box-shadow: 3px 3px 4px #000;
+}
+.product-pic .small img
+{
+	height: 55px;
+}
+.product-pic .big
+{
+	height:460px;
+    overflow: hidden;
+}
+.product-pic .big img
+{
+	margin-left: 20px;
+	width: 350px;
+	margin-top: 30px;
+}
+.product-pic ,.product-detail, .big , .small
+{
+	float:left;
+}
+.product-info
+{
+	color: black;
+	margin-bottom:20px;
+}
+.product-detail
+{
+	text-align: left;
+	width:500px;
+}
+
+.product-detail .pd-title
+{
+	font-size: 26px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+.product-detail .pd-price
+{
+	color:rgb(232,35,27);
+	font-size: 28px;
+	margin-bottom: 15px;
+}
+.product-detail .pd-size
+{
+	font-size: 26px;
+	margin-bottom: 20px;
+}
+.size-form ul
+{
+	margin: 0px;
+padding: 0px;
+}
+.size-form ul li
+{
+	float:left;
+	
+	margin: 7px;
+	font-size: 16px;
+}
+.size-name
+{
+	width:70px;
+}
+.option
+{
+	border: 2px solid black;
+	padding-left: 8px;
+	padding-right: 8px;
+	cursor:pointer;
+	
+}
+.option:hover
+{
+	background-color:#8c3ce1;
+}
+.size-form .active
+{
+	background-color:#8c3ce1;
+}
+.op-detail
+{
+	width:100%;
+}
+.op-detail ul
+{
+	text-align: left;
+	margin:0px;
+	padding:0px;
+	float:left;
+	width: 40%;
+	margin-left: 20px;
+}
+.op-detail ul li
+{
+	margin-bottom:5px;
+}
+.op-detail ul li p
+{
+	margin:0px;
+	padding:0px;
+	text-intent:10px;
+	display: inline;
+	font-size: 18px;
+	margin-left: 10px;
+}
+.op-detail .op-name
+{
+	font-size:30px;
+	font-weight:bold;
+}
+
+.op-info
+{
+	text-align: left;
+	width: 100%;
+	border: 4px solid rgb(186, 197, 201);
+	position: absolute;
+	top: 230px;
+	min-height: 140px;
+}
+.size-banner
+{
+	text-align: left;
+}
+.size-banner .guid
+{
+	color:black;
+	text-align: left;
+	margin: 0px;
+	font-size: 26px;
+	font-weight: bold;
+	padding-top: 5px;
+	padding-left: 20px;
+	width: 200px;
+	margin-bottom: 20px;
+}
+.size-banner .guid-text
+{
+	color: #617880;
+	font-size: 26px;
+}
+.size-banner img
+{
+	margin-left: 12px;
+	width:1000px;
+}
+.tb-btn-add a, .tb-btn-buynow a {
+    width: 180px;
+    color: #FFF;
+    border-color: #F40;
+    background: none repeat scroll 0% 0% #F40;
+    display: block;
+	cursor: pointer;
+	height: 38px;
+	text-align: center;
+	font-family: "Hiragino Sans GB","microsoft yahei",sans-serif;
+	font-size: 16px;
+	line-height: 38px;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 2px;
+    
+}
+.tb-btn-buynow a
+{
+	width:150px;	
+}
+.tb-btn-add i {
+    font-size: 22px;
+    font-weight: 400;
+    font-style: normal;
+    margin-right: 10px;
+}
+.tb-action .tb-btn-add i {
+    vertical-align: bottom;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    margin-right: 10px;
+}
+
+.tb-btn-add, .tb-btn-buynow
+{
+	margin-top: 30px;
+	margin-left: 10px;
+}
+.tb-stock a{
+    display: block;
+    float: left;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #CCC;
+    line-height: 26px;
+    padding: 0px;
+    vertical-align: top;
+    text-align: center;
+    background-color: #EDEDED;
+    overflow: hidden;
+}
+.iconfont {
+    font-family: iconfont !important;
+    font-size: 12px;
+    font-style: normal;
+    -moz-user-select: none;
+}
+.tb-stock .tb-increase {
+    border-left: 0px none !important;
+    margin-right: 8px;
+}
+.tb-stock .tb-disable-reduce, 
+.tb-stock .tb-disable-reduce:hover  {
+    color: #CCC;
+	cursor: not-allowed;
+	background-color: #EDEDED;
+}
+
+.tb-stock input {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 48px;
+    height: 26px;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: #666;
+    border: 1px solid #CCC;
+    outline: 0px none;
+    background: none repeat scroll 0% 0% #FFF;
+    ime-mode: disabled;
+}

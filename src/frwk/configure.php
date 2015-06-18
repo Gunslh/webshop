@@ -17,10 +17,20 @@ class Configure
 	            'admin/actions/',
 	        ),
 	    ),
+	    'customer'=>array(
+	        'pattern'=>'/^\/customer\/.*/',
+	        'filters'=>array(
+	            'LoginFilter'
+	        ),
+	        'loadpath'=>array(
+	            'customer/filters/',
+	            'customer/actions/',
+	        ),
+	    ),
 	);
 
-	public static $DIRECTORY_TEMPLATE = 'templates/';
-	public static $REQUEST_PAGE_NOT_FOUND = '404.php';
+	//public static $DIRECTORY_TEMPLATE = 'templates/';
+	public static $REQUEST_PAGE_NOT_FOUND = '404.html';
 	public static $BASE_CONTROLLER = 'Controller';
 // 	public static $DISPATCHER_FILTERS = array (
 // 			'LoginFilter',

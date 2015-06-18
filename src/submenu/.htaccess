@@ -1,0 +1,4 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule ^(.*)\.htm* ../submenu.php?id=$1 [NC]    
+</IfModule>

@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine on
-    RewriteRule    ^admin\/(.*)$    frwk/index.php    [L]
-    RewriteRule ^(.*)\.htm*  show.php?page=$1 [NC]    
-    ErrorDocument 404 	 templates/404.html
+    RewriteRule    ^admin\/(.*)$    frwk/    [L]
+    RewriteRule    ^customer\/(.*)$    frwk/    [L]
+    ErrorDocument 404   /404.html
 </IfModule>

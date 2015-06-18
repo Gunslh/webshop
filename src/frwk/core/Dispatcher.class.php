@@ -34,9 +34,8 @@ class Dispatcher implements EventListener
             }
         } catch (Exception $e) {
             echo $e;
-        }finally {
-            return $controller;
         }
+        return $controller;
     	//return new Controller($request,$response);
     }
     
@@ -50,10 +49,12 @@ class Dispatcher implements EventListener
 	public function dispatch(BaseRequest $request, BaseResponse $response)
     {
     	$this->_attachFilters($request,$response);
-    	$this->getEventManager()->dispatch('Dispatcher.beforeDispatch');
-       $controller = $this->getController($request, $response);
-       $this->invoke($controller);
-       $this->getEventManager()->dispatch('Dispatcher.afterDispatch');
+    	$isRun = $this->getEventManager()->dispatch('Dispatcher.beforeDispatch');
+    	if($isRun){
+    	    $controller = $this->getController($request, $response);
+    	    $this->invoke($controller);
+    	}
+        $this->getEventManager()->dispatch('Dispatcher.afterDispatch');
     }
     
     public function implementedEvents() {
