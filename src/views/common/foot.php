@@ -1,11 +1,26 @@
-
-		<p class="f-title">China Wholesale Marketplace</p>
-		<p class="f-detail">DHgate.com is the world’s leading online wholesale marketplace for goods made in China, connecting international buyers 
-		with Chinese wholesale sellers who offer the same quality products found elsewhere at a fraction of the price. DHgate hosts 
-		over 30 million products in a wide range of categories including Apparel & Accessories, Computers & Networking, Consumer 
-		Electronics, Toys & Hobbies, Health & Beauty, Bags & Jewelry, Home, Auto, and more. Get low prices on top selling products 
-		such as but not limited to wedding dresses, electronic cigarettes, </p>
-		<p class="banner"><img src="/images/botton-banner.jpg"></img></p>
-		<div id="mask" class="mask" style="display:none;">
-    	<iframe src="about:blank" style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity:0);position:absolute;top:0px;left:0px;width:100%;height:100%;" frameborder="0"></iframe>
-		</div>
+<div id="footInfo" class="cls">
+    <ul>
+        <li class="first">COMPANY INFO</li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Free Shipping</a></li>
+    </ul>
+    <ul>
+        <li class="first">CUSTOMER SERVICE</li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">My Account</a></li>
+        <li><a href="#">Returns</a></li>
+    </ul>
+    <ul>
+        <li class="first">SECURITY & PRIVACY</li>
+        <li><a href="#">My Password</a></li>
+        <li><a href="#">Payment Method</a></li>
+        <li><a href="#">Track My Order</a></li>
+    </ul>
+</div>
+<p class="banner"><img src="/images/bottom-banner.jpg" /></p>
+<div id="mask" class="mask" style="display:none;">
+    <iframe src="about:blank"
+            style="filter:progid:DXImageTransform.Microsoft.Alpha(opacity:0);position:absolute;top:0px;left:0px;width:100%;height:100%;"
+            frameborder="0"></iframe>
+</div>

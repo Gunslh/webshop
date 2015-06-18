@@ -40,15 +40,13 @@
             </div>
         </div>
         <div class="free-regist">
-            <span><a href="/reg.html">Register&gt;&gt;</a></span>
+            <span><a href="/reg.php">Register&gt;&gt;</a></span>
         </div>
     </div>
     <div class="footer">
         <?php include_once __DIR__ . '/views/common/foot.php'; ?>
     </div>
 </div>
-<script src="lib/js/jquery-1.8.1.min.js"></script>
-<script src="app/js/templates.js"></script>
 <script src="app/js/public.js"></script>
 <script type="text/javascript" src="lib/js/md5-min.js"></script>
 <script type="text/javascript">
@@ -60,7 +58,6 @@ $(function () {
         $(this).css('border', '1px solid #ccc');
     });
     $('#loginsubmit').click(function () {
-        //alert($.public.getQueryString('url'));
         $.User.Auth($('#loginname').val(), hex_md5($('#nloginpwd').val()), $.public.getQueryString('url'));
     });
     $.key.enter(function () {

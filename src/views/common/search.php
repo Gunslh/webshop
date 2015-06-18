@@ -1,5 +1,5 @@
-<script src="/app/js/user.js"></script>
-<script src="/app/js/media.js"></script>
+<script type="text/javascript" src="/app/js/user.js"></script>
+<script type="text/javascript" src="/app/js/media.js"></script>
 <script type="text/javascript">
 $(function(){
 
@@ -113,7 +113,7 @@ $(function(){
 </div>
 
 <div class="left d-right login-area loginfo">
-	<div class="tt"><a class="login-url" href="/login.html">login</a></div>
+	<div class="tt"><a class="login-url" href="/login.php">login</a></div>
 	<div class="t-list">
 		<ul>
 			<li class="super-link logout" >Logout</li>
